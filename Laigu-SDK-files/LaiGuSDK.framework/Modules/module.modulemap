@@ -1,0 +1,6 @@
+framework module LaiGuSDK {
+  umbrella header "LaiGuSDK.h"
+
+  export *
+  module * { export * }
+}

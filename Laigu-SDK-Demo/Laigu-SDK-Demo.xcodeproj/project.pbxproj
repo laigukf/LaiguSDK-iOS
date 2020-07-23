@@ -1,0 +1,2168 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3678661F24C98B1F008AB7AE /* LAIGU_HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678649124C98B1E008AB7AE /* LAIGU_HPTextViewInternal.m */; };
+		3678662024C98B1F008AB7AE /* LAIGU_HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678649424C98B1E008AB7AE /* LAIGU_HPGrowingTextView.m */; };
+		3678662124C98B1F008AB7AE /* LGAGEmojiKeyBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678649724C98B1E008AB7AE /* LGAGEmojiKeyBoardView.m */; };
+		3678662224C98B1F008AB7AE /* LGAGEmojiPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678649824C98B1E008AB7AE /* LGAGEmojiPageView.m */; };
+		3678662324C98B1F008AB7AE /* VoiceConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3678649B24C98B1E008AB7AE /* VoiceConverter.mm */; };
+		3678662424C98B1F008AB7AE /* wav.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3678649E24C98B1E008AB7AE /* wav.mm */; };
+		3678662524C98B1F008AB7AE /* amrFileCodec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3678649F24C98B1E008AB7AE /* amrFileCodec.mm */; };
+		3678662624C98B1F008AB7AE /* XLPInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864A324C98B1E008AB7AE /* XLPInputView.m */; };
+		3678662724C98B1F008AB7AE /* XlpEmojiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864A424C98B1E008AB7AE /* XlpEmojiCell.m */; };
+		3678662824C98B1F008AB7AE /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864A924C98B1E008AB7AE /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		3678662924C98B1F008AB7AE /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864B224C98B1E008AB7AE /* ViewController+MASAdditions.m */; };
+		3678662A24C98B1F008AB7AE /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864B624C98B1E008AB7AE /* MASCompositeConstraint.m */; };
+		3678662B24C98B1F008AB7AE /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864B724C98B1E008AB7AE /* MASConstraintMaker.m */; };
+		3678662C24C98B1F008AB7AE /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864B824C98B1E008AB7AE /* MASLayoutConstraint.m */; };
+		3678662D24C98B1F008AB7AE /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864B924C98B1E008AB7AE /* NSArray+MASAdditions.m */; };
+		3678662E24C98B1F008AB7AE /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864BA24C98B1E008AB7AE /* View+MASAdditions.m */; };
+		3678662F24C98B1F008AB7AE /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864BD24C98B1E008AB7AE /* MASConstraint.m */; };
+		3678663024C98B1F008AB7AE /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864BF24C98B1E008AB7AE /* MASViewConstraint.m */; };
+		3678663124C98B1F008AB7AE /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864C024C98B1E008AB7AE /* MASViewAttribute.m */; };
+		3678663224C98B1F008AB7AE /* LAIGU_CustomIOSAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864C224C98B1E008AB7AE /* LAIGU_CustomIOSAlertView.m */; };
+		3678663324C98B1F008AB7AE /* LAIGU_MLAudioMeterObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864C624C98B1E008AB7AE /* LAIGU_MLAudioMeterObserver.m */; };
+		3678663424C98B1F008AB7AE /* LAIGU_CafRecordWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864CB24C98B1E008AB7AE /* LAIGU_CafRecordWriter.m */; };
+		3678663524C98B1F008AB7AE /* LAIGU_MLAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864CD24C98B1E008AB7AE /* LAIGU_MLAudioRecorder.m */; };
+		3678663624C98B1F008AB7AE /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 367864D724C98B1E008AB7AE /* libopencore-amrwb.a */; };
+		3678663724C98B1F008AB7AE /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 367864D824C98B1E008AB7AE /* libopencore-amrnb.a */; };
+		3678663824C98B1F008AB7AE /* LAIGU_AmrRecordWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864D924C98B1E008AB7AE /* LAIGU_AmrRecordWriter.m */; };
+		3678663924C98B1F008AB7AE /* LAIGU_TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864DB24C98B1E008AB7AE /* LAIGU_TTTAttributedLabel.m */; };
+		3678663A24C98B1F008AB7AE /* LAIGU_FBBitmapFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864DF24C98B1E008AB7AE /* LAIGU_FBBitmapFont.m */; };
+		3678663B24C98B1F008AB7AE /* LAIGU_FBSquareFontView.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864E324C98B1E008AB7AE /* LAIGU_FBSquareFontView.m */; };
+		3678663C24C98B1F008AB7AE /* LAIGU_FBSquareFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864E524C98B1E008AB7AE /* LAIGU_FBSquareFont.m */; };
+		3678663D24C98B1F008AB7AE /* LAIGU_FBBitmapFontView.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864E724C98B1E008AB7AE /* LAIGU_FBBitmapFontView.m */; };
+		3678663E24C98B1F008AB7AE /* LAIGU_FBFontSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864E824C98B1E008AB7AE /* LAIGU_FBFontSymbol.m */; };
+		3678663F24C98B1F008AB7AE /* LAIGU_FBLCDFontView.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864E924C98B1E008AB7AE /* LAIGU_FBLCDFontView.m */; };
+		3678664024C98B1F008AB7AE /* LAIGU_FBLCDFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864EA24C98B1E008AB7AE /* LAIGU_FBLCDFont.m */; };
+		3678664124C98B1F008AB7AE /* LGChatViewConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864ED24C98B1E008AB7AE /* LGChatViewConfig.m */; };
+		3678664224C98B1F008AB7AE /* LGChatViewStyleDark.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864F224C98B1E008AB7AE /* LGChatViewStyleDark.m */; };
+		3678664324C98B1F008AB7AE /* LGChatViewStyleBlue.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864F324C98B1E008AB7AE /* LGChatViewStyleBlue.m */; };
+		3678664424C98B1F008AB7AE /* LGChatViewStyleGreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864F524C98B1E008AB7AE /* LGChatViewStyleGreen.m */; };
+		3678664524C98B1F008AB7AE /* LGChatViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864F724C98B1E008AB7AE /* LGChatViewStyle.m */; };
+		3678664624C98B1F008AB7AE /* LGChatViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864F824C98B1E008AB7AE /* LGChatViewManager.m */; };
+		3678664724C98B1F008AB7AE /* LGCustomizedUIText.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864FC24C98B1E008AB7AE /* LGCustomizedUIText.m */; };
+		3678664824C98B1F008AB7AE /* LGFileDownloadMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 367864FF24C98B1E008AB7AE /* LGFileDownloadMessage.m */; };
+		3678664924C98B1F008AB7AE /* LGBotMenuMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678650624C98B1E008AB7AE /* LGBotMenuMessage.m */; };
+		3678664A24C98B1F008AB7AE /* LGBotMessageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678650824C98B1E008AB7AE /* LGBotMessageFactory.m */; };
+		3678664B24C98B1F008AB7AE /* LGBotRichTextMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678650924C98B1E008AB7AE /* LGBotRichTextMessage.m */; };
+		3678664C24C98B1F008AB7AE /* LGCardMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678650D24C98B1E008AB7AE /* LGCardMessage.m */; };
+		3678664D24C98B1F008AB7AE /* LGMessageFactoryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678650F24C98B1E008AB7AE /* LGMessageFactoryHelper.m */; };
+		3678664E24C98B1F008AB7AE /* LGPhotoCardMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678651024C98B1E008AB7AE /* LGPhotoCardMessage.m */; };
+		3678664F24C98B1F008AB7AE /* LGBaseMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678651124C98B1E008AB7AE /* LGBaseMessage.m */; };
+		3678665024C98B1F008AB7AE /* LGBotAnswerMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678651324C98B1E008AB7AE /* LGBotAnswerMessage.m */; };
+		3678665124C98B1F008AB7AE /* LGImageMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678651424C98B1E008AB7AE /* LGImageMessage.m */; };
+		3678665224C98B1F008AB7AE /* LGEventMessageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678651524C98B1E008AB7AE /* LGEventMessageFactory.m */; };
+		3678665324C98B1F008AB7AE /* LGEventMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678651624C98B1E008AB7AE /* LGEventMessage.m */; };
+		3678665424C98B1F008AB7AE /* LGRichTextMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678651724C98B1E008AB7AE /* LGRichTextMessage.m */; };
+		3678665524C98B1F008AB7AE /* LGWithDrawMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678651824C98B1E008AB7AE /* LGWithDrawMessage.m */; };
+		3678665624C98B1F008AB7AE /* LGTextMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678651B24C98B1E008AB7AE /* LGTextMessage.m */; };
+		3678665724C98B1F008AB7AE /* LGVoiceMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678651E24C98B1E008AB7AE /* LGVoiceMessage.m */; };
+		3678665824C98B1F008AB7AE /* LGVisialMessageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678652024C98B1E008AB7AE /* LGVisialMessageFactory.m */; };
+		3678665924C98B1F008AB7AE /* LGEvaluationResultCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678652424C98B1E008AB7AE /* LGEvaluationResultCellModel.m */; };
+		3678665A24C98B1F008AB7AE /* LGRichTextViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678652624C98B1E008AB7AE /* LGRichTextViewModel.m */; };
+		3678665B24C98B1F008AB7AE /* LGBotAnswerCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678652724C98B1E008AB7AE /* LGBotAnswerCellModel.m */; };
+		3678665C24C98B1F008AB7AE /* LGTextCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678652824C98B1E008AB7AE /* LGTextCellModel.m */; };
+		3678665D24C98B1F008AB7AE /* LGBotWebViewBubbleAnswerCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678652B24C98B1E008AB7AE /* LGBotWebViewBubbleAnswerCellModel.m */; };
+		3678665E24C98B1F008AB7AE /* LGFileDownloadCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678652C24C98B1E008AB7AE /* LGFileDownloadCellModel.m */; };
+		3678665F24C98B1F008AB7AE /* LGWebViewBubbleCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678652D24C98B1E008AB7AE /* LGWebViewBubbleCellModel.m */; };
+		3678666024C98B1F008AB7AE /* LGEventCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678652E24C98B1E008AB7AE /* LGEventCellModel.m */; };
+		3678666124C98B1F008AB7AE /* LGMessageDateCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678653124C98B1E008AB7AE /* LGMessageDateCellModel.m */; };
+		3678666224C98B1F008AB7AE /* LGBotMenuAnswerCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678653224C98B1E008AB7AE /* LGBotMenuAnswerCellModel.m */; };
+		3678666324C98B1F008AB7AE /* LGBotMenuRichCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678653424C98B1E008AB7AE /* LGBotMenuRichCellModel.m */; };
+		3678666424C98B1F008AB7AE /* LGCardCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678653524C98B1E008AB7AE /* LGCardCellModel.m */; };
+		3678666524C98B1F008AB7AE /* LGImageCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678653624C98B1E008AB7AE /* LGImageCellModel.m */; };
+		3678666624C98B1F008AB7AE /* LGTipsCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678653A24C98B1E008AB7AE /* LGTipsCellModel.m */; };
+		3678666724C98B1F008AB7AE /* LGBotMenuWebViewBubbleAnswerCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678653C24C98B1E008AB7AE /* LGBotMenuWebViewBubbleAnswerCellModel.m */; };
+		3678666824C98B1F008AB7AE /* LGBotMenuCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678654224C98B1E008AB7AE /* LGBotMenuCellModel.m */; };
+		3678666924C98B1F008AB7AE /* LGPhotoCardCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678654324C98B1E008AB7AE /* LGPhotoCardCellModel.m */; };
+		3678666A24C98B1F008AB7AE /* LGVoiceCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678654524C98B1E008AB7AE /* LGVoiceCellModel.m */; };
+		3678666B24C98B1F008AB7AE /* LGBotMenuAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678654924C98B1E008AB7AE /* LGBotMenuAnswerCell.m */; };
+		3678666C24C98B1F008AB7AE /* LGTipsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678654A24C98B1E008AB7AE /* LGTipsCell.m */; };
+		3678666D24C98B1F008AB7AE /* LGEventMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678654B24C98B1E008AB7AE /* LGEventMessageCell.m */; };
+		3678666E24C98B1F008AB7AE /* LGImageMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678654C24C98B1E008AB7AE /* LGImageMessageCell.m */; };
+		3678666F24C98B1F008AB7AE /* LGFileDownloadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678654F24C98B1E008AB7AE /* LGFileDownloadCell.m */; };
+		3678667024C98B1F008AB7AE /* LGEvaluationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678655024C98B1E008AB7AE /* LGEvaluationCell.m */; };
+		3678667124C98B1F008AB7AE /* LGWebViewBubbleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678655624C98B1E008AB7AE /* LGWebViewBubbleCell.m */; };
+		3678667224C98B1F008AB7AE /* LGBotWebViewBubbleAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678655A24C98B1E008AB7AE /* LGBotWebViewBubbleAnswerCell.m */; };
+		3678667324C98B1F008AB7AE /* LGMessageDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678655B24C98B1E008AB7AE /* LGMessageDateCell.m */; };
+		3678667424C98B1F008AB7AE /* LGChatBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678655C24C98B1E008AB7AE /* LGChatBaseCell.m */; };
+		3678667524C98B1F008AB7AE /* LGRichTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678656124C98B1E008AB7AE /* LGRichTextViewCell.m */; };
+		3678667624C98B1F008AB7AE /* LGTextMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678656324C98B1E008AB7AE /* LGTextMessageCell.m */; };
+		3678667724C98B1F008AB7AE /* LGBotMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678656524C98B1E008AB7AE /* LGBotMenuCell.m */; };
+		3678667824C98B1F008AB7AE /* LGPhotoCardMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678656624C98B1E008AB7AE /* LGPhotoCardMessageCell.m */; };
+		3678667924C98B1F008AB7AE /* LGCardMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678656724C98B1E008AB7AE /* LGCardMessageCell.m */; };
+		3678667A24C98B1F008AB7AE /* LGBotAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678656824C98B1E008AB7AE /* LGBotAnswerCell.m */; };
+		3678667B24C98B1F008AB7AE /* LGEvaluationResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678656924C98B1E008AB7AE /* LGEvaluationResultCell.m */; };
+		3678667C24C98B1F008AB7AE /* LGBotMenuRichMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678656E24C98B1E008AB7AE /* LGBotMenuRichMessageCell.m */; };
+		3678667D24C98B1F008AB7AE /* LGVoiceMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678656F24C98B1E008AB7AE /* LGVoiceMessageCell.m */; };
+		3678667E24C98B1F008AB7AE /* LGBotMenuWebViewBubbleAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678657024C98B1E008AB7AE /* LGBotMenuWebViewBubbleAnswerCell.m */; };
+		3678667F24C98B1F008AB7AE /* LGAnimatorPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678657224C98B1E008AB7AE /* LGAnimatorPush.m */; };
+		3678668024C98B1F008AB7AE /* LGTransitioningAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678657324C98B1E008AB7AE /* LGTransitioningAnimation.m */; };
+		3678668124C98B1F008AB7AE /* LGShareTransitioningDelegateImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678657424C98B1E008AB7AE /* LGShareTransitioningDelegateImpl.m */; };
+		3678668224C98B1F008AB7AE /* LGBundleUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678657B24C98B1E008AB7AE /* LGBundleUtil.m */; };
+		3678668324C98B1F008AB7AE /* LGDateFormatterUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678657C24C98B1E008AB7AE /* LGDateFormatterUtil.m */; };
+		3678668424C98B1F008AB7AE /* LGChatDeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678657E24C98B1E008AB7AE /* LGChatDeviceUtil.m */; };
+		3678668524C98B1F008AB7AE /* LGImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678658224C98B1E008AB7AE /* LGImageUtil.m */; };
+		3678668624C98B1F008AB7AE /* LGWindowUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678658324C98B1E008AB7AE /* LGWindowUtil.m */; };
+		3678668724C98B1F008AB7AE /* LGChatRegexUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678658524C98B1E008AB7AE /* LGChatRegexUtil.m */; };
+		3678668824C98B1F008AB7AE /* LGChatAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678658624C98B1E008AB7AE /* LGChatAudioRecorder.m */; };
+		3678668924C98B1F008AB7AE /* LGJsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678658B24C98B1E008AB7AE /* LGJsonUtil.m */; };
+		3678668A24C98B1F008AB7AE /* LGTypeTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678658C24C98B1E008AB7AE /* LGTypeTag.m */; };
+		3678668B24C98B1F008AB7AE /* LGToolUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678658D24C98B1E008AB7AE /* LGToolUtil.m */; };
+		3678668C24C98B1F008AB7AE /* LGChatAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678658E24C98B1E008AB7AE /* LGChatAudioPlayer.m */; };
+		3678668D24C98B1F008AB7AE /* LGChatFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678659024C98B1E008AB7AE /* LGChatFileUtil.m */; };
+		3678668E24C98B1F008AB7AE /* UIControl+LGControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678659624C98B1E008AB7AE /* UIControl+LGControl.m */; };
+		3678668F24C98B1F008AB7AE /* LGUIMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678659724C98B1E008AB7AE /* LGUIMaker.m */; };
+		3678669024C98B1F008AB7AE /* UIButton+LGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678659824C98B1E008AB7AE /* UIButton+LGButton.m */; };
+		3678669124C98B1F008AB7AE /* LGStringSizeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678659A24C98B1E008AB7AE /* LGStringSizeUtil.m */; };
+		3678669224C98B1F008AB7AE /* LGAssetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678659B24C98B1E008AB7AE /* LGAssetUtil.m */; };
+		3678669324C98B1F008AB7AE /* LGChatEmojize.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678659E24C98B1E008AB7AE /* LGChatEmojize.m */; };
+		3678669424C98B1F008AB7AE /* LGChatViewService.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865A024C98B1E008AB7AE /* LGChatViewService.m */; };
+		3678669524C98B1F008AB7AE /* LGPreChatCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865A324C98B1E008AB7AE /* LGPreChatCells.m */; };
+		3678669624C98B1F008AB7AE /* LGPreChatFormListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865A424C98B1E008AB7AE /* LGPreChatFormListViewController.m */; };
+		3678669724C98B1F008AB7AE /* LGPreChatFormViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865A524C98B1E008AB7AE /* LGPreChatFormViewModel.m */; };
+		3678669824C98B1F008AB7AE /* LGPreChatSubmitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865A724C98B1E008AB7AE /* LGPreChatSubmitViewController.m */; };
+		3678669924C98B1F008AB7AE /* LGChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865AA24C98B1E008AB7AE /* LGChatViewController.m */; };
+		3678669A24C98B1F008AB7AE /* LGChatTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865AC24C98B1E008AB7AE /* LGChatTableView.m */; };
+		3678669B24C98B1F008AB7AE /* LGChatViewTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865AE24C98B1E008AB7AE /* LGChatViewTableDataSource.m */; };
+		3678669C24C98B1F008AB7AE /* LGRadioGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865B424C98B1E008AB7AE /* LGRadioGroup.m */; };
+		3678669D24C98B1F008AB7AE /* LGRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865B524C98B1E008AB7AE /* LGRadioButton.m */; };
+		3678669E24C98B1F008AB7AE /* LGRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865B924C98B1E008AB7AE /* LGRecordView.m */; };
+		3678669F24C98B1F008AB7AE /* LGEvaluationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865BB24C98B1E008AB7AE /* LGEvaluationView.m */; };
+		367866A024C98B1F008AB7AE /* LGTabInputContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865BF24C98B1E008AB7AE /* LGTabInputContentView.m */; };
+		367866A124C98B1F008AB7AE /* LGInputContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865C024C98B1E008AB7AE /* LGInputContentView.m */; };
+		367866A224C98B1F008AB7AE /* LGButtonGroupBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865C424C98B1E008AB7AE /* LGButtonGroupBar.m */; };
+		367866A324C98B1F008AB7AE /* LGRecorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865C624C98B1E008AB7AE /* LGRecorderView.m */; };
+		367866A424C98B1F008AB7AE /* LGBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865C924C98B1E008AB7AE /* LGBottomBar.m */; };
+		367866A524C98B1F008AB7AE /* LGRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865CC24C98B1E008AB7AE /* LGRefresh.m */; };
+		367866A624C98B1F008AB7AE /* LGKeyboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865CE24C98B1E008AB7AE /* LGKeyboardController.m */; };
+		367866A724C98B1F008AB7AE /* LGToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865D224C98B1E008AB7AE /* LGToast.m */; };
+		367866A824C98B1F008AB7AE /* LGEmbededWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865D424C98B1E008AB7AE /* LGEmbededWebView.m */; };
+		367866A924C98B1F008AB7AE /* LGBotWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865D824C98B1E008AB7AE /* LGBotWebViewController.m */; };
+		367866AA24C98B1F008AB7AE /* LGWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865D924C98B1E008AB7AE /* LGWebViewController.m */; };
+		367866AB24C98B1F008AB7AE /* LGImageViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865DB24C98B1E008AB7AE /* LGImageViewerViewController.m */; };
+		367866AC24C98B1F008AB7AE /* LGChatViewAsset.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 367865DE24C98B1E008AB7AE /* LGChatViewAsset.bundle */; };
+		367866AD24C98B1F008AB7AE /* UIViewController+LGOrientationFix.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865E024C98B1E008AB7AE /* UIViewController+LGOrientationFix.m */; };
+		367866AE24C98B1F008AB7AE /* UIImage+LGGenerate.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865E224C98B1E008AB7AE /* UIImage+LGGenerate.m */; };
+		367866AF24C98B1F008AB7AE /* NSArray+LGFunctional.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865E324C98B1E008AB7AE /* NSArray+LGFunctional.m */; };
+		367866B024C98B1F008AB7AE /* NSError+LGConvenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865E524C98B1E008AB7AE /* NSError+LGConvenient.m */; };
+		367866B124C98B1F008AB7AE /* UIViewController+LGHieriachy.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865E724C98B1E008AB7AE /* UIViewController+LGHieriachy.m */; };
+		367866B224C98B1F008AB7AE /* UIColor+LGHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865E824C98B1E008AB7AE /* UIColor+LGHex.m */; };
+		367866B324C98B1F008AB7AE /* NSNull+LGSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865ED24C98B1E008AB7AE /* NSNull+LGSafe.m */; };
+		367866B424C98B1F008AB7AE /* NSString+Name.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865EE24C98B1E008AB7AE /* NSString+Name.m */; };
+		367866B524C98B1F008AB7AE /* UIView+LGLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865F024C98B1E008AB7AE /* UIView+LGLayout.m */; };
+		367866B624C98B1F008AB7AE /* NSString+Regular.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865F124C98B1E008AB7AE /* NSString+Regular.m */; };
+		367866B724C98B1F008AB7AE /* LGMessageFormViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865F724C98B1E008AB7AE /* LGMessageFormViewManager.m */; };
+		367866B824C98B1F008AB7AE /* LGMessageFormViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865F924C98B1E008AB7AE /* LGMessageFormViewStyle.m */; };
+		367866B924C98B1F008AB7AE /* LGMessageFormViewStyleDark.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865FB24C98B1E008AB7AE /* LGMessageFormViewStyleDark.m */; };
+		367866BA24C98B1F008AB7AE /* LGMessageFormViewStyleBlue.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865FD24C98B1E008AB7AE /* LGMessageFormViewStyleBlue.m */; };
+		367866BB24C98B1F008AB7AE /* LGMessageFormViewStyleGreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 367865FF24C98B1E008AB7AE /* LGMessageFormViewStyleGreen.m */; };
+		367866BC24C98B1F008AB7AE /* LGMessageFormConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678660224C98B1E008AB7AE /* LGMessageFormConfig.m */; };
+		367866BD24C98B1F008AB7AE /* LGMessageFormInputModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678660524C98B1F008AB7AE /* LGMessageFormInputModel.m */; };
+		367866BE24C98B1F008AB7AE /* LGMessageFormViewService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678660824C98B1F008AB7AE /* LGMessageFormViewService.m */; };
+		367866BF24C98B1F008AB7AE /* LGMessageFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678660924C98B1F008AB7AE /* LGMessageFormViewController.m */; };
+		367866C024C98B1F008AB7AE /* LGMessageFormCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678660D24C98B1F008AB7AE /* LGMessageFormCategoryViewController.m */; };
+		367866C124C98B1F008AB7AE /* LGMessageFormTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678661024C98B1F008AB7AE /* LGMessageFormTextView.m */; };
+		367866C224C98B1F008AB7AE /* LGMessageFormImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678661424C98B1F008AB7AE /* LGMessageFormImageView.m */; };
+		367866C324C98B1F008AB7AE /* LGMessageFormImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678661724C98B1F008AB7AE /* LGMessageFormImageCell.m */; };
+		367866C424C98B1F008AB7AE /* LGMessageFormInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678661924C98B1F008AB7AE /* LGMessageFormInputView.m */; };
+		367866C524C98B1F008AB7AE /* LGServiceToViewInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678661D24C98B1F008AB7AE /* LGServiceToViewInterface.m */; };
+		367866C624C98B6E008AB7AE /* LaiGuSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3678648D24C98B1E008AB7AE /* LaiGuSDK.framework */; };
+		89B554A01FE75E8100EAC49D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B5549F1FE75E8100EAC49D /* ViewController.m */; };
+		CCE9D10B1C1812F6004E862E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE9D10A1C1812F6004E862E /* main.m */; };
+		CCE9D10E1C1812F6004E862E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE9D10D1C1812F6004E862E /* AppDelegate.m */; };
+		CCE9D1141C1812F6004E862E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE9D1121C1812F6004E862E /* Main.storyboard */; };
+		CCE9D1161C1812F6004E862E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCE9D1151C1812F6004E862E /* Assets.xcassets */; };
+		CCE9D1191C1812F6004E862E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE9D1171C1812F6004E862E /* LaunchScreen.storyboard */; };
+		CCE9D12F1C1812F6004E862E /* Laigu_SDK_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE9D12E1C1812F6004E862E /* Laigu_SDK_DemoUITests.m */; };
+		CCE9D1401C181385004E862E /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE9D13F1C181385004E862E /* libicucore.tbd */; };
+		CCE9D1421C18138C004E862E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE9D1411C18138C004E862E /* AVFoundation.framework */; };
+		CCE9D1441C181393004E862E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE9D1431C181393004E862E /* CoreTelephony.framework */; };
+		CCE9D1461C181399004E862E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE9D1451C181399004E862E /* SystemConfiguration.framework */; };
+		CCE9D1481C18139E004E862E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE9D1471C18139E004E862E /* MobileCoreServices.framework */; };
+		CCE9D14D1C1813BE004E862E /* DevelopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE9D14C1C1813BE004E862E /* DevelopViewController.m */; };
+		E40C2C7B1D2B710300744577 /* testdata.txt in Resources */ = {isa = PBXBuildFile; fileRef = E40C2C7A1D2B710300744577 /* testdata.txt */; };
+		E41DDDA61DD18DE0000B3083 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E41DDDA51DD18DE0000B3083 /* libz.tbd */; };
+		E4275AD91DEC1B5F0011B32B /* LGOnlineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4275AD51DEC16400011B32B /* LGOnlineTests.m */; };
+		E4275ADB1DEC1D000011B32B /* LGInitializationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E4275ADA1DEC1D000011B32B /* LGInitializationTest.m */; };
+		E4275ADD1DEC41010011B32B /* LGSendTextTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4275ADC1DEC41010011B32B /* LGSendTextTests.m */; };
+		E4275AE01DED844C0011B32B /* LGStateObserverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4275ADF1DED844C0011B32B /* LGStateObserverTests.m */; };
+		E44A5EA51D5AF47D000481E8 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44A5EA41D5AF47D000481E8 /* Accelerate.framework */; };
+		E45CA12D1CCA33EF000B8917 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E45CA12C1CCA33EF000B8917 /* libsqlite3.tbd */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CCE9D1201C1812F6004E862E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CCE9D0FE1C1812F6004E862E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCE9D1051C1812F6004E862E;
+			remoteInfo = "Laigu-SDK-Demo";
+		};
+		CCE9D12B1C1812F6004E862E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CCE9D0FE1C1812F6004E862E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCE9D1051C1812F6004E862E;
+			remoteInfo = "Laigu-SDK-Demo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3678648D24C98B1E008AB7AE /* LaiGuSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LaiGuSDK.framework; sourceTree = "<group>"; };
+		3678649124C98B1E008AB7AE /* LAIGU_HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAIGU_HPTextViewInternal.m; sourceTree = "<group>"; };
+		3678649224C98B1E008AB7AE /* LAIGU_HPGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAIGU_HPGrowingTextView.h; sourceTree = "<group>"; };
+		3678649324C98B1E008AB7AE /* LAIGU_HPTextViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAIGU_HPTextViewInternal.h; sourceTree = "<group>"; };
+		3678649424C98B1E008AB7AE /* LAIGU_HPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAIGU_HPGrowingTextView.m; sourceTree = "<group>"; };
+		3678649624C98B1E008AB7AE /* LGAGEmojiPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGAGEmojiPageView.h; sourceTree = "<group>"; };
+		3678649724C98B1E008AB7AE /* LGAGEmojiKeyBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGAGEmojiKeyBoardView.m; sourceTree = "<group>"; };
+		3678649824C98B1E008AB7AE /* LGAGEmojiPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGAGEmojiPageView.m; sourceTree = "<group>"; };
+		3678649924C98B1E008AB7AE /* LGAGEmojiKeyBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGAGEmojiKeyBoardView.h; sourceTree = "<group>"; };
+		3678649B24C98B1E008AB7AE /* VoiceConverter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VoiceConverter.mm; sourceTree = "<group>"; };
+		3678649C24C98B1E008AB7AE /* VoiceConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceConverter.h; sourceTree = "<group>"; };
+		3678649E24C98B1E008AB7AE /* wav.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = wav.mm; sourceTree = "<group>"; };
+		3678649F24C98B1E008AB7AE /* amrFileCodec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = amrFileCodec.mm; sourceTree = "<group>"; };
+		367864A024C98B1E008AB7AE /* amrFileCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amrFileCodec.h; sourceTree = "<group>"; };
+		367864A124C98B1E008AB7AE /* wav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wav.h; sourceTree = "<group>"; };
+		367864A324C98B1E008AB7AE /* XLPInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLPInputView.m; sourceTree = "<group>"; };
+		367864A424C98B1E008AB7AE /* XlpEmojiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XlpEmojiCell.m; sourceTree = "<group>"; };
+		367864A524C98B1E008AB7AE /* XLPInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPInputView.h; sourceTree = "<group>"; };
+		367864A624C98B1E008AB7AE /* XlpEmojiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XlpEmojiCell.h; sourceTree = "<group>"; };
+		367864A824C98B1E008AB7AE /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		367864A924C98B1E008AB7AE /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		367864AA24C98B1E008AB7AE /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		367864AB24C98B1E008AB7AE /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		367864AC24C98B1E008AB7AE /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		367864AD24C98B1E008AB7AE /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		367864AE24C98B1E008AB7AE /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		367864AF24C98B1E008AB7AE /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		367864B024C98B1E008AB7AE /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		367864B124C98B1E008AB7AE /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		367864B224C98B1E008AB7AE /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		367864B324C98B1E008AB7AE /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		367864B424C98B1E008AB7AE /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		367864B524C98B1E008AB7AE /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		367864B624C98B1E008AB7AE /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		367864B724C98B1E008AB7AE /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		367864B824C98B1E008AB7AE /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		367864B924C98B1E008AB7AE /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		367864BA24C98B1E008AB7AE /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		367864BB24C98B1E008AB7AE /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		367864BC24C98B1E008AB7AE /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		367864BD24C98B1E008AB7AE /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		367864BE24C98B1E008AB7AE /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		367864BF24C98B1E008AB7AE /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		367864C024C98B1E008AB7AE /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		367864C224C98B1E008AB7AE /* LAIGU_CustomIOSAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAIGU_CustomIOSAlertView.m; sourceTree = "<group>"; };
+		367864C324C98B1E008AB7AE /* LAIGU_CustomIOSAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAIGU_CustomIOSAlertView.h; sourceTree = "<group>"; };
+		367864C424C98B1E008AB7AE /* LGNamespacedDependencies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGNamespacedDependencies.h; sourceTree = "<group>"; };
+		367864C624C98B1E008AB7AE /* LAIGU_MLAudioMeterObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAIGU_MLAudioMeterObserver.m; sourceTree = "<group>"; };
+		367864C724C98B1E008AB7AE /* LAIGU_MLAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAIGU_MLAudioRecorder.h; sourceTree = "<group>"; };
+		367864C824C98B1E008AB7AE /* LAIGU_CafRecordWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAIGU_CafRecordWriter.h; sourceTree = "<group>"; };
+		367864C924C98B1E008AB7AE /* LAIGU_AmrRecordWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAIGU_AmrRecordWriter.h; sourceTree = "<group>"; };
+		367864CA24C98B1E008AB7AE /* LAIGU_MLAudioMeterObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAIGU_MLAudioMeterObserver.h; sourceTree = "<group>"; };
+		367864CB24C98B1E008AB7AE /* LAIGU_CafRecordWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAIGU_CafRecordWriter.m; sourceTree = "<group>"; };
+		367864CC24C98B1E008AB7AE /* LAIGU_AMR_Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAIGU_AMR_Debug.h; sourceTree = "<group>"; };
+		367864CD24C98B1E008AB7AE /* LAIGU_MLAudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAIGU_MLAudioRecorder.m; sourceTree = "<group>"; };
+		367864D124C98B1E008AB7AE /* if_rom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = if_rom.h; sourceTree = "<group>"; };
+		367864D224C98B1E008AB7AE /* dec_if.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dec_if.h; sourceTree = "<group>"; };
+		367864D424C98B1E008AB7AE /* interf_dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_dec.h; sourceTree = "<group>"; };
+		367864D524C98B1E008AB7AE /* interf_enc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_enc.h; sourceTree = "<group>"; };
+		367864D724C98B1E008AB7AE /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
+		367864D824C98B1E008AB7AE /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
+		367864D924C98B1E008AB7AE /* LAIGU_AmrRecordWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAIGU_AmrRecordWriter.m; sourceTree = "<group>"; };
+		367864DB24C98B1E008AB7AE /* LAIGU_TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAIGU_TTTAttributedLabel.m; sourceTree = "<group>"; };
+		367864DC24C98B1E008AB7AE /* LAIGU_TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAIGU_TTTAttributedLabel.h; sourceTree = "<group>"; };
+		367864DE24C98B1E008AB7AE /* LAIGU_FBBitmapFontView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAIGU_FBBitmapFontView.h; sourceTree = "<group>"; };
+		367864DF24C98B1E008AB7AE /* LAIGU_FBBitmapFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAIGU_FBBitmapFont.m; sourceTree = "<group>"; };
+		367864E024C98B1E008AB7AE /* LAIGU_FBSquareFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAIGU_FBSquareFont.h; sourceTree = "<group>"; };
+		367864E124C98B1E008AB7AE /* LAIGU_FBLCDFontView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAIGU_FBLCDFontView.h; sourceTree = "<group>"; };
+		367864E224C98B1E008AB7AE /* LAIGU_FBFontSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAIGU_FBFontSymbol.h; sourceTree = "<group>"; };
+		367864E324C98B1E008AB7AE /* LAIGU_FBSquareFontView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAIGU_FBSquareFontView.m; sourceTree = "<group>"; };
+		367864E424C98B1E008AB7AE /* LAIGU_FBLCDFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAIGU_FBLCDFont.h; sourceTree = "<group>"; };
+		367864E524C98B1E008AB7AE /* LAIGU_FBSquareFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAIGU_FBSquareFont.m; sourceTree = "<group>"; };
+		367864E624C98B1E008AB7AE /* LAIGU_FBBitmapFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAIGU_FBBitmapFont.h; sourceTree = "<group>"; };
+		367864E724C98B1E008AB7AE /* LAIGU_FBBitmapFontView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAIGU_FBBitmapFontView.m; sourceTree = "<group>"; };
+		367864E824C98B1E008AB7AE /* LAIGU_FBFontSymbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAIGU_FBFontSymbol.m; sourceTree = "<group>"; };
+		367864E924C98B1E008AB7AE /* LAIGU_FBLCDFontView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAIGU_FBLCDFontView.m; sourceTree = "<group>"; };
+		367864EA24C98B1E008AB7AE /* LAIGU_FBLCDFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAIGU_FBLCDFont.m; sourceTree = "<group>"; };
+		367864EB24C98B1E008AB7AE /* LAIGU_FBSquareFontView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAIGU_FBSquareFontView.h; sourceTree = "<group>"; };
+		367864ED24C98B1E008AB7AE /* LGChatViewConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGChatViewConfig.m; sourceTree = "<group>"; };
+		367864EF24C98B1E008AB7AE /* LGChatViewStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGChatViewStyle.h; sourceTree = "<group>"; };
+		367864F124C98B1E008AB7AE /* LGChatViewStyleGreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGChatViewStyleGreen.h; sourceTree = "<group>"; };
+		367864F224C98B1E008AB7AE /* LGChatViewStyleDark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGChatViewStyleDark.m; sourceTree = "<group>"; };
+		367864F324C98B1E008AB7AE /* LGChatViewStyleBlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGChatViewStyleBlue.m; sourceTree = "<group>"; };
+		367864F424C98B1E008AB7AE /* LGChatViewStyleDark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGChatViewStyleDark.h; sourceTree = "<group>"; };
+		367864F524C98B1E008AB7AE /* LGChatViewStyleGreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGChatViewStyleGreen.m; sourceTree = "<group>"; };
+		367864F624C98B1E008AB7AE /* LGChatViewStyleBlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGChatViewStyleBlue.h; sourceTree = "<group>"; };
+		367864F724C98B1E008AB7AE /* LGChatViewStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGChatViewStyle.m; sourceTree = "<group>"; };
+		367864F824C98B1E008AB7AE /* LGChatViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGChatViewManager.m; sourceTree = "<group>"; };
+		367864F924C98B1E008AB7AE /* LGChatViewConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGChatViewConfig.h; sourceTree = "<group>"; };
+		367864FA24C98B1E008AB7AE /* LGChatViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGChatViewManager.h; sourceTree = "<group>"; };
+		367864FC24C98B1E008AB7AE /* LGCustomizedUIText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGCustomizedUIText.m; sourceTree = "<group>"; };
+		367864FD24C98B1E008AB7AE /* LGCustomizedUIText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGCustomizedUIText.h; sourceTree = "<group>"; };
+		367864FF24C98B1E008AB7AE /* LGFileDownloadMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGFileDownloadMessage.m; sourceTree = "<group>"; };
+		3678650024C98B1E008AB7AE /* LGBaseMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBaseMessage.h; sourceTree = "<group>"; };
+		3678650124C98B1E008AB7AE /* LGPhotoCardMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoCardMessage.h; sourceTree = "<group>"; };
+		3678650224C98B1E008AB7AE /* LGEventMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGEventMessage.h; sourceTree = "<group>"; };
+		3678650324C98B1E008AB7AE /* LGEventMessageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGEventMessageFactory.h; sourceTree = "<group>"; };
+		3678650424C98B1E008AB7AE /* LGImageMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGImageMessage.h; sourceTree = "<group>"; };
+		3678650524C98B1E008AB7AE /* LGBotAnswerMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBotAnswerMessage.h; sourceTree = "<group>"; };
+		3678650624C98B1E008AB7AE /* LGBotMenuMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBotMenuMessage.m; sourceTree = "<group>"; };
+		3678650724C98B1E008AB7AE /* LGTextMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGTextMessage.h; sourceTree = "<group>"; };
+		3678650824C98B1E008AB7AE /* LGBotMessageFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBotMessageFactory.m; sourceTree = "<group>"; };
+		3678650924C98B1E008AB7AE /* LGBotRichTextMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBotRichTextMessage.m; sourceTree = "<group>"; };
+		3678650A24C98B1E008AB7AE /* LGWithDrawMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGWithDrawMessage.h; sourceTree = "<group>"; };
+		3678650B24C98B1E008AB7AE /* LGRichTextMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGRichTextMessage.h; sourceTree = "<group>"; };
+		3678650C24C98B1E008AB7AE /* LGVisialMessageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGVisialMessageFactory.h; sourceTree = "<group>"; };
+		3678650D24C98B1E008AB7AE /* LGCardMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGCardMessage.m; sourceTree = "<group>"; };
+		3678650E24C98B1E008AB7AE /* LGVoiceMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGVoiceMessage.h; sourceTree = "<group>"; };
+		3678650F24C98B1E008AB7AE /* LGMessageFactoryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGMessageFactoryHelper.m; sourceTree = "<group>"; };
+		3678651024C98B1E008AB7AE /* LGPhotoCardMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoCardMessage.m; sourceTree = "<group>"; };
+		3678651124C98B1E008AB7AE /* LGBaseMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBaseMessage.m; sourceTree = "<group>"; };
+		3678651224C98B1E008AB7AE /* LGFileDownloadMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGFileDownloadMessage.h; sourceTree = "<group>"; };
+		3678651324C98B1E008AB7AE /* LGBotAnswerMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBotAnswerMessage.m; sourceTree = "<group>"; };
+		3678651424C98B1E008AB7AE /* LGImageMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGImageMessage.m; sourceTree = "<group>"; };
+		3678651524C98B1E008AB7AE /* LGEventMessageFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGEventMessageFactory.m; sourceTree = "<group>"; };
+		3678651624C98B1E008AB7AE /* LGEventMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGEventMessage.m; sourceTree = "<group>"; };
+		3678651724C98B1E008AB7AE /* LGRichTextMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGRichTextMessage.m; sourceTree = "<group>"; };
+		3678651824C98B1E008AB7AE /* LGWithDrawMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGWithDrawMessage.m; sourceTree = "<group>"; };
+		3678651924C98B1E008AB7AE /* LGBotRichTextMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBotRichTextMessage.h; sourceTree = "<group>"; };
+		3678651A24C98B1E008AB7AE /* LGBotMessageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBotMessageFactory.h; sourceTree = "<group>"; };
+		3678651B24C98B1E008AB7AE /* LGTextMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGTextMessage.m; sourceTree = "<group>"; };
+		3678651C24C98B1E008AB7AE /* LGBotMenuMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBotMenuMessage.h; sourceTree = "<group>"; };
+		3678651D24C98B1E008AB7AE /* LGMessageFactoryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGMessageFactoryHelper.h; sourceTree = "<group>"; };
+		3678651E24C98B1E008AB7AE /* LGVoiceMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGVoiceMessage.m; sourceTree = "<group>"; };
+		3678651F24C98B1E008AB7AE /* LGCardMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGCardMessage.h; sourceTree = "<group>"; };
+		3678652024C98B1E008AB7AE /* LGVisialMessageFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGVisialMessageFactory.m; sourceTree = "<group>"; };
+		3678652324C98B1E008AB7AE /* LGBotMenuWebViewBubbleAnswerCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBotMenuWebViewBubbleAnswerCellModel.h; sourceTree = "<group>"; };
+		3678652424C98B1E008AB7AE /* LGEvaluationResultCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGEvaluationResultCellModel.m; sourceTree = "<group>"; };
+		3678652524C98B1E008AB7AE /* LGTipsCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGTipsCellModel.h; sourceTree = "<group>"; };
+		3678652624C98B1E008AB7AE /* LGRichTextViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGRichTextViewModel.m; sourceTree = "<group>"; };
+		3678652724C98B1E008AB7AE /* LGBotAnswerCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBotAnswerCellModel.m; sourceTree = "<group>"; };
+		3678652824C98B1E008AB7AE /* LGTextCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGTextCellModel.m; sourceTree = "<group>"; };
+		3678652924C98B1E008AB7AE /* LGImageCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGImageCellModel.h; sourceTree = "<group>"; };
+		3678652A24C98B1E008AB7AE /* LGCardCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGCardCellModel.h; sourceTree = "<group>"; };
+		3678652B24C98B1E008AB7AE /* LGBotWebViewBubbleAnswerCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBotWebViewBubbleAnswerCellModel.m; sourceTree = "<group>"; };
+		3678652C24C98B1E008AB7AE /* LGFileDownloadCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGFileDownloadCellModel.m; sourceTree = "<group>"; };
+		3678652D24C98B1E008AB7AE /* LGWebViewBubbleCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGWebViewBubbleCellModel.m; sourceTree = "<group>"; };
+		3678652E24C98B1E008AB7AE /* LGEventCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGEventCellModel.m; sourceTree = "<group>"; };
+		3678652F24C98B1E008AB7AE /* LGPhotoCardCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoCardCellModel.h; sourceTree = "<group>"; };
+		3678653024C98B1E008AB7AE /* LGBotMenuCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBotMenuCellModel.h; sourceTree = "<group>"; };
+		3678653124C98B1E008AB7AE /* LGMessageDateCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGMessageDateCellModel.m; sourceTree = "<group>"; };
+		3678653224C98B1E008AB7AE /* LGBotMenuAnswerCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBotMenuAnswerCellModel.m; sourceTree = "<group>"; };
+		3678653324C98B1E008AB7AE /* LGVoiceCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGVoiceCellModel.h; sourceTree = "<group>"; };
+		3678653424C98B1E008AB7AE /* LGBotMenuRichCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBotMenuRichCellModel.m; sourceTree = "<group>"; };
+		3678653524C98B1E008AB7AE /* LGCardCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGCardCellModel.m; sourceTree = "<group>"; };
+		3678653624C98B1E008AB7AE /* LGImageCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGImageCellModel.m; sourceTree = "<group>"; };
+		3678653724C98B1E008AB7AE /* LGTextCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGTextCellModel.h; sourceTree = "<group>"; };
+		3678653824C98B1E008AB7AE /* LGBotAnswerCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBotAnswerCellModel.h; sourceTree = "<group>"; };
+		3678653924C98B1E008AB7AE /* LGRichTextViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGRichTextViewModel.h; sourceTree = "<group>"; };
+		3678653A24C98B1E008AB7AE /* LGTipsCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGTipsCellModel.m; sourceTree = "<group>"; };
+		3678653B24C98B1E008AB7AE /* LGEvaluationResultCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGEvaluationResultCellModel.h; sourceTree = "<group>"; };
+		3678653C24C98B1E008AB7AE /* LGBotMenuWebViewBubbleAnswerCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBotMenuWebViewBubbleAnswerCellModel.m; sourceTree = "<group>"; };
+		3678653D24C98B1E008AB7AE /* LGCellModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGCellModelProtocol.h; sourceTree = "<group>"; };
+		3678653E24C98B1E008AB7AE /* LGEventCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGEventCellModel.h; sourceTree = "<group>"; };
+		3678653F24C98B1E008AB7AE /* LGWebViewBubbleCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGWebViewBubbleCellModel.h; sourceTree = "<group>"; };
+		3678654024C98B1E008AB7AE /* LGFileDownloadCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGFileDownloadCellModel.h; sourceTree = "<group>"; };
+		3678654124C98B1E008AB7AE /* LGBotWebViewBubbleAnswerCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBotWebViewBubbleAnswerCellModel.h; sourceTree = "<group>"; };
+		3678654224C98B1E008AB7AE /* LGBotMenuCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBotMenuCellModel.m; sourceTree = "<group>"; };
+		3678654324C98B1E008AB7AE /* LGPhotoCardCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoCardCellModel.m; sourceTree = "<group>"; };
+		3678654424C98B1E008AB7AE /* LGBotMenuRichCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBotMenuRichCellModel.h; sourceTree = "<group>"; };
+		3678654524C98B1E008AB7AE /* LGVoiceCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGVoiceCellModel.m; sourceTree = "<group>"; };
+		3678654624C98B1E008AB7AE /* LGBotMenuAnswerCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBotMenuAnswerCellModel.h; sourceTree = "<group>"; };
+		3678654724C98B1E008AB7AE /* LGMessageDateCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGMessageDateCellModel.h; sourceTree = "<group>"; };
+		3678654924C98B1E008AB7AE /* LGBotMenuAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBotMenuAnswerCell.m; sourceTree = "<group>"; };
+		3678654A24C98B1E008AB7AE /* LGTipsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGTipsCell.m; sourceTree = "<group>"; };
+		3678654B24C98B1E008AB7AE /* LGEventMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGEventMessageCell.m; sourceTree = "<group>"; };
+		3678654C24C98B1E008AB7AE /* LGImageMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGImageMessageCell.m; sourceTree = "<group>"; };
+		3678654D24C98B1E008AB7AE /* LGTextMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGTextMessageCell.h; sourceTree = "<group>"; };
+		3678654E24C98B1E008AB7AE /* LGRichTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGRichTextViewCell.h; sourceTree = "<group>"; };
+		3678654F24C98B1E008AB7AE /* LGFileDownloadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGFileDownloadCell.m; sourceTree = "<group>"; };
+		3678655024C98B1E008AB7AE /* LGEvaluationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGEvaluationCell.m; sourceTree = "<group>"; };
+		3678655124C98B1E008AB7AE /* LGEvaluationResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGEvaluationResultCell.h; sourceTree = "<group>"; };
+		3678655224C98B1E008AB7AE /* LGBotAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBotAnswerCell.h; sourceTree = "<group>"; };
+		3678655324C98B1E008AB7AE /* LGCardMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGCardMessageCell.h; sourceTree = "<group>"; };
+		3678655424C98B1E008AB7AE /* LGPhotoCardMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoCardMessageCell.h; sourceTree = "<group>"; };
+		3678655524C98B1E008AB7AE /* LGBotMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBotMenuCell.h; sourceTree = "<group>"; };
+		3678655624C98B1E008AB7AE /* LGWebViewBubbleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGWebViewBubbleCell.m; sourceTree = "<group>"; };
+		3678655724C98B1E008AB7AE /* LGBotMenuWebViewBubbleAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBotMenuWebViewBubbleAnswerCell.h; sourceTree = "<group>"; };
+		3678655824C98B1E008AB7AE /* LGBotMenuRichMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBotMenuRichMessageCell.h; sourceTree = "<group>"; };
+		3678655924C98B1E008AB7AE /* LGVoiceMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGVoiceMessageCell.h; sourceTree = "<group>"; };
+		3678655A24C98B1E008AB7AE /* LGBotWebViewBubbleAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBotWebViewBubbleAnswerCell.m; sourceTree = "<group>"; };
+		3678655B24C98B1E008AB7AE /* LGMessageDateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGMessageDateCell.m; sourceTree = "<group>"; };
+		3678655C24C98B1E008AB7AE /* LGChatBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGChatBaseCell.m; sourceTree = "<group>"; };
+		3678655D24C98B1E008AB7AE /* LGEventMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGEventMessageCell.h; sourceTree = "<group>"; };
+		3678655E24C98B1E008AB7AE /* LGTipsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGTipsCell.h; sourceTree = "<group>"; };
+		3678655F24C98B1E008AB7AE /* LGBotMenuAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBotMenuAnswerCell.h; sourceTree = "<group>"; };
+		3678656024C98B1E008AB7AE /* LGFileDownloadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGFileDownloadCell.h; sourceTree = "<group>"; };
+		3678656124C98B1E008AB7AE /* LGRichTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGRichTextViewCell.m; sourceTree = "<group>"; };
+		3678656224C98B1E008AB7AE /* LGImageMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGImageMessageCell.h; sourceTree = "<group>"; };
+		3678656324C98B1E008AB7AE /* LGTextMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGTextMessageCell.m; sourceTree = "<group>"; };
+		3678656424C98B1E008AB7AE /* LGWebViewBubbleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGWebViewBubbleCell.h; sourceTree = "<group>"; };
+		3678656524C98B1E008AB7AE /* LGBotMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBotMenuCell.m; sourceTree = "<group>"; };
+		3678656624C98B1E008AB7AE /* LGPhotoCardMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoCardMessageCell.m; sourceTree = "<group>"; };
+		3678656724C98B1E008AB7AE /* LGCardMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGCardMessageCell.m; sourceTree = "<group>"; };
+		3678656824C98B1E008AB7AE /* LGBotAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBotAnswerCell.m; sourceTree = "<group>"; };
+		3678656924C98B1E008AB7AE /* LGEvaluationResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGEvaluationResultCell.m; sourceTree = "<group>"; };
+		3678656A24C98B1E008AB7AE /* LGEvaluationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGEvaluationCell.h; sourceTree = "<group>"; };
+		3678656B24C98B1E008AB7AE /* LGChatBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGChatBaseCell.h; sourceTree = "<group>"; };
+		3678656C24C98B1E008AB7AE /* LGMessageDateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGMessageDateCell.h; sourceTree = "<group>"; };
+		3678656D24C98B1E008AB7AE /* LGBotWebViewBubbleAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBotWebViewBubbleAnswerCell.h; sourceTree = "<group>"; };
+		3678656E24C98B1E008AB7AE /* LGBotMenuRichMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBotMenuRichMessageCell.m; sourceTree = "<group>"; };
+		3678656F24C98B1E008AB7AE /* LGVoiceMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGVoiceMessageCell.m; sourceTree = "<group>"; };
+		3678657024C98B1E008AB7AE /* LGBotMenuWebViewBubbleAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBotMenuWebViewBubbleAnswerCell.m; sourceTree = "<group>"; };
+		3678657224C98B1E008AB7AE /* LGAnimatorPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGAnimatorPush.m; sourceTree = "<group>"; };
+		3678657324C98B1E008AB7AE /* LGTransitioningAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGTransitioningAnimation.m; sourceTree = "<group>"; };
+		3678657424C98B1E008AB7AE /* LGShareTransitioningDelegateImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGShareTransitioningDelegateImpl.m; sourceTree = "<group>"; };
+		3678657524C98B1E008AB7AE /* LGAnimatorPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGAnimatorPush.h; sourceTree = "<group>"; };
+		3678657624C98B1E008AB7AE /* LGShareTransitioningDelegateImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGShareTransitioningDelegateImpl.h; sourceTree = "<group>"; };
+		3678657724C98B1E008AB7AE /* LGTransitioningAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGTransitioningAnimation.h; sourceTree = "<group>"; };
+		3678657924C98B1E008AB7AE /* LGJsonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGJsonUtil.h; sourceTree = "<group>"; };
+		3678657A24C98B1E008AB7AE /* LGTypeTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGTypeTag.h; sourceTree = "<group>"; };
+		3678657B24C98B1E008AB7AE /* LGBundleUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBundleUtil.m; sourceTree = "<group>"; };
+		3678657C24C98B1E008AB7AE /* LGDateFormatterUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGDateFormatterUtil.m; sourceTree = "<group>"; };
+		3678657D24C98B1E008AB7AE /* LGChatFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGChatFileUtil.h; sourceTree = "<group>"; };
+		3678657E24C98B1E008AB7AE /* LGChatDeviceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGChatDeviceUtil.m; sourceTree = "<group>"; };
+		3678657F24C98B1E008AB7AE /* LGChatAudioTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGChatAudioTypes.h; sourceTree = "<group>"; };
+		3678658024C98B1E008AB7AE /* LGChatAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGChatAudioPlayer.h; sourceTree = "<group>"; };
+		3678658124C98B1E008AB7AE /* LGToolUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGToolUtil.h; sourceTree = "<group>"; };
+		3678658224C98B1E008AB7AE /* LGImageUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGImageUtil.m; sourceTree = "<group>"; };
+		3678658324C98B1E008AB7AE /* LGWindowUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGWindowUtil.m; sourceTree = "<group>"; };
+		3678658424C98B1E008AB7AE /* LGChatEmojize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGChatEmojize.h; sourceTree = "<group>"; };
+		3678658524C98B1E008AB7AE /* LGChatRegexUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGChatRegexUtil.m; sourceTree = "<group>"; };
+		3678658624C98B1E008AB7AE /* LGChatAudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGChatAudioRecorder.m; sourceTree = "<group>"; };
+		3678658724C98B1E008AB7AE /* LGAssetUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGAssetUtil.h; sourceTree = "<group>"; };
+		3678658824C98B1E008AB7AE /* LGStringSizeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGStringSizeUtil.h; sourceTree = "<group>"; };
+		3678658924C98B1E008AB7AE /* LGDateFormatterUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGDateFormatterUtil.h; sourceTree = "<group>"; };
+		3678658A24C98B1E008AB7AE /* LGBundleUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBundleUtil.h; sourceTree = "<group>"; };
+		3678658B24C98B1E008AB7AE /* LGJsonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGJsonUtil.m; sourceTree = "<group>"; };
+		3678658C24C98B1E008AB7AE /* LGTypeTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGTypeTag.m; sourceTree = "<group>"; };
+		3678658D24C98B1E008AB7AE /* LGToolUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGToolUtil.m; sourceTree = "<group>"; };
+		3678658E24C98B1E008AB7AE /* LGChatAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGChatAudioPlayer.m; sourceTree = "<group>"; };
+		3678658F24C98B1E008AB7AE /* LGChatDeviceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGChatDeviceUtil.h; sourceTree = "<group>"; };
+		3678659024C98B1E008AB7AE /* LGChatFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGChatFileUtil.m; sourceTree = "<group>"; };
+		3678659124C98B1E008AB7AE /* LGWindowUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGWindowUtil.h; sourceTree = "<group>"; };
+		3678659324C98B1E008AB7AE /* UIControl+LGControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+LGControl.h"; sourceTree = "<group>"; };
+		3678659424C98B1E008AB7AE /* LGUIMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGUIMaker.h; sourceTree = "<group>"; };
+		3678659524C98B1E008AB7AE /* UIButton+LGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+LGButton.h"; sourceTree = "<group>"; };
+		3678659624C98B1E008AB7AE /* UIControl+LGControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+LGControl.m"; sourceTree = "<group>"; };
+		3678659724C98B1E008AB7AE /* LGUIMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGUIMaker.m; sourceTree = "<group>"; };
+		3678659824C98B1E008AB7AE /* UIButton+LGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+LGButton.m"; sourceTree = "<group>"; };
+		3678659924C98B1E008AB7AE /* LGImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGImageUtil.h; sourceTree = "<group>"; };
+		3678659A24C98B1E008AB7AE /* LGStringSizeUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGStringSizeUtil.m; sourceTree = "<group>"; };
+		3678659B24C98B1E008AB7AE /* LGAssetUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGAssetUtil.m; sourceTree = "<group>"; };
+		3678659C24C98B1E008AB7AE /* LGChatAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGChatAudioRecorder.h; sourceTree = "<group>"; };
+		3678659D24C98B1E008AB7AE /* LGChatRegexUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGChatRegexUtil.h; sourceTree = "<group>"; };
+		3678659E24C98B1E008AB7AE /* LGChatEmojize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGChatEmojize.m; sourceTree = "<group>"; };
+		367865A024C98B1E008AB7AE /* LGChatViewService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGChatViewService.m; sourceTree = "<group>"; };
+		367865A224C98B1E008AB7AE /* LGPreChatSubmitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPreChatSubmitViewController.h; sourceTree = "<group>"; };
+		367865A324C98B1E008AB7AE /* LGPreChatCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPreChatCells.m; sourceTree = "<group>"; };
+		367865A424C98B1E008AB7AE /* LGPreChatFormListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPreChatFormListViewController.m; sourceTree = "<group>"; };
+		367865A524C98B1E008AB7AE /* LGPreChatFormViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPreChatFormViewModel.m; sourceTree = "<group>"; };
+		367865A624C98B1E008AB7AE /* LGPreChatFormListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPreChatFormListViewController.h; sourceTree = "<group>"; };
+		367865A724C98B1E008AB7AE /* LGPreChatSubmitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPreChatSubmitViewController.m; sourceTree = "<group>"; };
+		367865A824C98B1E008AB7AE /* LGPreChatCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPreChatCells.h; sourceTree = "<group>"; };
+		367865A924C98B1E008AB7AE /* LGPreChatFormViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPreChatFormViewModel.h; sourceTree = "<group>"; };
+		367865AA24C98B1E008AB7AE /* LGChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGChatViewController.m; sourceTree = "<group>"; };
+		367865AB24C98B1E008AB7AE /* LGChatViewTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGChatViewTableDataSource.h; sourceTree = "<group>"; };
+		367865AC24C98B1E008AB7AE /* LGChatTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGChatTableView.m; sourceTree = "<group>"; };
+		367865AD24C98B1E008AB7AE /* LGChatViewService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGChatViewService.h; sourceTree = "<group>"; };
+		367865AE24C98B1E008AB7AE /* LGChatViewTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGChatViewTableDataSource.m; sourceTree = "<group>"; };
+		367865AF24C98B1E008AB7AE /* LGChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGChatViewController.h; sourceTree = "<group>"; };
+		367865B024C98B1E008AB7AE /* LGChatTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGChatTableView.h; sourceTree = "<group>"; };
+		367865B324C98B1E008AB7AE /* LGRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGRadioButton.h; sourceTree = "<group>"; };
+		367865B424C98B1E008AB7AE /* LGRadioGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGRadioGroup.m; sourceTree = "<group>"; };
+		367865B524C98B1E008AB7AE /* LGRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGRadioButton.m; sourceTree = "<group>"; };
+		367865B624C98B1E008AB7AE /* LGRadioGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGRadioGroup.h; sourceTree = "<group>"; };
+		367865B824C98B1E008AB7AE /* LGRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGRecordView.h; sourceTree = "<group>"; };
+		367865B924C98B1E008AB7AE /* LGRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGRecordView.m; sourceTree = "<group>"; };
+		367865BB24C98B1E008AB7AE /* LGEvaluationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGEvaluationView.m; sourceTree = "<group>"; };
+		367865BC24C98B1E008AB7AE /* LGEvaluationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGEvaluationView.h; sourceTree = "<group>"; };
+		367865BF24C98B1E008AB7AE /* LGTabInputContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGTabInputContentView.m; sourceTree = "<group>"; };
+		367865C024C98B1E008AB7AE /* LGInputContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGInputContentView.m; sourceTree = "<group>"; };
+		367865C124C98B1E008AB7AE /* LGInputContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGInputContentView.h; sourceTree = "<group>"; };
+		367865C224C98B1E008AB7AE /* LGTabInputContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGTabInputContentView.h; sourceTree = "<group>"; };
+		367865C324C98B1E008AB7AE /* LGBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBottomBar.h; sourceTree = "<group>"; };
+		367865C424C98B1E008AB7AE /* LGButtonGroupBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGButtonGroupBar.m; sourceTree = "<group>"; };
+		367865C624C98B1E008AB7AE /* LGRecorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGRecorderView.m; sourceTree = "<group>"; };
+		367865C724C98B1E008AB7AE /* LGRecorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGRecorderView.h; sourceTree = "<group>"; };
+		367865C824C98B1E008AB7AE /* LGButtonGroupBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGButtonGroupBar.h; sourceTree = "<group>"; };
+		367865C924C98B1E008AB7AE /* LGBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBottomBar.m; sourceTree = "<group>"; };
+		367865CB24C98B1E008AB7AE /* LGRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGRefresh.h; sourceTree = "<group>"; };
+		367865CC24C98B1E008AB7AE /* LGRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGRefresh.m; sourceTree = "<group>"; };
+		367865CE24C98B1E008AB7AE /* LGKeyboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGKeyboardController.m; sourceTree = "<group>"; };
+		367865CF24C98B1E008AB7AE /* LGKeyboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGKeyboardController.h; sourceTree = "<group>"; };
+		367865D124C98B1E008AB7AE /* LGToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGToast.h; sourceTree = "<group>"; };
+		367865D224C98B1E008AB7AE /* LGToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGToast.m; sourceTree = "<group>"; };
+		367865D424C98B1E008AB7AE /* LGEmbededWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGEmbededWebView.m; sourceTree = "<group>"; };
+		367865D524C98B1E008AB7AE /* LGBotWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBotWebViewController.h; sourceTree = "<group>"; };
+		367865D624C98B1E008AB7AE /* LGWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGWebViewController.h; sourceTree = "<group>"; };
+		367865D724C98B1E008AB7AE /* LGEmbededWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGEmbededWebView.h; sourceTree = "<group>"; };
+		367865D824C98B1E008AB7AE /* LGBotWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGBotWebViewController.m; sourceTree = "<group>"; };
+		367865D924C98B1E008AB7AE /* LGWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGWebViewController.m; sourceTree = "<group>"; };
+		367865DB24C98B1E008AB7AE /* LGImageViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGImageViewerViewController.m; sourceTree = "<group>"; };
+		367865DC24C98B1E008AB7AE /* LGImageViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGImageViewerViewController.h; sourceTree = "<group>"; };
+		367865DE24C98B1E008AB7AE /* LGChatViewAsset.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LGChatViewAsset.bundle; sourceTree = "<group>"; };
+		367865E024C98B1E008AB7AE /* UIViewController+LGOrientationFix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LGOrientationFix.m"; sourceTree = "<group>"; };
+		367865E124C98B1E008AB7AE /* NSNull+LGSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+LGSafe.h"; sourceTree = "<group>"; };
+		367865E224C98B1E008AB7AE /* UIImage+LGGenerate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LGGenerate.m"; sourceTree = "<group>"; };
+		367865E324C98B1E008AB7AE /* NSArray+LGFunctional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+LGFunctional.m"; sourceTree = "<group>"; };
+		367865E424C98B1E008AB7AE /* UIView+LGLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LGLayout.h"; sourceTree = "<group>"; };
+		367865E524C98B1E008AB7AE /* NSError+LGConvenient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+LGConvenient.m"; sourceTree = "<group>"; };
+		367865E624C98B1E008AB7AE /* NSString+Name.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Name.h"; sourceTree = "<group>"; };
+		367865E724C98B1E008AB7AE /* UIViewController+LGHieriachy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LGHieriachy.m"; sourceTree = "<group>"; };
+		367865E824C98B1E008AB7AE /* UIColor+LGHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LGHex.m"; sourceTree = "<group>"; };
+		367865E924C98B1E008AB7AE /* NSString+Regular.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Regular.h"; sourceTree = "<group>"; };
+		367865EA24C98B1E008AB7AE /* UIViewController+LGOrientationFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LGOrientationFix.h"; sourceTree = "<group>"; };
+		367865EB24C98B1E008AB7AE /* NSArray+LGFunctional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+LGFunctional.h"; sourceTree = "<group>"; };
+		367865EC24C98B1E008AB7AE /* UIImage+LGGenerate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LGGenerate.h"; sourceTree = "<group>"; };
+		367865ED24C98B1E008AB7AE /* NSNull+LGSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+LGSafe.m"; sourceTree = "<group>"; };
+		367865EE24C98B1E008AB7AE /* NSString+Name.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Name.m"; sourceTree = "<group>"; };
+		367865EF24C98B1E008AB7AE /* NSError+LGConvenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+LGConvenient.h"; sourceTree = "<group>"; };
+		367865F024C98B1E008AB7AE /* UIView+LGLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LGLayout.m"; sourceTree = "<group>"; };
+		367865F124C98B1E008AB7AE /* NSString+Regular.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Regular.m"; sourceTree = "<group>"; };
+		367865F224C98B1E008AB7AE /* UIViewController+LGHieriachy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LGHieriachy.h"; sourceTree = "<group>"; };
+		367865F324C98B1E008AB7AE /* UIColor+LGHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+LGHex.h"; sourceTree = "<group>"; };
+		367865F624C98B1E008AB7AE /* LGMessageFormConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGMessageFormConfig.h; sourceTree = "<group>"; };
+		367865F724C98B1E008AB7AE /* LGMessageFormViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGMessageFormViewManager.m; sourceTree = "<group>"; };
+		367865F924C98B1E008AB7AE /* LGMessageFormViewStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGMessageFormViewStyle.m; sourceTree = "<group>"; };
+		367865FB24C98B1E008AB7AE /* LGMessageFormViewStyleDark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGMessageFormViewStyleDark.m; sourceTree = "<group>"; };
+		367865FC24C98B1E008AB7AE /* LGMessageFormViewStyleGreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGMessageFormViewStyleGreen.h; sourceTree = "<group>"; };
+		367865FD24C98B1E008AB7AE /* LGMessageFormViewStyleBlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGMessageFormViewStyleBlue.m; sourceTree = "<group>"; };
+		367865FE24C98B1E008AB7AE /* LGMessageFormViewStyleDark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGMessageFormViewStyleDark.h; sourceTree = "<group>"; };
+		367865FF24C98B1E008AB7AE /* LGMessageFormViewStyleGreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGMessageFormViewStyleGreen.m; sourceTree = "<group>"; };
+		3678660024C98B1E008AB7AE /* LGMessageFormViewStyleBlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGMessageFormViewStyleBlue.h; sourceTree = "<group>"; };
+		3678660124C98B1E008AB7AE /* LGMessageFormViewStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGMessageFormViewStyle.h; sourceTree = "<group>"; };
+		3678660224C98B1E008AB7AE /* LGMessageFormConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGMessageFormConfig.m; sourceTree = "<group>"; };
+		3678660324C98B1F008AB7AE /* LGMessageFormViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGMessageFormViewManager.h; sourceTree = "<group>"; };
+		3678660524C98B1F008AB7AE /* LGMessageFormInputModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGMessageFormInputModel.m; sourceTree = "<group>"; };
+		3678660624C98B1F008AB7AE /* LGMessageFormInputModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGMessageFormInputModel.h; sourceTree = "<group>"; };
+		3678660824C98B1F008AB7AE /* LGMessageFormViewService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGMessageFormViewService.m; sourceTree = "<group>"; };
+		3678660924C98B1F008AB7AE /* LGMessageFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGMessageFormViewController.m; sourceTree = "<group>"; };
+		3678660A24C98B1F008AB7AE /* LGMessageFormCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGMessageFormCategoryViewController.h; sourceTree = "<group>"; };
+		3678660B24C98B1F008AB7AE /* LGMessageFormViewService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGMessageFormViewService.h; sourceTree = "<group>"; };
+		3678660C24C98B1F008AB7AE /* LGMessageFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGMessageFormViewController.h; sourceTree = "<group>"; };
+		3678660D24C98B1F008AB7AE /* LGMessageFormCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGMessageFormCategoryViewController.m; sourceTree = "<group>"; };
+		3678661024C98B1F008AB7AE /* LGMessageFormTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGMessageFormTextView.m; sourceTree = "<group>"; };
+		3678661124C98B1F008AB7AE /* LGMessageFormTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGMessageFormTextView.h; sourceTree = "<group>"; };
+		3678661324C98B1F008AB7AE /* LGMessageFormImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGMessageFormImageView.h; sourceTree = "<group>"; };
+		3678661424C98B1F008AB7AE /* LGMessageFormImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGMessageFormImageView.m; sourceTree = "<group>"; };
+		3678661624C98B1F008AB7AE /* LGMessageFormImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGMessageFormImageCell.h; sourceTree = "<group>"; };
+		3678661724C98B1F008AB7AE /* LGMessageFormImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGMessageFormImageCell.m; sourceTree = "<group>"; };
+		3678661924C98B1F008AB7AE /* LGMessageFormInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGMessageFormInputView.m; sourceTree = "<group>"; };
+		3678661A24C98B1F008AB7AE /* LGMessageFormInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGMessageFormInputView.h; sourceTree = "<group>"; };
+		3678661C24C98B1F008AB7AE /* LGServiceToViewInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGServiceToViewInterface.h; sourceTree = "<group>"; };
+		3678661D24C98B1F008AB7AE /* LGServiceToViewInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGServiceToViewInterface.m; sourceTree = "<group>"; };
+		89B5549E1FE75E8100EAC49D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		89B5549F1FE75E8100EAC49D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CCE9D1061C1812F6004E862E /* Laigu-SDK-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Laigu-SDK-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCE9D10A1C1812F6004E862E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CCE9D10C1C1812F6004E862E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CCE9D10D1C1812F6004E862E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CCE9D1131C1812F6004E862E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CCE9D1151C1812F6004E862E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CCE9D1181C1812F6004E862E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CCE9D11A1C1812F6004E862E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCE9D11F1C1812F6004E862E /* Laigu-SDK-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Laigu-SDK-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCE9D1251C1812F6004E862E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCE9D12A1C1812F6004E862E /* Laigu-SDK-DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Laigu-SDK-DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCE9D12E1C1812F6004E862E /* Laigu_SDK_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Laigu_SDK_DemoUITests.m; sourceTree = "<group>"; };
+		CCE9D1301C1812F6004E862E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCE9D13F1C181385004E862E /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		CCE9D1411C18138C004E862E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CCE9D1431C181393004E862E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		CCE9D1451C181399004E862E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CCE9D1471C18139E004E862E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		CCE9D14B1C1813BE004E862E /* DevelopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevelopViewController.h; sourceTree = "<group>"; };
+		CCE9D14C1C1813BE004E862E /* DevelopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevelopViewController.m; sourceTree = "<group>"; };
+		E40C2C7A1D2B710300744577 /* testdata.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testdata.txt; sourceTree = "<group>"; };
+		E41DDDA51DD18DE0000B3083 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E4275AD51DEC16400011B32B /* LGOnlineTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGOnlineTests.m; sourceTree = "<group>"; };
+		E4275ADA1DEC1D000011B32B /* LGInitializationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGInitializationTest.m; sourceTree = "<group>"; };
+		E4275ADC1DEC41010011B32B /* LGSendTextTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSendTextTests.m; sourceTree = "<group>"; };
+		E4275ADF1DED844C0011B32B /* LGStateObserverTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGStateObserverTests.m; sourceTree = "<group>"; };
+		E44A5EA41D5AF47D000481E8 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		E45CA12C1CCA33EF000B8917 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CCE9D1031C1812F6004E862E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3678663724C98B1F008AB7AE /* libopencore-amrnb.a in Frameworks */,
+				E41DDDA61DD18DE0000B3083 /* libz.tbd in Frameworks */,
+				E44A5EA51D5AF47D000481E8 /* Accelerate.framework in Frameworks */,
+				E45CA12D1CCA33EF000B8917 /* libsqlite3.tbd in Frameworks */,
+				CCE9D1481C18139E004E862E /* MobileCoreServices.framework in Frameworks */,
+				CCE9D1461C181399004E862E /* SystemConfiguration.framework in Frameworks */,
+				367866C624C98B6E008AB7AE /* LaiGuSDK.framework in Frameworks */,
+				CCE9D1441C181393004E862E /* CoreTelephony.framework in Frameworks */,
+				3678663624C98B1F008AB7AE /* libopencore-amrwb.a in Frameworks */,
+				CCE9D1421C18138C004E862E /* AVFoundation.framework in Frameworks */,
+				CCE9D1401C181385004E862E /* libicucore.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCE9D11C1C1812F6004E862E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCE9D1271C1812F6004E862E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3678648C24C98B1E008AB7AE /* Laigu-SDK-files */ = {
+			isa = PBXGroup;
+			children = (
+				3678648D24C98B1E008AB7AE /* LaiGuSDK.framework */,
+				3678648E24C98B1E008AB7AE /* LGChatViewController */,
+				367865F424C98B1E008AB7AE /* LGMessageForm */,
+				3678661B24C98B1F008AB7AE /* LaiguSDKViewInterface */,
+			);
+			name = "Laigu-SDK-files";
+			path = "../Laigu-SDK-files";
+			sourceTree = "<group>";
+		};
+		3678648E24C98B1E008AB7AE /* LGChatViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3678648F24C98B1E008AB7AE /* Vendors */,
+				367864EC24C98B1E008AB7AE /* Config */,
+				367864FE24C98B1E008AB7AE /* MessageModels */,
+				3678652124C98B1E008AB7AE /* TableCells */,
+				3678657124C98B1E008AB7AE /* Animation */,
+				3678657824C98B1E008AB7AE /* Utils */,
+				3678659F24C98B1E008AB7AE /* Controllers */,
+				367865B124C98B1E008AB7AE /* Views */,
+				367865DD24C98B1E008AB7AE /* Assets */,
+				367865DF24C98B1E008AB7AE /* Categories */,
+			);
+			path = LGChatViewController;
+			sourceTree = "<group>";
+		};
+		3678648F24C98B1E008AB7AE /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				3678649024C98B1E008AB7AE /* HPTextView */,
+				3678649524C98B1E008AB7AE /* AGEmojiKeyboard */,
+				3678649A24C98B1E008AB7AE /* VoiceConvert */,
+				367864A224C98B1E008AB7AE /* XlpEmojiView */,
+				367864A724C98B1E008AB7AE /* Masonry */,
+				367864C124C98B1E008AB7AE /* CustomIOSAlertView */,
+				367864C424C98B1E008AB7AE /* LGNamespacedDependencies.h */,
+				367864C524C98B1E008AB7AE /* MLAudioRecorder */,
+				367864DA24C98B1E008AB7AE /* TTTAttributedLabel */,
+				367864DD24C98B1E008AB7AE /* FBDigitalFont */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		3678649024C98B1E008AB7AE /* HPTextView */ = {
+			isa = PBXGroup;
+			children = (
+				3678649124C98B1E008AB7AE /* LAIGU_HPTextViewInternal.m */,
+				3678649224C98B1E008AB7AE /* LAIGU_HPGrowingTextView.h */,
+				3678649324C98B1E008AB7AE /* LAIGU_HPTextViewInternal.h */,
+				3678649424C98B1E008AB7AE /* LAIGU_HPGrowingTextView.m */,
+			);
+			path = HPTextView;
+			sourceTree = "<group>";
+		};
+		3678649524C98B1E008AB7AE /* AGEmojiKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				3678649624C98B1E008AB7AE /* LGAGEmojiPageView.h */,
+				3678649724C98B1E008AB7AE /* LGAGEmojiKeyBoardView.m */,
+				3678649824C98B1E008AB7AE /* LGAGEmojiPageView.m */,
+				3678649924C98B1E008AB7AE /* LGAGEmojiKeyBoardView.h */,
+			);
+			path = AGEmojiKeyboard;
+			sourceTree = "<group>";
+		};
+		3678649A24C98B1E008AB7AE /* VoiceConvert */ = {
+			isa = PBXGroup;
+			children = (
+				3678649B24C98B1E008AB7AE /* VoiceConverter.mm */,
+				3678649C24C98B1E008AB7AE /* VoiceConverter.h */,
+				3678649D24C98B1E008AB7AE /* amrwapper */,
+			);
+			path = VoiceConvert;
+			sourceTree = "<group>";
+		};
+		3678649D24C98B1E008AB7AE /* amrwapper */ = {
+			isa = PBXGroup;
+			children = (
+				3678649E24C98B1E008AB7AE /* wav.mm */,
+				3678649F24C98B1E008AB7AE /* amrFileCodec.mm */,
+				367864A024C98B1E008AB7AE /* amrFileCodec.h */,
+				367864A124C98B1E008AB7AE /* wav.h */,
+			);
+			path = amrwapper;
+			sourceTree = "<group>";
+		};
+		367864A224C98B1E008AB7AE /* XlpEmojiView */ = {
+			isa = PBXGroup;
+			children = (
+				367864A324C98B1E008AB7AE /* XLPInputView.m */,
+				367864A424C98B1E008AB7AE /* XlpEmojiCell.m */,
+				367864A524C98B1E008AB7AE /* XLPInputView.h */,
+				367864A624C98B1E008AB7AE /* XlpEmojiCell.h */,
+			);
+			path = XlpEmojiView;
+			sourceTree = "<group>";
+		};
+		367864A724C98B1E008AB7AE /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				367864A824C98B1E008AB7AE /* MASCompositeConstraint.h */,
+				367864A924C98B1E008AB7AE /* NSLayoutConstraint+MASDebugAdditions.m */,
+				367864AA24C98B1E008AB7AE /* MASConstraint+Private.h */,
+				367864AB24C98B1E008AB7AE /* MASLayoutConstraint.h */,
+				367864AC24C98B1E008AB7AE /* NSArray+MASShorthandAdditions.h */,
+				367864AD24C98B1E008AB7AE /* MASConstraintMaker.h */,
+				367864AE24C98B1E008AB7AE /* View+MASAdditions.h */,
+				367864AF24C98B1E008AB7AE /* NSArray+MASAdditions.h */,
+				367864B024C98B1E008AB7AE /* MASUtilities.h */,
+				367864B124C98B1E008AB7AE /* MASViewAttribute.h */,
+				367864B224C98B1E008AB7AE /* ViewController+MASAdditions.m */,
+				367864B324C98B1E008AB7AE /* MASViewConstraint.h */,
+				367864B424C98B1E008AB7AE /* MASConstraint.h */,
+				367864B524C98B1E008AB7AE /* NSLayoutConstraint+MASDebugAdditions.h */,
+				367864B624C98B1E008AB7AE /* MASCompositeConstraint.m */,
+				367864B724C98B1E008AB7AE /* MASConstraintMaker.m */,
+				367864B824C98B1E008AB7AE /* MASLayoutConstraint.m */,
+				367864B924C98B1E008AB7AE /* NSArray+MASAdditions.m */,
+				367864BA24C98B1E008AB7AE /* View+MASAdditions.m */,
+				367864BB24C98B1E008AB7AE /* View+MASShorthandAdditions.h */,
+				367864BC24C98B1E008AB7AE /* Masonry.h */,
+				367864BD24C98B1E008AB7AE /* MASConstraint.m */,
+				367864BE24C98B1E008AB7AE /* ViewController+MASAdditions.h */,
+				367864BF24C98B1E008AB7AE /* MASViewConstraint.m */,
+				367864C024C98B1E008AB7AE /* MASViewAttribute.m */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		367864C124C98B1E008AB7AE /* CustomIOSAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				367864C224C98B1E008AB7AE /* LAIGU_CustomIOSAlertView.m */,
+				367864C324C98B1E008AB7AE /* LAIGU_CustomIOSAlertView.h */,
+			);
+			path = CustomIOSAlertView;
+			sourceTree = "<group>";
+		};
+		367864C524C98B1E008AB7AE /* MLAudioRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				367864C624C98B1E008AB7AE /* LAIGU_MLAudioMeterObserver.m */,
+				367864C724C98B1E008AB7AE /* LAIGU_MLAudioRecorder.h */,
+				367864C824C98B1E008AB7AE /* LAIGU_CafRecordWriter.h */,
+				367864C924C98B1E008AB7AE /* LAIGU_AmrRecordWriter.h */,
+				367864CA24C98B1E008AB7AE /* LAIGU_MLAudioMeterObserver.h */,
+				367864CB24C98B1E008AB7AE /* LAIGU_CafRecordWriter.m */,
+				367864CC24C98B1E008AB7AE /* LAIGU_AMR_Debug.h */,
+				367864CD24C98B1E008AB7AE /* LAIGU_MLAudioRecorder.m */,
+				367864CE24C98B1E008AB7AE /* amr_en_de */,
+				367864D924C98B1E008AB7AE /* LAIGU_AmrRecordWriter.m */,
+			);
+			path = MLAudioRecorder;
+			sourceTree = "<group>";
+		};
+		367864CE24C98B1E008AB7AE /* amr_en_de */ = {
+			isa = PBXGroup;
+			children = (
+				367864CF24C98B1E008AB7AE /* include */,
+				367864D624C98B1E008AB7AE /* lib */,
+			);
+			path = amr_en_de;
+			sourceTree = "<group>";
+		};
+		367864CF24C98B1E008AB7AE /* include */ = {
+			isa = PBXGroup;
+			children = (
+				367864D024C98B1E008AB7AE /* opencore-amrwb */,
+				367864D324C98B1E008AB7AE /* opencore-amrnb */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		367864D024C98B1E008AB7AE /* opencore-amrwb */ = {
+			isa = PBXGroup;
+			children = (
+				367864D124C98B1E008AB7AE /* if_rom.h */,
+				367864D224C98B1E008AB7AE /* dec_if.h */,
+			);
+			path = "opencore-amrwb";
+			sourceTree = "<group>";
+		};
+		367864D324C98B1E008AB7AE /* opencore-amrnb */ = {
+			isa = PBXGroup;
+			children = (
+				367864D424C98B1E008AB7AE /* interf_dec.h */,
+				367864D524C98B1E008AB7AE /* interf_enc.h */,
+			);
+			path = "opencore-amrnb";
+			sourceTree = "<group>";
+		};
+		367864D624C98B1E008AB7AE /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				367864D724C98B1E008AB7AE /* libopencore-amrwb.a */,
+				367864D824C98B1E008AB7AE /* libopencore-amrnb.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		367864DA24C98B1E008AB7AE /* TTTAttributedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				367864DB24C98B1E008AB7AE /* LAIGU_TTTAttributedLabel.m */,
+				367864DC24C98B1E008AB7AE /* LAIGU_TTTAttributedLabel.h */,
+			);
+			path = TTTAttributedLabel;
+			sourceTree = "<group>";
+		};
+		367864DD24C98B1E008AB7AE /* FBDigitalFont */ = {
+			isa = PBXGroup;
+			children = (
+				367864DE24C98B1E008AB7AE /* LAIGU_FBBitmapFontView.h */,
+				367864DF24C98B1E008AB7AE /* LAIGU_FBBitmapFont.m */,
+				367864E024C98B1E008AB7AE /* LAIGU_FBSquareFont.h */,
+				367864E124C98B1E008AB7AE /* LAIGU_FBLCDFontView.h */,
+				367864E224C98B1E008AB7AE /* LAIGU_FBFontSymbol.h */,
+				367864E324C98B1E008AB7AE /* LAIGU_FBSquareFontView.m */,
+				367864E424C98B1E008AB7AE /* LAIGU_FBLCDFont.h */,
+				367864E524C98B1E008AB7AE /* LAIGU_FBSquareFont.m */,
+				367864E624C98B1E008AB7AE /* LAIGU_FBBitmapFont.h */,
+				367864E724C98B1E008AB7AE /* LAIGU_FBBitmapFontView.m */,
+				367864E824C98B1E008AB7AE /* LAIGU_FBFontSymbol.m */,
+				367864E924C98B1E008AB7AE /* LAIGU_FBLCDFontView.m */,
+				367864EA24C98B1E008AB7AE /* LAIGU_FBLCDFont.m */,
+				367864EB24C98B1E008AB7AE /* LAIGU_FBSquareFontView.h */,
+			);
+			path = FBDigitalFont;
+			sourceTree = "<group>";
+		};
+		367864EC24C98B1E008AB7AE /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				367864ED24C98B1E008AB7AE /* LGChatViewConfig.m */,
+				367864EE24C98B1E008AB7AE /* Style */,
+				367864F824C98B1E008AB7AE /* LGChatViewManager.m */,
+				367864F924C98B1E008AB7AE /* LGChatViewConfig.h */,
+				367864FA24C98B1E008AB7AE /* LGChatViewManager.h */,
+				367864FB24C98B1E008AB7AE /* CustomizedText */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		367864EE24C98B1E008AB7AE /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				367864EF24C98B1E008AB7AE /* LGChatViewStyle.h */,
+				367864F024C98B1E008AB7AE /* PreDefined */,
+				367864F724C98B1E008AB7AE /* LGChatViewStyle.m */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		367864F024C98B1E008AB7AE /* PreDefined */ = {
+			isa = PBXGroup;
+			children = (
+				367864F124C98B1E008AB7AE /* LGChatViewStyleGreen.h */,
+				367864F224C98B1E008AB7AE /* LGChatViewStyleDark.m */,
+				367864F324C98B1E008AB7AE /* LGChatViewStyleBlue.m */,
+				367864F424C98B1E008AB7AE /* LGChatViewStyleDark.h */,
+				367864F524C98B1E008AB7AE /* LGChatViewStyleGreen.m */,
+				367864F624C98B1E008AB7AE /* LGChatViewStyleBlue.h */,
+			);
+			path = PreDefined;
+			sourceTree = "<group>";
+		};
+		367864FB24C98B1E008AB7AE /* CustomizedText */ = {
+			isa = PBXGroup;
+			children = (
+				367864FC24C98B1E008AB7AE /* LGCustomizedUIText.m */,
+				367864FD24C98B1E008AB7AE /* LGCustomizedUIText.h */,
+			);
+			path = CustomizedText;
+			sourceTree = "<group>";
+		};
+		367864FE24C98B1E008AB7AE /* MessageModels */ = {
+			isa = PBXGroup;
+			children = (
+				367864FF24C98B1E008AB7AE /* LGFileDownloadMessage.m */,
+				3678650024C98B1E008AB7AE /* LGBaseMessage.h */,
+				3678650124C98B1E008AB7AE /* LGPhotoCardMessage.h */,
+				3678650224C98B1E008AB7AE /* LGEventMessage.h */,
+				3678650324C98B1E008AB7AE /* LGEventMessageFactory.h */,
+				3678650424C98B1E008AB7AE /* LGImageMessage.h */,
+				3678650524C98B1E008AB7AE /* LGBotAnswerMessage.h */,
+				3678650624C98B1E008AB7AE /* LGBotMenuMessage.m */,
+				3678650724C98B1E008AB7AE /* LGTextMessage.h */,
+				3678650824C98B1E008AB7AE /* LGBotMessageFactory.m */,
+				3678650924C98B1E008AB7AE /* LGBotRichTextMessage.m */,
+				3678650A24C98B1E008AB7AE /* LGWithDrawMessage.h */,
+				3678650B24C98B1E008AB7AE /* LGRichTextMessage.h */,
+				3678650C24C98B1E008AB7AE /* LGVisialMessageFactory.h */,
+				3678650D24C98B1E008AB7AE /* LGCardMessage.m */,
+				3678650E24C98B1E008AB7AE /* LGVoiceMessage.h */,
+				3678650F24C98B1E008AB7AE /* LGMessageFactoryHelper.m */,
+				3678651024C98B1E008AB7AE /* LGPhotoCardMessage.m */,
+				3678651124C98B1E008AB7AE /* LGBaseMessage.m */,
+				3678651224C98B1E008AB7AE /* LGFileDownloadMessage.h */,
+				3678651324C98B1E008AB7AE /* LGBotAnswerMessage.m */,
+				3678651424C98B1E008AB7AE /* LGImageMessage.m */,
+				3678651524C98B1E008AB7AE /* LGEventMessageFactory.m */,
+				3678651624C98B1E008AB7AE /* LGEventMessage.m */,
+				3678651724C98B1E008AB7AE /* LGRichTextMessage.m */,
+				3678651824C98B1E008AB7AE /* LGWithDrawMessage.m */,
+				3678651924C98B1E008AB7AE /* LGBotRichTextMessage.h */,
+				3678651A24C98B1E008AB7AE /* LGBotMessageFactory.h */,
+				3678651B24C98B1E008AB7AE /* LGTextMessage.m */,
+				3678651C24C98B1E008AB7AE /* LGBotMenuMessage.h */,
+				3678651D24C98B1E008AB7AE /* LGMessageFactoryHelper.h */,
+				3678651E24C98B1E008AB7AE /* LGVoiceMessage.m */,
+				3678651F24C98B1E008AB7AE /* LGCardMessage.h */,
+				3678652024C98B1E008AB7AE /* LGVisialMessageFactory.m */,
+			);
+			path = MessageModels;
+			sourceTree = "<group>";
+		};
+		3678652124C98B1E008AB7AE /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				3678652224C98B1E008AB7AE /* CellModel */,
+				3678654824C98B1E008AB7AE /* CellView */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		3678652224C98B1E008AB7AE /* CellModel */ = {
+			isa = PBXGroup;
+			children = (
+				3678652324C98B1E008AB7AE /* LGBotMenuWebViewBubbleAnswerCellModel.h */,
+				3678652424C98B1E008AB7AE /* LGEvaluationResultCellModel.m */,
+				3678652524C98B1E008AB7AE /* LGTipsCellModel.h */,
+				3678652624C98B1E008AB7AE /* LGRichTextViewModel.m */,
+				3678652724C98B1E008AB7AE /* LGBotAnswerCellModel.m */,
+				3678652824C98B1E008AB7AE /* LGTextCellModel.m */,
+				3678652924C98B1E008AB7AE /* LGImageCellModel.h */,
+				3678652A24C98B1E008AB7AE /* LGCardCellModel.h */,
+				3678652B24C98B1E008AB7AE /* LGBotWebViewBubbleAnswerCellModel.m */,
+				3678652C24C98B1E008AB7AE /* LGFileDownloadCellModel.m */,
+				3678652D24C98B1E008AB7AE /* LGWebViewBubbleCellModel.m */,
+				3678652E24C98B1E008AB7AE /* LGEventCellModel.m */,
+				3678652F24C98B1E008AB7AE /* LGPhotoCardCellModel.h */,
+				3678653024C98B1E008AB7AE /* LGBotMenuCellModel.h */,
+				3678653124C98B1E008AB7AE /* LGMessageDateCellModel.m */,
+				3678653224C98B1E008AB7AE /* LGBotMenuAnswerCellModel.m */,
+				3678653324C98B1E008AB7AE /* LGVoiceCellModel.h */,
+				3678653424C98B1E008AB7AE /* LGBotMenuRichCellModel.m */,
+				3678653524C98B1E008AB7AE /* LGCardCellModel.m */,
+				3678653624C98B1E008AB7AE /* LGImageCellModel.m */,
+				3678653724C98B1E008AB7AE /* LGTextCellModel.h */,
+				3678653824C98B1E008AB7AE /* LGBotAnswerCellModel.h */,
+				3678653924C98B1E008AB7AE /* LGRichTextViewModel.h */,
+				3678653A24C98B1E008AB7AE /* LGTipsCellModel.m */,
+				3678653B24C98B1E008AB7AE /* LGEvaluationResultCellModel.h */,
+				3678653C24C98B1E008AB7AE /* LGBotMenuWebViewBubbleAnswerCellModel.m */,
+				3678653D24C98B1E008AB7AE /* LGCellModelProtocol.h */,
+				3678653E24C98B1E008AB7AE /* LGEventCellModel.h */,
+				3678653F24C98B1E008AB7AE /* LGWebViewBubbleCellModel.h */,
+				3678654024C98B1E008AB7AE /* LGFileDownloadCellModel.h */,
+				3678654124C98B1E008AB7AE /* LGBotWebViewBubbleAnswerCellModel.h */,
+				3678654224C98B1E008AB7AE /* LGBotMenuCellModel.m */,
+				3678654324C98B1E008AB7AE /* LGPhotoCardCellModel.m */,
+				3678654424C98B1E008AB7AE /* LGBotMenuRichCellModel.h */,
+				3678654524C98B1E008AB7AE /* LGVoiceCellModel.m */,
+				3678654624C98B1E008AB7AE /* LGBotMenuAnswerCellModel.h */,
+				3678654724C98B1E008AB7AE /* LGMessageDateCellModel.h */,
+			);
+			path = CellModel;
+			sourceTree = "<group>";
+		};
+		3678654824C98B1E008AB7AE /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				3678654924C98B1E008AB7AE /* LGBotMenuAnswerCell.m */,
+				3678654A24C98B1E008AB7AE /* LGTipsCell.m */,
+				3678654B24C98B1E008AB7AE /* LGEventMessageCell.m */,
+				3678654C24C98B1E008AB7AE /* LGImageMessageCell.m */,
+				3678654D24C98B1E008AB7AE /* LGTextMessageCell.h */,
+				3678654E24C98B1E008AB7AE /* LGRichTextViewCell.h */,
+				3678654F24C98B1E008AB7AE /* LGFileDownloadCell.m */,
+				3678655024C98B1E008AB7AE /* LGEvaluationCell.m */,
+				3678655124C98B1E008AB7AE /* LGEvaluationResultCell.h */,
+				3678655224C98B1E008AB7AE /* LGBotAnswerCell.h */,
+				3678655324C98B1E008AB7AE /* LGCardMessageCell.h */,
+				3678655424C98B1E008AB7AE /* LGPhotoCardMessageCell.h */,
+				3678655524C98B1E008AB7AE /* LGBotMenuCell.h */,
+				3678655624C98B1E008AB7AE /* LGWebViewBubbleCell.m */,
+				3678655724C98B1E008AB7AE /* LGBotMenuWebViewBubbleAnswerCell.h */,
+				3678655824C98B1E008AB7AE /* LGBotMenuRichMessageCell.h */,
+				3678655924C98B1E008AB7AE /* LGVoiceMessageCell.h */,
+				3678655A24C98B1E008AB7AE /* LGBotWebViewBubbleAnswerCell.m */,
+				3678655B24C98B1E008AB7AE /* LGMessageDateCell.m */,
+				3678655C24C98B1E008AB7AE /* LGChatBaseCell.m */,
+				3678655D24C98B1E008AB7AE /* LGEventMessageCell.h */,
+				3678655E24C98B1E008AB7AE /* LGTipsCell.h */,
+				3678655F24C98B1E008AB7AE /* LGBotMenuAnswerCell.h */,
+				3678656024C98B1E008AB7AE /* LGFileDownloadCell.h */,
+				3678656124C98B1E008AB7AE /* LGRichTextViewCell.m */,
+				3678656224C98B1E008AB7AE /* LGImageMessageCell.h */,
+				3678656324C98B1E008AB7AE /* LGTextMessageCell.m */,
+				3678656424C98B1E008AB7AE /* LGWebViewBubbleCell.h */,
+				3678656524C98B1E008AB7AE /* LGBotMenuCell.m */,
+				3678656624C98B1E008AB7AE /* LGPhotoCardMessageCell.m */,
+				3678656724C98B1E008AB7AE /* LGCardMessageCell.m */,
+				3678656824C98B1E008AB7AE /* LGBotAnswerCell.m */,
+				3678656924C98B1E008AB7AE /* LGEvaluationResultCell.m */,
+				3678656A24C98B1E008AB7AE /* LGEvaluationCell.h */,
+				3678656B24C98B1E008AB7AE /* LGChatBaseCell.h */,
+				3678656C24C98B1E008AB7AE /* LGMessageDateCell.h */,
+				3678656D24C98B1E008AB7AE /* LGBotWebViewBubbleAnswerCell.h */,
+				3678656E24C98B1E008AB7AE /* LGBotMenuRichMessageCell.m */,
+				3678656F24C98B1E008AB7AE /* LGVoiceMessageCell.m */,
+				3678657024C98B1E008AB7AE /* LGBotMenuWebViewBubbleAnswerCell.m */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
+		3678657124C98B1E008AB7AE /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				3678657224C98B1E008AB7AE /* LGAnimatorPush.m */,
+				3678657324C98B1E008AB7AE /* LGTransitioningAnimation.m */,
+				3678657424C98B1E008AB7AE /* LGShareTransitioningDelegateImpl.m */,
+				3678657524C98B1E008AB7AE /* LGAnimatorPush.h */,
+				3678657624C98B1E008AB7AE /* LGShareTransitioningDelegateImpl.h */,
+				3678657724C98B1E008AB7AE /* LGTransitioningAnimation.h */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		3678657824C98B1E008AB7AE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3678657924C98B1E008AB7AE /* LGJsonUtil.h */,
+				3678657A24C98B1E008AB7AE /* LGTypeTag.h */,
+				3678657B24C98B1E008AB7AE /* LGBundleUtil.m */,
+				3678657C24C98B1E008AB7AE /* LGDateFormatterUtil.m */,
+				3678657D24C98B1E008AB7AE /* LGChatFileUtil.h */,
+				3678657E24C98B1E008AB7AE /* LGChatDeviceUtil.m */,
+				3678657F24C98B1E008AB7AE /* LGChatAudioTypes.h */,
+				3678658024C98B1E008AB7AE /* LGChatAudioPlayer.h */,
+				3678658124C98B1E008AB7AE /* LGToolUtil.h */,
+				3678658224C98B1E008AB7AE /* LGImageUtil.m */,
+				3678658324C98B1E008AB7AE /* LGWindowUtil.m */,
+				3678658424C98B1E008AB7AE /* LGChatEmojize.h */,
+				3678658524C98B1E008AB7AE /* LGChatRegexUtil.m */,
+				3678658624C98B1E008AB7AE /* LGChatAudioRecorder.m */,
+				3678658724C98B1E008AB7AE /* LGAssetUtil.h */,
+				3678658824C98B1E008AB7AE /* LGStringSizeUtil.h */,
+				3678658924C98B1E008AB7AE /* LGDateFormatterUtil.h */,
+				3678658A24C98B1E008AB7AE /* LGBundleUtil.h */,
+				3678658B24C98B1E008AB7AE /* LGJsonUtil.m */,
+				3678658C24C98B1E008AB7AE /* LGTypeTag.m */,
+				3678658D24C98B1E008AB7AE /* LGToolUtil.m */,
+				3678658E24C98B1E008AB7AE /* LGChatAudioPlayer.m */,
+				3678658F24C98B1E008AB7AE /* LGChatDeviceUtil.h */,
+				3678659024C98B1E008AB7AE /* LGChatFileUtil.m */,
+				3678659124C98B1E008AB7AE /* LGWindowUtil.h */,
+				3678659224C98B1E008AB7AE /* UIMaker */,
+				3678659924C98B1E008AB7AE /* LGImageUtil.h */,
+				3678659A24C98B1E008AB7AE /* LGStringSizeUtil.m */,
+				3678659B24C98B1E008AB7AE /* LGAssetUtil.m */,
+				3678659C24C98B1E008AB7AE /* LGChatAudioRecorder.h */,
+				3678659D24C98B1E008AB7AE /* LGChatRegexUtil.h */,
+				3678659E24C98B1E008AB7AE /* LGChatEmojize.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3678659224C98B1E008AB7AE /* UIMaker */ = {
+			isa = PBXGroup;
+			children = (
+				3678659324C98B1E008AB7AE /* UIControl+LGControl.h */,
+				3678659424C98B1E008AB7AE /* LGUIMaker.h */,
+				3678659524C98B1E008AB7AE /* UIButton+LGButton.h */,
+				3678659624C98B1E008AB7AE /* UIControl+LGControl.m */,
+				3678659724C98B1E008AB7AE /* LGUIMaker.m */,
+				3678659824C98B1E008AB7AE /* UIButton+LGButton.m */,
+			);
+			path = UIMaker;
+			sourceTree = "<group>";
+		};
+		3678659F24C98B1E008AB7AE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				367865A024C98B1E008AB7AE /* LGChatViewService.m */,
+				367865A124C98B1E008AB7AE /* PreChatForm */,
+				367865AA24C98B1E008AB7AE /* LGChatViewController.m */,
+				367865AB24C98B1E008AB7AE /* LGChatViewTableDataSource.h */,
+				367865AC24C98B1E008AB7AE /* LGChatTableView.m */,
+				367865AD24C98B1E008AB7AE /* LGChatViewService.h */,
+				367865AE24C98B1E008AB7AE /* LGChatViewTableDataSource.m */,
+				367865AF24C98B1E008AB7AE /* LGChatViewController.h */,
+				367865B024C98B1E008AB7AE /* LGChatTableView.h */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		367865A124C98B1E008AB7AE /* PreChatForm */ = {
+			isa = PBXGroup;
+			children = (
+				367865A224C98B1E008AB7AE /* LGPreChatSubmitViewController.h */,
+				367865A324C98B1E008AB7AE /* LGPreChatCells.m */,
+				367865A424C98B1E008AB7AE /* LGPreChatFormListViewController.m */,
+				367865A524C98B1E008AB7AE /* LGPreChatFormViewModel.m */,
+				367865A624C98B1E008AB7AE /* LGPreChatFormListViewController.h */,
+				367865A724C98B1E008AB7AE /* LGPreChatSubmitViewController.m */,
+				367865A824C98B1E008AB7AE /* LGPreChatCells.h */,
+				367865A924C98B1E008AB7AE /* LGPreChatFormViewModel.h */,
+			);
+			path = PreChatForm;
+			sourceTree = "<group>";
+		};
+		367865B124C98B1E008AB7AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				367865B224C98B1E008AB7AE /* LGCustom */,
+				367865B724C98B1E008AB7AE /* LGRecordView */,
+				367865BA24C98B1E008AB7AE /* LGEvaluationView */,
+				367865BD24C98B1E008AB7AE /* LGInputBar */,
+				367865CA24C98B1E008AB7AE /* LGPullRefreshView */,
+				367865CD24C98B1E008AB7AE /* LGKeyboardController */,
+				367865D024C98B1E008AB7AE /* LGToast */,
+				367865D324C98B1E008AB7AE /* LGWebView */,
+				367865DA24C98B1E008AB7AE /* LGImageViewer */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		367865B224C98B1E008AB7AE /* LGCustom */ = {
+			isa = PBXGroup;
+			children = (
+				367865B324C98B1E008AB7AE /* LGRadioButton.h */,
+				367865B424C98B1E008AB7AE /* LGRadioGroup.m */,
+				367865B524C98B1E008AB7AE /* LGRadioButton.m */,
+				367865B624C98B1E008AB7AE /* LGRadioGroup.h */,
+			);
+			path = LGCustom;
+			sourceTree = "<group>";
+		};
+		367865B724C98B1E008AB7AE /* LGRecordView */ = {
+			isa = PBXGroup;
+			children = (
+				367865B824C98B1E008AB7AE /* LGRecordView.h */,
+				367865B924C98B1E008AB7AE /* LGRecordView.m */,
+			);
+			path = LGRecordView;
+			sourceTree = "<group>";
+		};
+		367865BA24C98B1E008AB7AE /* LGEvaluationView */ = {
+			isa = PBXGroup;
+			children = (
+				367865BB24C98B1E008AB7AE /* LGEvaluationView.m */,
+				367865BC24C98B1E008AB7AE /* LGEvaluationView.h */,
+			);
+			path = LGEvaluationView;
+			sourceTree = "<group>";
+		};
+		367865BD24C98B1E008AB7AE /* LGInputBar */ = {
+			isa = PBXGroup;
+			children = (
+				367865BE24C98B1E008AB7AE /* LGInputContentView */,
+				367865C324C98B1E008AB7AE /* LGBottomBar.h */,
+				367865C424C98B1E008AB7AE /* LGButtonGroupBar.m */,
+				367865C524C98B1E008AB7AE /* FunctionView */,
+				367865C824C98B1E008AB7AE /* LGButtonGroupBar.h */,
+				367865C924C98B1E008AB7AE /* LGBottomBar.m */,
+			);
+			path = LGInputBar;
+			sourceTree = "<group>";
+		};
+		367865BE24C98B1E008AB7AE /* LGInputContentView */ = {
+			isa = PBXGroup;
+			children = (
+				367865BF24C98B1E008AB7AE /* LGTabInputContentView.m */,
+				367865C024C98B1E008AB7AE /* LGInputContentView.m */,
+				367865C124C98B1E008AB7AE /* LGInputContentView.h */,
+				367865C224C98B1E008AB7AE /* LGTabInputContentView.h */,
+			);
+			path = LGInputContentView;
+			sourceTree = "<group>";
+		};
+		367865C524C98B1E008AB7AE /* FunctionView */ = {
+			isa = PBXGroup;
+			children = (
+				367865C624C98B1E008AB7AE /* LGRecorderView.m */,
+				367865C724C98B1E008AB7AE /* LGRecorderView.h */,
+			);
+			path = FunctionView;
+			sourceTree = "<group>";
+		};
+		367865CA24C98B1E008AB7AE /* LGPullRefreshView */ = {
+			isa = PBXGroup;
+			children = (
+				367865CB24C98B1E008AB7AE /* LGRefresh.h */,
+				367865CC24C98B1E008AB7AE /* LGRefresh.m */,
+			);
+			path = LGPullRefreshView;
+			sourceTree = "<group>";
+		};
+		367865CD24C98B1E008AB7AE /* LGKeyboardController */ = {
+			isa = PBXGroup;
+			children = (
+				367865CE24C98B1E008AB7AE /* LGKeyboardController.m */,
+				367865CF24C98B1E008AB7AE /* LGKeyboardController.h */,
+			);
+			path = LGKeyboardController;
+			sourceTree = "<group>";
+		};
+		367865D024C98B1E008AB7AE /* LGToast */ = {
+			isa = PBXGroup;
+			children = (
+				367865D124C98B1E008AB7AE /* LGToast.h */,
+				367865D224C98B1E008AB7AE /* LGToast.m */,
+			);
+			path = LGToast;
+			sourceTree = "<group>";
+		};
+		367865D324C98B1E008AB7AE /* LGWebView */ = {
+			isa = PBXGroup;
+			children = (
+				367865D424C98B1E008AB7AE /* LGEmbededWebView.m */,
+				367865D524C98B1E008AB7AE /* LGBotWebViewController.h */,
+				367865D624C98B1E008AB7AE /* LGWebViewController.h */,
+				367865D724C98B1E008AB7AE /* LGEmbededWebView.h */,
+				367865D824C98B1E008AB7AE /* LGBotWebViewController.m */,
+				367865D924C98B1E008AB7AE /* LGWebViewController.m */,
+			);
+			path = LGWebView;
+			sourceTree = "<group>";
+		};
+		367865DA24C98B1E008AB7AE /* LGImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				367865DB24C98B1E008AB7AE /* LGImageViewerViewController.m */,
+				367865DC24C98B1E008AB7AE /* LGImageViewerViewController.h */,
+			);
+			path = LGImageViewer;
+			sourceTree = "<group>";
+		};
+		367865DD24C98B1E008AB7AE /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				367865DE24C98B1E008AB7AE /* LGChatViewAsset.bundle */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		367865DF24C98B1E008AB7AE /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				367865E024C98B1E008AB7AE /* UIViewController+LGOrientationFix.m */,
+				367865E124C98B1E008AB7AE /* NSNull+LGSafe.h */,
+				367865E224C98B1E008AB7AE /* UIImage+LGGenerate.m */,
+				367865E324C98B1E008AB7AE /* NSArray+LGFunctional.m */,
+				367865E424C98B1E008AB7AE /* UIView+LGLayout.h */,
+				367865E524C98B1E008AB7AE /* NSError+LGConvenient.m */,
+				367865E624C98B1E008AB7AE /* NSString+Name.h */,
+				367865E724C98B1E008AB7AE /* UIViewController+LGHieriachy.m */,
+				367865E824C98B1E008AB7AE /* UIColor+LGHex.m */,
+				367865E924C98B1E008AB7AE /* NSString+Regular.h */,
+				367865EA24C98B1E008AB7AE /* UIViewController+LGOrientationFix.h */,
+				367865EB24C98B1E008AB7AE /* NSArray+LGFunctional.h */,
+				367865EC24C98B1E008AB7AE /* UIImage+LGGenerate.h */,
+				367865ED24C98B1E008AB7AE /* NSNull+LGSafe.m */,
+				367865EE24C98B1E008AB7AE /* NSString+Name.m */,
+				367865EF24C98B1E008AB7AE /* NSError+LGConvenient.h */,
+				367865F024C98B1E008AB7AE /* UIView+LGLayout.m */,
+				367865F124C98B1E008AB7AE /* NSString+Regular.m */,
+				367865F224C98B1E008AB7AE /* UIViewController+LGHieriachy.h */,
+				367865F324C98B1E008AB7AE /* UIColor+LGHex.h */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		367865F424C98B1E008AB7AE /* LGMessageForm */ = {
+			isa = PBXGroup;
+			children = (
+				367865F524C98B1E008AB7AE /* Config */,
+				3678660724C98B1F008AB7AE /* Controllers */,
+				3678660E24C98B1F008AB7AE /* Views */,
+			);
+			path = LGMessageForm;
+			sourceTree = "<group>";
+		};
+		367865F524C98B1E008AB7AE /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				367865F624C98B1E008AB7AE /* LGMessageFormConfig.h */,
+				367865F724C98B1E008AB7AE /* LGMessageFormViewManager.m */,
+				367865F824C98B1E008AB7AE /* Styles */,
+				3678660224C98B1E008AB7AE /* LGMessageFormConfig.m */,
+				3678660324C98B1F008AB7AE /* LGMessageFormViewManager.h */,
+				3678660424C98B1F008AB7AE /* MessageFormInputModel */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		367865F824C98B1E008AB7AE /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				367865F924C98B1E008AB7AE /* LGMessageFormViewStyle.m */,
+				367865FA24C98B1E008AB7AE /* PreDefined */,
+				3678660124C98B1E008AB7AE /* LGMessageFormViewStyle.h */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		367865FA24C98B1E008AB7AE /* PreDefined */ = {
+			isa = PBXGroup;
+			children = (
+				367865FB24C98B1E008AB7AE /* LGMessageFormViewStyleDark.m */,
+				367865FC24C98B1E008AB7AE /* LGMessageFormViewStyleGreen.h */,
+				367865FD24C98B1E008AB7AE /* LGMessageFormViewStyleBlue.m */,
+				367865FE24C98B1E008AB7AE /* LGMessageFormViewStyleDark.h */,
+				367865FF24C98B1E008AB7AE /* LGMessageFormViewStyleGreen.m */,
+				3678660024C98B1E008AB7AE /* LGMessageFormViewStyleBlue.h */,
+			);
+			path = PreDefined;
+			sourceTree = "<group>";
+		};
+		3678660424C98B1F008AB7AE /* MessageFormInputModel */ = {
+			isa = PBXGroup;
+			children = (
+				3678660524C98B1F008AB7AE /* LGMessageFormInputModel.m */,
+				3678660624C98B1F008AB7AE /* LGMessageFormInputModel.h */,
+			);
+			path = MessageFormInputModel;
+			sourceTree = "<group>";
+		};
+		3678660724C98B1F008AB7AE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3678660824C98B1F008AB7AE /* LGMessageFormViewService.m */,
+				3678660924C98B1F008AB7AE /* LGMessageFormViewController.m */,
+				3678660A24C98B1F008AB7AE /* LGMessageFormCategoryViewController.h */,
+				3678660B24C98B1F008AB7AE /* LGMessageFormViewService.h */,
+				3678660C24C98B1F008AB7AE /* LGMessageFormViewController.h */,
+				3678660D24C98B1F008AB7AE /* LGMessageFormCategoryViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3678660E24C98B1F008AB7AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3678660F24C98B1F008AB7AE /* LGMessageFormTextView */,
+				3678661224C98B1F008AB7AE /* LGMessageFromImageView */,
+				3678661524C98B1F008AB7AE /* LGMessageFormImageCell */,
+				3678661824C98B1F008AB7AE /* LGMessageFormInputView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3678660F24C98B1F008AB7AE /* LGMessageFormTextView */ = {
+			isa = PBXGroup;
+			children = (
+				3678661024C98B1F008AB7AE /* LGMessageFormTextView.m */,
+				3678661124C98B1F008AB7AE /* LGMessageFormTextView.h */,
+			);
+			path = LGMessageFormTextView;
+			sourceTree = "<group>";
+		};
+		3678661224C98B1F008AB7AE /* LGMessageFromImageView */ = {
+			isa = PBXGroup;
+			children = (
+				3678661324C98B1F008AB7AE /* LGMessageFormImageView.h */,
+				3678661424C98B1F008AB7AE /* LGMessageFormImageView.m */,
+			);
+			path = LGMessageFromImageView;
+			sourceTree = "<group>";
+		};
+		3678661524C98B1F008AB7AE /* LGMessageFormImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				3678661624C98B1F008AB7AE /* LGMessageFormImageCell.h */,
+				3678661724C98B1F008AB7AE /* LGMessageFormImageCell.m */,
+			);
+			path = LGMessageFormImageCell;
+			sourceTree = "<group>";
+		};
+		3678661824C98B1F008AB7AE /* LGMessageFormInputView */ = {
+			isa = PBXGroup;
+			children = (
+				3678661924C98B1F008AB7AE /* LGMessageFormInputView.m */,
+				3678661A24C98B1F008AB7AE /* LGMessageFormInputView.h */,
+			);
+			path = LGMessageFormInputView;
+			sourceTree = "<group>";
+		};
+		3678661B24C98B1F008AB7AE /* LaiguSDKViewInterface */ = {
+			isa = PBXGroup;
+			children = (
+				3678661C24C98B1F008AB7AE /* LGServiceToViewInterface.h */,
+				3678661D24C98B1F008AB7AE /* LGServiceToViewInterface.m */,
+			);
+			path = LaiguSDKViewInterface;
+			sourceTree = "<group>";
+		};
+		CCE9D0FD1C1812F6004E862E = {
+			isa = PBXGroup;
+			children = (
+				3678648C24C98B1E008AB7AE /* Laigu-SDK-files */,
+				CCE9D1081C1812F6004E862E /* Laigu-SDK-Demo */,
+				CCE9D13C1C181368004E862E /* Frameworks */,
+				CCE9D1221C1812F6004E862E /* Laigu-SDK-DemoTests */,
+				CCE9D12D1C1812F6004E862E /* Laigu-SDK-DemoUITests */,
+				CCE9D1071C1812F6004E862E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CCE9D1071C1812F6004E862E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CCE9D1061C1812F6004E862E /* Laigu-SDK-Demo.app */,
+				CCE9D11F1C1812F6004E862E /* Laigu-SDK-DemoTests.xctest */,
+				CCE9D12A1C1812F6004E862E /* Laigu-SDK-DemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CCE9D1081C1812F6004E862E /* Laigu-SDK-Demo */ = {
+			isa = PBXGroup;
+			children = (
+				CCE9D10C1C1812F6004E862E /* AppDelegate.h */,
+				CCE9D10D1C1812F6004E862E /* AppDelegate.m */,
+				89B5549E1FE75E8100EAC49D /* ViewController.h */,
+				89B5549F1FE75E8100EAC49D /* ViewController.m */,
+				CCE9D14B1C1813BE004E862E /* DevelopViewController.h */,
+				CCE9D14C1C1813BE004E862E /* DevelopViewController.m */,
+				CCE9D1121C1812F6004E862E /* Main.storyboard */,
+				CCE9D1151C1812F6004E862E /* Assets.xcassets */,
+				CCE9D1171C1812F6004E862E /* LaunchScreen.storyboard */,
+				CCE9D11A1C1812F6004E862E /* Info.plist */,
+				CCE9D1091C1812F6004E862E /* Supporting Files */,
+			);
+			path = "Laigu-SDK-Demo";
+			sourceTree = "<group>";
+		};
+		CCE9D1091C1812F6004E862E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E40C2C7A1D2B710300744577 /* testdata.txt */,
+				CCE9D10A1C1812F6004E862E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CCE9D1221C1812F6004E862E /* Laigu-SDK-DemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				CCE9D1251C1812F6004E862E /* Info.plist */,
+				E4275AD51DEC16400011B32B /* LGOnlineTests.m */,
+				E4275ADC1DEC41010011B32B /* LGSendTextTests.m */,
+				E4275ADA1DEC1D000011B32B /* LGInitializationTest.m */,
+				E4275ADF1DED844C0011B32B /* LGStateObserverTests.m */,
+			);
+			path = "Laigu-SDK-DemoTests";
+			sourceTree = "<group>";
+		};
+		CCE9D12D1C1812F6004E862E /* Laigu-SDK-DemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CCE9D12E1C1812F6004E862E /* Laigu_SDK_DemoUITests.m */,
+				CCE9D1301C1812F6004E862E /* Info.plist */,
+			);
+			path = "Laigu-SDK-DemoUITests";
+			sourceTree = "<group>";
+		};
+		CCE9D13C1C181368004E862E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E41DDDA51DD18DE0000B3083 /* libz.tbd */,
+				E44A5EA41D5AF47D000481E8 /* Accelerate.framework */,
+				E45CA12C1CCA33EF000B8917 /* libsqlite3.tbd */,
+				CCE9D1471C18139E004E862E /* MobileCoreServices.framework */,
+				CCE9D1451C181399004E862E /* SystemConfiguration.framework */,
+				CCE9D1431C181393004E862E /* CoreTelephony.framework */,
+				CCE9D1411C18138C004E862E /* AVFoundation.framework */,
+				CCE9D13F1C181385004E862E /* libicucore.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CCE9D1051C1812F6004E862E /* Laigu-SDK-Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCE9D1331C1812F6004E862E /* Build configuration list for PBXNativeTarget "Laigu-SDK-Demo" */;
+			buildPhases = (
+				CCE9D1021C1812F6004E862E /* Sources */,
+				CCE9D1031C1812F6004E862E /* Frameworks */,
+				CCE9D1041C1812F6004E862E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Laigu-SDK-Demo";
+			productName = "Laigu-SDK-Demo";
+			productReference = CCE9D1061C1812F6004E862E /* Laigu-SDK-Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CCE9D11E1C1812F6004E862E /* Laigu-SDK-DemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCE9D1361C1812F6004E862E /* Build configuration list for PBXNativeTarget "Laigu-SDK-DemoTests" */;
+			buildPhases = (
+				CCE9D11B1C1812F6004E862E /* Sources */,
+				CCE9D11C1C1812F6004E862E /* Frameworks */,
+				CCE9D11D1C1812F6004E862E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CCE9D1211C1812F6004E862E /* PBXTargetDependency */,
+			);
+			name = "Laigu-SDK-DemoTests";
+			productName = "Laigu-SDK-DemoTests";
+			productReference = CCE9D11F1C1812F6004E862E /* Laigu-SDK-DemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CCE9D1291C1812F6004E862E /* Laigu-SDK-DemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCE9D1391C1812F6004E862E /* Build configuration list for PBXNativeTarget "Laigu-SDK-DemoUITests" */;
+			buildPhases = (
+				CCE9D1261C1812F6004E862E /* Sources */,
+				CCE9D1271C1812F6004E862E /* Frameworks */,
+				CCE9D1281C1812F6004E862E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CCE9D12C1C1812F6004E862E /* PBXTargetDependency */,
+			);
+			name = "Laigu-SDK-DemoUITests";
+			productName = "Laigu-SDK-DemoUITests";
+			productReference = CCE9D12A1C1812F6004E862E /* Laigu-SDK-DemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CCE9D0FE1C1812F6004E862E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LG;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = Laigu;
+				TargetAttributes = {
+					CCE9D1051C1812F6004E862E = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = H22N8T6DAX;
+						ProvisioningStyle = Automatic;
+					};
+					CCE9D11E1C1812F6004E862E = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = CCE9D1051C1812F6004E862E;
+					};
+					CCE9D1291C1812F6004E862E = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = CCE9D1051C1812F6004E862E;
+					};
+				};
+			};
+			buildConfigurationList = CCE9D1011C1812F6004E862E /* Build configuration list for PBXProject "Laigu-SDK-Demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = CCE9D0FD1C1812F6004E862E;
+			productRefGroup = CCE9D1071C1812F6004E862E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CCE9D1051C1812F6004E862E /* Laigu-SDK-Demo */,
+				CCE9D11E1C1812F6004E862E /* Laigu-SDK-DemoTests */,
+				CCE9D1291C1812F6004E862E /* Laigu-SDK-DemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CCE9D1041C1812F6004E862E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCE9D1191C1812F6004E862E /* LaunchScreen.storyboard in Resources */,
+				367866AC24C98B1F008AB7AE /* LGChatViewAsset.bundle in Resources */,
+				CCE9D1161C1812F6004E862E /* Assets.xcassets in Resources */,
+				E40C2C7B1D2B710300744577 /* testdata.txt in Resources */,
+				CCE9D1141C1812F6004E862E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCE9D11D1C1812F6004E862E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCE9D1281C1812F6004E862E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CCE9D1021C1812F6004E862E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3678662624C98B1F008AB7AE /* XLPInputView.m in Sources */,
+				3678667424C98B1F008AB7AE /* LGChatBaseCell.m in Sources */,
+				3678665D24C98B1F008AB7AE /* LGBotWebViewBubbleAnswerCellModel.m in Sources */,
+				3678666324C98B1F008AB7AE /* LGBotMenuRichCellModel.m in Sources */,
+				3678668224C98B1F008AB7AE /* LGBundleUtil.m in Sources */,
+				3678667724C98B1F008AB7AE /* LGBotMenuCell.m in Sources */,
+				3678668E24C98B1F008AB7AE /* UIControl+LGControl.m in Sources */,
+				3678668024C98B1F008AB7AE /* LGTransitioningAnimation.m in Sources */,
+				3678663E24C98B1F008AB7AE /* LAIGU_FBFontSymbol.m in Sources */,
+				3678665124C98B1F008AB7AE /* LGImageMessage.m in Sources */,
+				3678669024C98B1F008AB7AE /* UIButton+LGButton.m in Sources */,
+				367866A624C98B1F008AB7AE /* LGKeyboardController.m in Sources */,
+				367866B824C98B1F008AB7AE /* LGMessageFormViewStyle.m in Sources */,
+				367866BB24C98B1F008AB7AE /* LGMessageFormViewStyleGreen.m in Sources */,
+				3678669524C98B1F008AB7AE /* LGPreChatCells.m in Sources */,
+				3678665824C98B1F008AB7AE /* LGVisialMessageFactory.m in Sources */,
+				3678663024C98B1F008AB7AE /* MASViewConstraint.m in Sources */,
+				367866B224C98B1F008AB7AE /* UIColor+LGHex.m in Sources */,
+				3678668724C98B1F008AB7AE /* LGChatRegexUtil.m in Sources */,
+				3678663524C98B1F008AB7AE /* LAIGU_MLAudioRecorder.m in Sources */,
+				3678665624C98B1F008AB7AE /* LGTextMessage.m in Sources */,
+				3678662D24C98B1F008AB7AE /* NSArray+MASAdditions.m in Sources */,
+				3678668624C98B1F008AB7AE /* LGWindowUtil.m in Sources */,
+				3678666E24C98B1F008AB7AE /* LGImageMessageCell.m in Sources */,
+				367866A724C98B1F008AB7AE /* LGToast.m in Sources */,
+				3678669924C98B1F008AB7AE /* LGChatViewController.m in Sources */,
+				3678667C24C98B1F008AB7AE /* LGBotMenuRichMessageCell.m in Sources */,
+				3678665524C98B1F008AB7AE /* LGWithDrawMessage.m in Sources */,
+				3678668824C98B1F008AB7AE /* LGChatAudioRecorder.m in Sources */,
+				3678669F24C98B1F008AB7AE /* LGEvaluationView.m in Sources */,
+				3678662424C98B1F008AB7AE /* wav.mm in Sources */,
+				367866A024C98B1F008AB7AE /* LGTabInputContentView.m in Sources */,
+				3678666624C98B1F008AB7AE /* LGTipsCellModel.m in Sources */,
+				3678666524C98B1F008AB7AE /* LGImageCellModel.m in Sources */,
+				367866C024C98B1F008AB7AE /* LGMessageFormCategoryViewController.m in Sources */,
+				3678663324C98B1F008AB7AE /* LAIGU_MLAudioMeterObserver.m in Sources */,
+				3678664224C98B1F008AB7AE /* LGChatViewStyleDark.m in Sources */,
+				3678662024C98B1F008AB7AE /* LAIGU_HPGrowingTextView.m in Sources */,
+				3678669E24C98B1F008AB7AE /* LGRecordView.m in Sources */,
+				3678669324C98B1F008AB7AE /* LGChatEmojize.m in Sources */,
+				367866B724C98B1F008AB7AE /* LGMessageFormViewManager.m in Sources */,
+				3678663124C98B1F008AB7AE /* MASViewAttribute.m in Sources */,
+				3678669824C98B1F008AB7AE /* LGPreChatSubmitViewController.m in Sources */,
+				3678663B24C98B1F008AB7AE /* LAIGU_FBSquareFontView.m in Sources */,
+				3678667B24C98B1F008AB7AE /* LGEvaluationResultCell.m in Sources */,
+				CCE9D14D1C1813BE004E862E /* DevelopViewController.m in Sources */,
+				367866C124C98B1F008AB7AE /* LGMessageFormTextView.m in Sources */,
+				3678663224C98B1F008AB7AE /* LAIGU_CustomIOSAlertView.m in Sources */,
+				3678662F24C98B1F008AB7AE /* MASConstraint.m in Sources */,
+				3678668C24C98B1F008AB7AE /* LGChatAudioPlayer.m in Sources */,
+				3678663824C98B1F008AB7AE /* LAIGU_AmrRecordWriter.m in Sources */,
+				3678661F24C98B1F008AB7AE /* LAIGU_HPTextViewInternal.m in Sources */,
+				3678662324C98B1F008AB7AE /* VoiceConverter.mm in Sources */,
+				3678665C24C98B1F008AB7AE /* LGTextCellModel.m in Sources */,
+				3678666924C98B1F008AB7AE /* LGPhotoCardCellModel.m in Sources */,
+				3678664424C98B1F008AB7AE /* LGChatViewStyleGreen.m in Sources */,
+				3678667324C98B1F008AB7AE /* LGMessageDateCell.m in Sources */,
+				3678666F24C98B1F008AB7AE /* LGFileDownloadCell.m in Sources */,
+				3678662724C98B1F008AB7AE /* XlpEmojiCell.m in Sources */,
+				3678669724C98B1F008AB7AE /* LGPreChatFormViewModel.m in Sources */,
+				367866B624C98B1F008AB7AE /* NSString+Regular.m in Sources */,
+				367866A924C98B1F008AB7AE /* LGBotWebViewController.m in Sources */,
+				3678666424C98B1F008AB7AE /* LGCardCellModel.m in Sources */,
+				3678664124C98B1F008AB7AE /* LGChatViewConfig.m in Sources */,
+				3678665B24C98B1F008AB7AE /* LGBotAnswerCellModel.m in Sources */,
+				3678667924C98B1F008AB7AE /* LGCardMessageCell.m in Sources */,
+				3678666D24C98B1F008AB7AE /* LGEventMessageCell.m in Sources */,
+				367866BD24C98B1F008AB7AE /* LGMessageFormInputModel.m in Sources */,
+				367866B424C98B1F008AB7AE /* NSString+Name.m in Sources */,
+				3678664524C98B1F008AB7AE /* LGChatViewStyle.m in Sources */,
+				3678663D24C98B1F008AB7AE /* LAIGU_FBBitmapFontView.m in Sources */,
+				3678669C24C98B1F008AB7AE /* LGRadioGroup.m in Sources */,
+				3678667624C98B1F008AB7AE /* LGTextMessageCell.m in Sources */,
+				3678666824C98B1F008AB7AE /* LGBotMenuCellModel.m in Sources */,
+				3678668F24C98B1F008AB7AE /* LGUIMaker.m in Sources */,
+				3678663C24C98B1F008AB7AE /* LAIGU_FBSquareFont.m in Sources */,
+				3678668924C98B1F008AB7AE /* LGJsonUtil.m in Sources */,
+				367866B924C98B1F008AB7AE /* LGMessageFormViewStyleDark.m in Sources */,
+				3678664F24C98B1F008AB7AE /* LGBaseMessage.m in Sources */,
+				367866A224C98B1F008AB7AE /* LGButtonGroupBar.m in Sources */,
+				3678668524C98B1F008AB7AE /* LGImageUtil.m in Sources */,
+				3678666024C98B1F008AB7AE /* LGEventCellModel.m in Sources */,
+				3678666724C98B1F008AB7AE /* LGBotMenuWebViewBubbleAnswerCellModel.m in Sources */,
+				3678662E24C98B1F008AB7AE /* View+MASAdditions.m in Sources */,
+				3678664924C98B1F008AB7AE /* LGBotMenuMessage.m in Sources */,
+				3678662B24C98B1F008AB7AE /* MASConstraintMaker.m in Sources */,
+				3678666C24C98B1F008AB7AE /* LGTipsCell.m in Sources */,
+				3678665224C98B1F008AB7AE /* LGEventMessageFactory.m in Sources */,
+				367866C524C98B1F008AB7AE /* LGServiceToViewInterface.m in Sources */,
+				3678667A24C98B1F008AB7AE /* LGBotAnswerCell.m in Sources */,
+				3678664D24C98B1F008AB7AE /* LGMessageFactoryHelper.m in Sources */,
+				367866A424C98B1F008AB7AE /* LGBottomBar.m in Sources */,
+				367866BF24C98B1F008AB7AE /* LGMessageFormViewController.m in Sources */,
+				3678664724C98B1F008AB7AE /* LGCustomizedUIText.m in Sources */,
+				367866A124C98B1F008AB7AE /* LGInputContentView.m in Sources */,
+				3678662124C98B1F008AB7AE /* LGAGEmojiKeyBoardView.m in Sources */,
+				3678668D24C98B1F008AB7AE /* LGChatFileUtil.m in Sources */,
+				3678669124C98B1F008AB7AE /* LGStringSizeUtil.m in Sources */,
+				367866AA24C98B1F008AB7AE /* LGWebViewController.m in Sources */,
+				3678664C24C98B1F008AB7AE /* LGCardMessage.m in Sources */,
+				3678667F24C98B1F008AB7AE /* LGAnimatorPush.m in Sources */,
+				3678669224C98B1F008AB7AE /* LGAssetUtil.m in Sources */,
+				3678669D24C98B1F008AB7AE /* LGRadioButton.m in Sources */,
+				3678667824C98B1F008AB7AE /* LGPhotoCardMessageCell.m in Sources */,
+				367866AD24C98B1F008AB7AE /* UIViewController+LGOrientationFix.m in Sources */,
+				3678667D24C98B1F008AB7AE /* LGVoiceMessageCell.m in Sources */,
+				3678665A24C98B1F008AB7AE /* LGRichTextViewModel.m in Sources */,
+				CCE9D10E1C1812F6004E862E /* AppDelegate.m in Sources */,
+				3678666A24C98B1F008AB7AE /* LGVoiceCellModel.m in Sources */,
+				3678662824C98B1F008AB7AE /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				3678662224C98B1F008AB7AE /* LGAGEmojiPageView.m in Sources */,
+				3678663424C98B1F008AB7AE /* LAIGU_CafRecordWriter.m in Sources */,
+				3678662924C98B1F008AB7AE /* ViewController+MASAdditions.m in Sources */,
+				3678665724C98B1F008AB7AE /* LGVoiceMessage.m in Sources */,
+				367866B324C98B1F008AB7AE /* NSNull+LGSafe.m in Sources */,
+				3678664E24C98B1F008AB7AE /* LGPhotoCardMessage.m in Sources */,
+				3678669B24C98B1F008AB7AE /* LGChatViewTableDataSource.m in Sources */,
+				3678669624C98B1F008AB7AE /* LGPreChatFormListViewController.m in Sources */,
+				367866C224C98B1F008AB7AE /* LGMessageFormImageView.m in Sources */,
+				367866BC24C98B1F008AB7AE /* LGMessageFormConfig.m in Sources */,
+				3678662A24C98B1F008AB7AE /* MASCompositeConstraint.m in Sources */,
+				3678663A24C98B1F008AB7AE /* LAIGU_FBBitmapFont.m in Sources */,
+				CCE9D10B1C1812F6004E862E /* main.m in Sources */,
+				3678665024C98B1F008AB7AE /* LGBotAnswerMessage.m in Sources */,
+				3678668124C98B1F008AB7AE /* LGShareTransitioningDelegateImpl.m in Sources */,
+				89B554A01FE75E8100EAC49D /* ViewController.m in Sources */,
+				367866B024C98B1F008AB7AE /* NSError+LGConvenient.m in Sources */,
+				367866BE24C98B1F008AB7AE /* LGMessageFormViewService.m in Sources */,
+				367866A324C98B1F008AB7AE /* LGRecorderView.m in Sources */,
+				3678668324C98B1F008AB7AE /* LGDateFormatterUtil.m in Sources */,
+				3678664B24C98B1F008AB7AE /* LGBotRichTextMessage.m in Sources */,
+				3678664024C98B1F008AB7AE /* LAIGU_FBLCDFont.m in Sources */,
+				3678669A24C98B1F008AB7AE /* LGChatTableView.m in Sources */,
+				3678665F24C98B1F008AB7AE /* LGWebViewBubbleCellModel.m in Sources */,
+				3678663F24C98B1F008AB7AE /* LAIGU_FBLCDFontView.m in Sources */,
+				3678666124C98B1F008AB7AE /* LGMessageDateCellModel.m in Sources */,
+				3678663924C98B1F008AB7AE /* LAIGU_TTTAttributedLabel.m in Sources */,
+				3678665E24C98B1F008AB7AE /* LGFileDownloadCellModel.m in Sources */,
+				3678665924C98B1F008AB7AE /* LGEvaluationResultCellModel.m in Sources */,
+				3678669424C98B1F008AB7AE /* LGChatViewService.m in Sources */,
+				3678667E24C98B1F008AB7AE /* LGBotMenuWebViewBubbleAnswerCell.m in Sources */,
+				3678668B24C98B1F008AB7AE /* LGToolUtil.m in Sources */,
+				367866B524C98B1F008AB7AE /* UIView+LGLayout.m in Sources */,
+				3678662C24C98B1F008AB7AE /* MASLayoutConstraint.m in Sources */,
+				367866C424C98B1F008AB7AE /* LGMessageFormInputView.m in Sources */,
+				3678667524C98B1F008AB7AE /* LGRichTextViewCell.m in Sources */,
+				3678665424C98B1F008AB7AE /* LGRichTextMessage.m in Sources */,
+				3678664324C98B1F008AB7AE /* LGChatViewStyleBlue.m in Sources */,
+				3678662524C98B1F008AB7AE /* amrFileCodec.mm in Sources */,
+				367866A524C98B1F008AB7AE /* LGRefresh.m in Sources */,
+				367866BA24C98B1F008AB7AE /* LGMessageFormViewStyleBlue.m in Sources */,
+				3678668A24C98B1F008AB7AE /* LGTypeTag.m in Sources */,
+				3678667124C98B1F008AB7AE /* LGWebViewBubbleCell.m in Sources */,
+				367866AB24C98B1F008AB7AE /* LGImageViewerViewController.m in Sources */,
+				3678667224C98B1F008AB7AE /* LGBotWebViewBubbleAnswerCell.m in Sources */,
+				3678666224C98B1F008AB7AE /* LGBotMenuAnswerCellModel.m in Sources */,
+				3678666B24C98B1F008AB7AE /* LGBotMenuAnswerCell.m in Sources */,
+				3678664A24C98B1F008AB7AE /* LGBotMessageFactory.m in Sources */,
+				3678667024C98B1F008AB7AE /* LGEvaluationCell.m in Sources */,
+				3678664824C98B1F008AB7AE /* LGFileDownloadMessage.m in Sources */,
+				367866AE24C98B1F008AB7AE /* UIImage+LGGenerate.m in Sources */,
+				3678665324C98B1F008AB7AE /* LGEventMessage.m in Sources */,
+				367866AF24C98B1F008AB7AE /* NSArray+LGFunctional.m in Sources */,
+				3678668424C98B1F008AB7AE /* LGChatDeviceUtil.m in Sources */,
+				3678664624C98B1F008AB7AE /* LGChatViewManager.m in Sources */,
+				367866B124C98B1F008AB7AE /* UIViewController+LGHieriachy.m in Sources */,
+				367866C324C98B1F008AB7AE /* LGMessageFormImageCell.m in Sources */,
+				367866A824C98B1F008AB7AE /* LGEmbededWebView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCE9D11B1C1812F6004E862E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4275ADD1DEC41010011B32B /* LGSendTextTests.m in Sources */,
+				E4275AD91DEC1B5F0011B32B /* LGOnlineTests.m in Sources */,
+				E4275ADB1DEC1D000011B32B /* LGInitializationTest.m in Sources */,
+				E4275AE01DED844C0011B32B /* LGStateObserverTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCE9D1261C1812F6004E862E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCE9D12F1C1812F6004E862E /* Laigu_SDK_DemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CCE9D1211C1812F6004E862E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CCE9D1051C1812F6004E862E /* Laigu-SDK-Demo */;
+			targetProxy = CCE9D1201C1812F6004E862E /* PBXContainerItemProxy */;
+		};
+		CCE9D12C1C1812F6004E862E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CCE9D1051C1812F6004E862E /* Laigu-SDK-Demo */;
+			targetProxy = CCE9D12B1C1812F6004E862E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CCE9D1121C1812F6004E862E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCE9D1131C1812F6004E862E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CCE9D1171C1812F6004E862E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCE9D1181C1812F6004E862E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CCE9D1311C1812F6004E862E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CCE9D1321C1812F6004E862E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CCE9D1341C1812F6004E862E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEPLOYMENT_POSTPROCESSING = NO;
+				DEVELOPMENT_TEAM = H22N8T6DAX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					"$(SRCROOT)/../Laigu-SDK-files",
+					"$(PROJECT_DIR)/../Laigu-SDK-files",
+					"$(PROJECT_DIR)/LaiguSDK",
+				);
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = "Laigu-SDK-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../Laigu-SDK-files/LGChatViewController/Vendors/MLAudioRecorder/amr_en_de/**",
+					"$(PROJECT_DIR)/LaiguSDK/LGChatViewController/Vendors/MLAudioRecorder/amr_en_de/lib",
+				);
+				MARKETING_VERSION = 3.6.0;
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = com.laigu.sdk.test.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 arm64";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		CCE9D1351C1812F6004E862E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DEVELOPMENT_TEAM = H22N8T6DAX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					"$(SRCROOT)/../Laigu-SDK-files",
+					"$(PROJECT_DIR)/../Laigu-SDK-files",
+					"$(PROJECT_DIR)/LaiguSDK",
+				);
+				INFOPLIST_FILE = "Laigu-SDK-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../Laigu-SDK-files/LGChatViewController/Vendors/MLAudioRecorder/amr_en_de/**",
+					"$(PROJECT_DIR)/LaiguSDK/LGChatViewController/Vendors/MLAudioRecorder/amr_en_de/lib",
+				);
+				MARKETING_VERSION = 3.6.0;
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = com.laigu.sdk.test.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 arm64";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		CCE9D1371C1812F6004E862E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					"$(SRCROOT)/../Laigu-SDK-files",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "Laigu-SDK-DemoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ijinmao.Laigu-SDK-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Laigu-SDK-Demo.app/Laigu-SDK-Demo";
+			};
+			name = Debug;
+		};
+		CCE9D1381C1812F6004E862E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					"$(SRCROOT)/../Laigu-SDK-files",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "Laigu-SDK-DemoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ijinmao.Laigu-SDK-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Laigu-SDK-Demo.app/Laigu-SDK-Demo";
+			};
+			name = Release;
+		};
+		CCE9D13A1C1812F6004E862E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Laigu-SDK-DemoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ijinmao.Laigu-SDK-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Laigu-SDK-Demo";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		CCE9D13B1C1812F6004E862E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Laigu-SDK-DemoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ijinmao.Laigu-SDK-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Laigu-SDK-Demo";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CCE9D1011C1812F6004E862E /* Build configuration list for PBXProject "Laigu-SDK-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCE9D1311C1812F6004E862E /* Debug */,
+				CCE9D1321C1812F6004E862E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCE9D1331C1812F6004E862E /* Build configuration list for PBXNativeTarget "Laigu-SDK-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCE9D1341C1812F6004E862E /* Debug */,
+				CCE9D1351C1812F6004E862E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCE9D1361C1812F6004E862E /* Build configuration list for PBXNativeTarget "Laigu-SDK-DemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCE9D1371C1812F6004E862E /* Debug */,
+				CCE9D1381C1812F6004E862E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCE9D1391C1812F6004E862E /* Build configuration list for PBXNativeTarget "Laigu-SDK-DemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCE9D13A1C1812F6004E862E /* Debug */,
+				CCE9D13B1C1812F6004E862E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CCE9D0FE1C1812F6004E862E /* Project object */;
+}

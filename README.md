@@ -5,8 +5,6 @@ permalink: /docs/laigu-ios-sdk/
 edition: m2020
 ---
 
-#LaiGuSDK [![](https://github.com/laigukf/LaiguSDK-iOS)]() [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![GitHub release](https://img.shields.io/github/release/meiqia/LaiguSDK-iOS.svg)](https://github.com/laigukf/LaiguSDK-iOS/releases)
-
 > 在您阅读此文档之前，我们假定您已经具备了基础的 iOS 应用开发经验，并能够理解相关基础概念。
 
 > 请您首先把文档全部仔细阅读完毕,再进行您的开发
@@ -341,7 +339,7 @@ LGChatViewManager *chatViewManager = [[LGChatViewManager alloc] init];
 	<string>en</string>
 </array>
 ```
-开源聊天界面的更多配置，可参见 [LGChatViewManager.h](https://github.com/Laigu/LGChatViewController/blob/master/LGChatViewControllerDemo/LGChatViewController/Config/LGChatViewManager.h) 文件。
+开源聊天界面的更多配置，可参见 [LGChatViewManager.h](https://github.com/laigukf/LaiguSDK-iOS/blob/master/Laigu-SDK-files/LGChatViewController/Config/LGChatViewManager.h) 文件。
 
 # 四 来鼓 API 接口介绍
 
@@ -406,7 +404,7 @@ LGChatViewManager *chatViewManager = [[LGChatViewManager alloc] init];
 
 ### 监听顾客上线成功后的广播
 
-开发者可监听顾客上线成功的广播，在上线成功后，可上传该顾客的自定义信息等操作。广播的名字为 `LG_CLIENT_ONLINE_SUCCESS_NOTIFICATION`，定义在 [LGDefinition.h](https://github.com/laigukf/LaiguSDK-iOS/blob/master/Laigu-SDK-Demo/LaiGuSDK.framework/Headers/LGDefinition.h) 中。
+开发者可监听顾客上线成功的广播，在上线成功后，可上传该顾客的自定义信息等操作。广播的名字为 `LG_CLIENT_ONLINE_SUCCESS_NOTIFICATION`，定义在 [LGDefinition.h](https://github.com/laigukf/LaiguSDK-iOS/blob/master/Laigu-SDK-files/LaiGuSDK.framework/Headers/LGDefinition.h) 中。
 
 ### 获取当前顾客 id
 
@@ -447,9 +445,9 @@ NSString *clientId = [LGManager setClientOffline];
 
 ### 监听收到消息的广播
 
-开发者可在合适的地方，监听收到消息的广播，用于提醒顾客有新消息。广播的名字为 `LG_RECEIVED_NEW_MESSAGES_NOTIFICATION`，定义在 [LGDefinition.h](https://github.com/laigukf/LaiguSDK-iOS/blob/master/Laigu-SDK-Demo/LaiGuSDK.framework/Headers/LGDefinition.h) 中。
+开发者可在合适的地方，监听收到消息的广播，用于提醒顾客有新消息。广播的名字为 `LG_RECEIVED_NEW_MESSAGES_NOTIFICATION`，定义在 [LGDefinition.h](https://github.com/laigukf/LaiguSDK-iOS/blob/master/Laigu-SDK-files/LaiGuSDK.framework/Headers/LGDefinition.h) 中。
 
-开发者可获取广播中的userInfo，来获取收到的消息数组，数组中是来鼓消息 [LGMessage](https://github.com/laigukf/LaiguSDK-iOS/blob/master/Laigu-SDK-Demo/LaiGuSDK.framework/Headers/LGMessage.h) 实体，例如：`[notification.userInfo objectForKey:@"messages"]`
+开发者可获取广播中的userInfo，来获取收到的消息数组，数组中是来鼓消息 [LGMessage](https://github.com/laigukf/LaiguSDK-iOS/blob/master/Laigu-SDK-files/LaiGuSDK.framework/Headers/LGMessage.h) 实体，例如：`[notification.userInfo objectForKey:@"messages"]`
 
 **注意**，如果顾客退出聊天界面，开发者没有调用设置顾客离线接口的话，以后该顾客收到新消息，仍能收到`有新消息的广播`。
 
@@ -804,9 +802,6 @@ VoiceConvert |  N/A | AMR 和 WAV 语音格式的互转；没找到出处，哪�
 
 # 九 更新日志
 
-**v3.6.0  2020 年 7 月 16 日**
+**v3.6.0  2020 年 8 月 18 日**
 
-* 新增敏感词汇过滤功能
-* 新增红包/优惠券类消息
-* 修复其他三方机器人hybrid类型消息解析不出来问题
-* 修复一些bug
+* 发布来鼓SDK

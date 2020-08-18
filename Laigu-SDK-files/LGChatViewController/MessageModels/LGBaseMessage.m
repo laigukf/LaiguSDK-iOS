@@ -2,8 +2,8 @@
 //  LGBaseMessage.m
 //  LGChatViewControllerDemo
 //
-//  Created by ijinmao on 15/10/30.
-//  Copyright © 2015年 ijinmao. All rights reserved.
+//  Created by zhangshunxing on 15/10/30.
+//  Copyright © 2015年 zhangshunxing. All rights reserved.
 //
 
 #import "LGBaseMessage.h"

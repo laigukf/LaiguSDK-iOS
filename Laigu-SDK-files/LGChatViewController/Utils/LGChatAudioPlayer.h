@@ -2,8 +2,8 @@
 //  LGChatAudioPlayer.h
 //  LGChatViewControllerDemo
 //
-//  Created by ijinmao on 15/11/2.
-//  Copyright © 2015年 ijinmao. All rights reserved.
+//  Created by zhangshunxing on 15/11/2.
+//  Copyright © 2015年 zhangshunxing. All rights reserved.
 //
 
 //此代码是基于UUAVAudioPlayer改写的，详见：https://github.com/ZhipingYang/UUChatTableView/blob/master/UUChat/UUAVAudioPlayer.h

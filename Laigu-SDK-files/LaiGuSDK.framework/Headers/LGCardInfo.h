@@ -2,7 +2,7 @@
 //  LGCardInfo.h
 //  LaiGuSDK
 //
-//  Created by qipeng_yuhao on 2020/5/25.
+//  Created by zhangshunxing on 2020/5/25.
 //  Copyright © 2020 LaiGu Inc. All rights reserved.
 //
 

@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.license          = 'MIT'
   s.author           = { "laigu" => "laigukf@gmail.com" }
   s.source           = { :git => "https://github.com/laigukf/LaiguSDK-iOS.git", :tag => "v3.6.0" }
-  s.social_media_url = "http://laigukf.com"
+  s.social_media_url = "https://app.laigukf.com"
   s.documentation_url = "https://github.com/laigukf/LaiguSDK-iOS/wiki"
   s.platform     = :ios, '8.0'
   s.requires_arc = true

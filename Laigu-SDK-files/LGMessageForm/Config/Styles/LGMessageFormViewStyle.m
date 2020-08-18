@@ -2,8 +2,8 @@
 //  LGMessageFormViewStyle.m
 //  LGChatViewControllerDemo
 //
-//  Created by bingoogol on 16/5/11.
-//  Copyright © 2016年 ijinmao. All rights reserved.
+//  Created by zhangshunxing on 16/5/11.
+//  Copyright © 2016年 zhangshunxing. All rights reserved.
 //
 
 #import "LGMessageFormViewStyle.h"

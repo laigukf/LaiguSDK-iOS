@@ -2,7 +2,7 @@
 //  LGManager.h
 //  LaiGuSDK
 //
-//  Created by dingnan on 15/10/27.
+//  Created by zhangshunxing on 15/10/27.
 //  Copyright © 2015年 LaiGu Inc. All rights reserved.
 //
 
@@ -54,6 +54,9 @@
 
 /// 获取当前的状态
 + (LGState)getCurrentState;
+
+/// 获取当前顾客是否分配了聊天
++ (BOOL)haveConversation;
 
 /**
  *  开启来鼓服务

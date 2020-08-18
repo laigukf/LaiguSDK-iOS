@@ -2,7 +2,7 @@
 //  LGEnterprise.h
 //  LaiGuSDK
 //
-//  Created by Injoy on 15/10/27.
+//  Created by zhangshunxing on 15/10/27.
 //  Copyright © 2015年 LaiGu Inc. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  LGChatBaseCell.h
 //  LaiGuSDK
 //
-//  Created by ijinmao on 15/10/29.
+//  Created by zhangshunxing on 15/10/29.
 //  Copyright © 2015年 LaiGu Inc. All rights reserved.
 //
 
@@ -73,7 +73,8 @@
 /**
  重新加载制定 cell
  */
-- (void)reloadCellAsContentUpdated:(UITableViewCell *)cell;
+- (void)reloadCellAsContentUpdated:(UITableViewCell *)cell messageId:(NSString *)messageId;
+
 
 /**
  删除cell

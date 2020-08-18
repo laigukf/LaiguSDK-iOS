@@ -193,9 +193,6 @@ github "laigukf/LaiguSDK-iOS"
 
 ##  添加自定义信息
 
-功能效果展示：
-![来鼓工作台顾客自定义信息图片]()
-
 为了让客服能更准确帮助用户，开发者可上传不同用户的属性信息。示例如下：
 
 ```objc
@@ -364,21 +361,6 @@ LGChatViewManager *chatViewManager = [[LGChatViewManager alloc] init];
 [LGManager initWithAppkey:@"开发者注册的App的AppKey" completion:^(NSString *clientId, NSError *error) {
 }];
 ```
-
-### 注册设备的 deviceToken
-
-来鼓需要获取每个设备的 deviceToken，才能在 App 进入后台以后，推送消息给开发者的服务端。消息数据中有 deviceToken 字段，开发者获取到后，可通知 APNS 推送给该设备。
-
-在 AppDelegate.m中的系统回调 `didRegisterForRemoteNotificationsWithDeviceToken` 中，调用上传 deviceToken 接口：
-
-```objc
-[LGManager registerDeviceToken:deviceToken];
-```
-
-### 关闭来鼓推送
-
-详细介绍请见 [消息推送](#7-消息推送)。
-
 
 ### 指定分配客服和客服组接口
 
@@ -741,15 +723,10 @@ messageFormViewManager.messageFormViewStyle.navTitleColor = [UIColor orangeColor
 ## SDK 初始化失败
 
 ### 1. 来鼓的 AppKey 版本不正确
-当前SDK是为来鼓 3.0 提供服务，如果你使用的 AppKey 是来鼓 2.0 「经典版」的，请使用来鼓 2.0 「经典版」SDK
-
-传送门：
-
-* [新版注册入口](https://app.meiqia.com/signup)
-* [经典版注册入口](http://meiqia.com/signup)
+当前SDK是为来鼓 3.6.0 提供服务
 
 ### 2. 没有配置 NSExceptionDomains
-如果没有配置`NSExceptionDomains`，来鼓SDK会返回`LGErrorCodePlistConfigurationError`，并且在控制台中打印：`!!!来鼓 SDK Error：请开发者在 App 的 info.plist 中增加 NSExceptionDomains，具体操作方法请见「https://github.com/Laigu/LaiguSDK-iOS#info.plist设置」`。如果出现上诉情况，请 [配置NSExceptionDomains](#infoplist设置)
+如果没有配置`NSExceptionDomains`，来鼓SDK会返回`LGErrorCodePlistConfigurationError`，并且在控制台中打印：`!!!来鼓 SDK Error：请开发者在 App 的 info.plist 中增加 NSExceptionDomains，具体操作方法请见「https://github.com/laigukf/LaiguSDK-iOS#info.plist设置」`。如果出现上诉情况，请 [配置NSExceptionDomains](#infoplist设置)
 
 **注意**，如果发现添加配置后，仍然打印配置错误，请开发者检查是否错误地将配置加进了项目 Tests 的 info.plist 中去。
 
@@ -803,8 +780,6 @@ messageFormViewManager.messageFormViewStyle.navTitleColor = [UIColor orangeColor
 ## 第三方库冲突
 
 由于「聊天界面」的项目中用到了几个开源库，如果开发者使用相同的库，会产生命名空间冲突的问题。遇到此类问题，开发者可以选择删除「聊天界面 - Vendors」中的相应第三方代码。
-
-**注意**，来鼓对几个第三方库进行了自定义修改，如果开发者删除了来鼓中的 Vendors，聊天界面将会缺少我们自定义的效果，详细请移步 Github [来鼓开源聊天界面](https://github.com/Laigu/LGChatViewController#vendors---用到的第三方开源库)。
 
 ## 工作台顾客信息显示应用的名称不正确
 

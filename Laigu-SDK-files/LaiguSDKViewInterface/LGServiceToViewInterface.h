@@ -2,8 +2,8 @@
 //  LGServiceToViewInterface.h
 //  LGChatViewControllerDemo
 //
-//  Created by ijinmao on 15/11/5.
-//  Copyright © 2015年 ijinmao. All rights reserved.
+//  Created by zhangshunxing on 15/11/5.
+//  Copyright © 2015年 zhangshunxing. All rights reserved.
 //
 /**
  *  该文件的作用是：开源聊天界面调用来鼓 SDK 接口的中间层，目的是剥离开源界面中的来鼓业务逻辑。这样就能让该聊天界面用于非来鼓项目中，开发者只需要实现 `LGServiceToViewInterface` 中的方法，即可将自己项目的业务逻辑和该聊天界面对接。
@@ -252,6 +252,13 @@
  *
  */
 + (BOOL)isThereAgent;
+
+
+/**
+ *  当前是否有分配对话
+ *
+ */
++ (BOOL)haveConversation;
 
 /**
  *  下载多媒体消息的多媒体内容

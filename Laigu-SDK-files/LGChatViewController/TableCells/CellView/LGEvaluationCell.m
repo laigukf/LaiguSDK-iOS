@@ -2,8 +2,8 @@
 //  LGEvaluationCell.m
 //  LGChatViewControllerDemo
 //
-//  Created by ijinmao on 16/1/19.
-//  Copyright © 2016年 ijinmao. All rights reserved.
+//  Created by zhangshunxing on 16/1/19.
+//  Copyright © 2016年 zhangshunxing. All rights reserved.
 //
 
 #import "LGEvaluationCell.h"

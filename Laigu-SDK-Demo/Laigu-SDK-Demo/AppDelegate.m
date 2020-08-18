@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  LGEcoboostSDK-test
 //
-//  Created by ijinmao on 15/11/11.
-//  Copyright © 2015年 ijinmao. All rights reserved.
+//  Created by zhangshunxing on 15/11/11.
+//  Copyright © 2015年 zhangshunxing. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -59,17 +59,7 @@
     [LGManager closeLaiguService];
 }
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    #pragma mark  集成第四步: 上传设备deviceToken
-    [LGManager registerDeviceToken:deviceToken];
-    
-    /*  swift 项目这样处理
-     let devicetokenStr = (NSData.init(data: deviceToken).description as NSString).trimmingCharacters(in: NSCharacterSet(charactersIn: "<>") as CharacterSet).replacingOccurrences(of: " ", with: "", options: .literal, range: nil)
-     LGManager.registerDeviceTokenString(devicetokenStr)
-     */
-    
 }
-
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
 }

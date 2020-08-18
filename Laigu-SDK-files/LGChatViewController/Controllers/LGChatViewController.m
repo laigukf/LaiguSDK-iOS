@@ -2,7 +2,7 @@
 //  LGChatViewController.m
 //  LaiGuSDK
 //
-//  Created by ijinmao on 15/10/28.
+//  Created by zhangshunxing on 15/10/28.
 //  Copyright © 2015年 LaiGu Inc. All rights reserved.
 //
 
@@ -39,6 +39,7 @@
 #import "LGChatViewManager.h"
 #import <LaiGuSDK/LGManager.h>
 #import "XLPInputView.h"
+#import "LGCellModelProtocol.h"
 static CGFloat const kLGChatViewInputBarHeight = 80.0;
 
 @interface LGChatViewController () <UITableViewDelegate, LGChatViewServiceDelegate, LGBottomBarDelegate, UIImagePickerControllerDelegate, LGChatTableViewDelegate, LGChatCellDelegate, LGServiceToViewInterfaceErrorDelegate,UINavigationControllerDelegate, LGEvaluationViewDelegate, LGInputContentViewDelegate, LGKeyboardControllerDelegate, LGRecordViewDelegate, LGRecorderViewDelegate,XLPInputViewDelegate>
@@ -74,7 +75,7 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
     BOOL openVisitorNoMessageBool; // 默认值 在presentUI里分2种情况初始化 在发送各种消息前检测 若为真 打开 则需手动上线  若为假 则不做操作
     
     BOOL shouldSendInputtingMessageToServer;
-
+    
 }
 
 - (void)dealloc {
@@ -83,7 +84,7 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
     [self.chatViewService setCurrentInputtingText:[(LGTabInputContentView *)self.bottomBar.contentView textField].text];
     [self closeLaiguChatView];
     [LGCustomizedUIText reset];
-
+    
 }
 
 - (instancetype)initWithChatViewManager:(LGChatViewConfig *)config {
@@ -133,7 +134,7 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
     
     shouldSendInputtingMessageToServer = YES;
     
-
+    
 }
 
 - (void)presentUI {
@@ -142,11 +143,11 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
         
         // 询前表单界面返回的数据，如果未进入表单，则为空,如果进入表单则userInfo为表单提交信息
         /**
-           {
-               menu = "价格";
-               target = dbd2e3a951bb7563873e9223073c5149;
-               targetType = agent;
-           }
+         {
+         menu = "价格";
+         target = dbd2e3a951bb7563873e9223073c5149;
+         targetType = agent;
+         }
          */
         NSString *targetType = userInfo[@"targetType"];
         NSString *target = userInfo[@"target"];
@@ -162,15 +163,15 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
             [LGChatViewConfig sharedConfig].preSendMessages = m;
         }
         // TODO: [LGServiceToViewInterface prepareForChat]也会初始化企业配置，这里会导致获取企业配置的接口调用两次,APP第一次初始化时会调3次
-        [LGServiceToViewInterface getEnterpriseConfigInfoWithCache:NO complete:^(LGEnterprise *enterprise, NSError *e) {
+        [LGServiceToViewInterface getEnterpriseConfigInfoWithCache:YES complete:^(LGEnterprise *enterprise, NSError *e) {
             
             // warning:用之前的绑定的clientId上线,防止出现排队现象
             // 企业配置字段scheduler_after_client_send_msg：客户（访客）是否开启无响应时消息
-            if (enterprise.configInfo.isScheduleAfterClientSendMessage && ![LGManager getLoginStatus]) {
-               
+            if (enterprise.configInfo.isScheduleAfterClientSendMessage && ![LGServiceToViewInterface haveConversation]) {
+                
                 // 设置head title
                 [self updateNavTitleWithAgentName:enterprise.configInfo.public_nickname ?: @"官方客服" agentStatus:LGChatAgentStatusNone];
-              
+                
                 // 设置欢迎语 设置企业头像
                 NSString *welcomeStr = enterprise.configInfo.enterpriseIntro;
                 NSString *str = [welcomeStr stringByReplacingOccurrencesOfString:@" " withString:@""];
@@ -187,6 +188,7 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
                     message.userName = enterprise.configInfo.public_nickname;
                     message.userAvatarPath = enterprise.configInfo.avatar;
                     message.sendStatus = LGChatMessageSendStatusSuccess;
+                    message.content = enterprise.configInfo.enterpriseIntro;
                     LGWebViewBubbleCellModel *cellModel = [[LGWebViewBubbleCellModel alloc] initCellModelWithMessage:message cellWidth:self.chatViewService.chatViewWidth delegate:(id <LGCellModelDelegate>)self.chatViewService];
                     
                     [self.chatViewService addCellModelAndReloadTableViewWithModel:cellModel];
@@ -223,7 +225,7 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [[NSNotificationCenter defaultCenter] postNotificationName:LGAudioPlayerDidInterruptNotification object:nil];
-
+    
     //恢复原来的导航栏时间条
     [UIApplication sharedApplication].statusBarStyle = previousStatusBarStyle;
     
@@ -349,8 +351,8 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
     [constrains addObject:[NSLayoutConstraint constraintWithItem:self.chatTableView attribute:(NSLayoutAttributeLeft) relatedBy:(NSLayoutRelationEqual) toItem:self.view attribute:(NSLayoutAttributeLeft) multiplier:1 constant:0]];
     [constrains addObject:[NSLayoutConstraint constraintWithItem:self.chatTableView attribute:(NSLayoutAttributeRight) relatedBy:(NSLayoutRelationEqual) toItem:self.view attribute:(NSLayoutAttributeRight) multiplier:1 constant:0]];
     [constrains addObject:[NSLayoutConstraint constraintWithItem:self.chatTableView attribute:(NSLayoutAttributeBottom) relatedBy:(NSLayoutRelationEqual) toItem:self.bottomBar attribute:(NSLayoutAttributeTop) multiplier:1 constant:0]];
-   
-
+    
+    
     
     self.constraintInputBarBottom = [NSLayoutConstraint constraintWithItem:self.view attribute:(NSLayoutAttributeBottom) relatedBy:(NSLayoutRelationEqual) toItem:self.bottomBar attribute:(NSLayoutAttributeBottom) multiplier:1 constant: (LGToolUtil.kXlpObtainDeviceVersionIsIphoneX > 0 ? 34 : 0)];
     
@@ -365,7 +367,7 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
 
 - (NSArray *)addFitWidthConstraintsToView:(UIView *)innerView onTo:(UIView *)outterView {
     return @[[NSLayoutConstraint constraintWithItem:innerView attribute:NSLayoutAttributeWidth relatedBy:(NSLayoutRelationEqual) toItem:outterView attribute:(NSLayoutAttributeWidth) multiplier:1 constant:0],
-    [NSLayoutConstraint constraintWithItem:innerView attribute:NSLayoutAttributeCenterX relatedBy:(NSLayoutRelationEqual) toItem:outterView attribute:(NSLayoutAttributeCenterX) multiplier:1 constant:0]];
+             [NSLayoutConstraint constraintWithItem:innerView attribute:NSLayoutAttributeCenterX relatedBy:(NSLayoutRelationEqual) toItem:outterView attribute:(NSLayoutAttributeCenterX) multiplier:1 constant:0]];
 }
 
 #pragma 添加消息通知的observer
@@ -382,15 +384,6 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
 
 - (void)didTapChatTableView:(UITableView *)tableView {
     [self.view endEditing:true];
-}
-
-// TODO crash
-- (void)reloadCellAsContentUpdated:(UITableViewCell *)cell {
-//    NSIndexPath *indexPath = [self.chatTableView indexPathForCell: cell];
-//    if (indexPath) {
-//        [self.chatTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation: UITableViewRowAnimationFade];
-//    }
-    [self.chatTableView reloadData];
 }
 
 - (void)tapNavigationRightBtn:(id)sender {
@@ -414,6 +407,14 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.view endEditing:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.0000001;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.000001;
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -467,7 +468,7 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
     for (int i = 0; i < count; i ++) {
         [indexToAdd addObject:[NSIndexPath indexPathForRow:currentRow + i inSection:0]];
     }
-
+    
     [self.chatTableView insertRowsAtIndexPaths:indexToAdd withRowAnimation:UITableViewRowAnimationBottom];
 }
 
@@ -541,8 +542,8 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
 
 
 #pragma mark - LGInputBarDelegate
-// 发送文本消息
--(BOOL)sendTextMessage:(NSString*)text {
+
+- (BOOL)sendMessagePrepareWithText:(NSString *)text image:(UIImage *)image andAMRFilePath:(NSString *)filePath {
     // 判断当前顾客是否正在登陆，如果正在登陆，显示禁止发送的提示
     if (self.chatViewService.clientStatus == LGStateAllocatingAgent || [NSDate timeIntervalSinceReferenceDate] - sendTime < 1) {
         NSString *alertText = self.chatViewService.clientStatus == LGStateAllocatingAgent ? @"cannot_text_client_is_onlining" : @"send_to_fast";
@@ -553,29 +554,38 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
     
     
     if (openVisitorNoMessageBool) {
-//        [self showActivityIndicatorView];
-        [LGServiceToViewInterface prepareForChat]; //初始化
-        
         [self.view endEditing:YES];
         [self.chatViewService setClientOnline];
         
-        //延时2秒 获取所有的历史记录
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            [self dismissActivityIndicatorView];
-            [self.chatViewService onceLoadHistoryAndRefreshWithSendMsg:text];
-        });
+        if (text) {
+            [self.chatViewService cacheSendText:text];
+        } else if (image) {
+            [self.chatViewService cacheSendImage:image];
+        } else if (filePath) {
+            [self.chatViewService cacheSendAMRFilePath:filePath];
+        }
         
         openVisitorNoMessageBool = NO;
     }else{
-        [self.chatViewService sendTextMessageWithContent:text];
+        if (text) {
+            [self.chatViewService sendTextMessageWithContent:text];
+        } else if (image) {
+            [self.chatViewService sendImageMessageWithImage:image];
+        } else if (filePath) {
+            [self.chatViewService sendVoiceMessageWithAMRFilePath:filePath];
+        }
         sendTime = [NSDate timeIntervalSinceReferenceDate];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                   [self chatTableViewScrollToBottomWithAnimated:YES];
-               });
+            [self chatTableViewScrollToBottomWithAnimated:YES];
+        });
     }
-    
-
     return YES;
+}
+
+// 发送文本消息
+-(BOOL)sendTextMessage:(NSString*)text {
+    // 判断当前顾客是否正在登陆，如果正在登陆，显示禁止发送的提示
+    return [self sendMessagePrepareWithText:text image:nil andAMRFilePath:nil];
 }
 
 -(void)sendImageWithSourceType:(UIImagePickerControllerSourceType)sourceType {
@@ -608,13 +618,13 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
 
 - (void)inputContentTextDidChange:(NSString *)newString {
     if ([LGManager getCurrentState] == LGStateAllocatedAgent){
-
+        
         if (shouldSendInputtingMessageToServer && newString.length > 0) {
             shouldSendInputtingMessageToServer = NO;
             [self.chatViewService sendUserInputtingWithContent:newString];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 self->shouldSendInputtingMessageToServer = YES;
-
+                
             });
         }
     }
@@ -692,8 +702,9 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
 
 #pragma LGRecordViewDelegate
 - (void)didFinishRecordingWithAMRFilePath:(NSString *)filePath {
-    [self.chatViewService sendVoiceMessageWithAMRFilePath:filePath];
-    [self chatTableViewScrollToBottomWithAnimated:true];
+//    [self.chatViewService sendVoiceMessageWithAMRFilePath:filePath];
+//    [self chatTableViewScrollToBottomWithAnimated:true];
+    [self sendMessagePrepareWithText:nil image:nil andAMRFilePath:filePath];
 }
 
 - (void)didUpdateVolumeInRecordView:(UIView *)recordView volume:(CGFloat)volume {
@@ -709,8 +720,9 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
     }
     UIImage *image          =  [LGImageUtil resizeImage:[LGImageUtil fixrotation:[info objectForKey:UIImagePickerControllerOriginalImage]]maxSize:CGSizeMake(1000, 1000)];
     [picker dismissViewControllerAnimated:YES completion:^{
-        [self.chatViewService sendImageMessageWithImage:image];
-        [self chatTableViewScrollToBottomWithAnimated:true];
+//        [self.chatViewService sendImageMessageWithImage:image];
+//        [self chatTableViewScrollToBottomWithAnimated:true];
+        [self sendMessagePrepareWithText:nil image:image andAMRFilePath:nil];
     }];
 }
 
@@ -744,6 +756,20 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
 
 - (void)replaceTipCell:(UITableViewCell *)cell {
     
+}
+
+- (void)reloadCellAsContentUpdated:(UITableViewCell *)cell messageId:(NSString *)messageId {
+    [self.chatTableView reloadData];
+    id<LGCellModelProtocol> cellModel = [self.chatViewService.cellModels lastObject];
+    if ([[cellModel getCellMessageId] isEqualToString: messageId]) {
+        [self.chatTableView layoutIfNeeded];
+        __weak typeof(self) weakSelf = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSIndexPath* indexPath = [NSIndexPath indexPathForRow: ([weakSelf.chatTableView numberOfRowsInSection:([weakSelf.chatTableView numberOfSections]-1)]-1) inSection:([weakSelf.chatTableView numberOfSections]-1)];
+            
+            [weakSelf.chatTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:false];
+        });
+    }
 }
 
 - (void)deleteCell:(UITableViewCell *)cell withTipMsg:(NSString *)tipMsg enableLinesDisplay:(BOOL)enable{
@@ -796,8 +822,8 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
     //    [self.chatTableView finishLoadingTopRefreshViewWithCellNumber:0 isLoadOver:YES];
     [self.chatTableView stopAnimationCompletion:^{
         
-//        [LGToast showToast:[LGBundleUtil localizedStringForKey:@"load_history_message_error"] duration:1.0 window:self.view];
-
+        //        [LGToast showToast:[LGBundleUtil localizedStringForKey:@"load_history_message_error"] duration:1.0 window:self.view];
+        
         //后端获取信息失败，取消错误信息提示，从数据库获取历史消息
         [self.chatViewService startGettingDateBaseHistoryMessages];
         
@@ -912,10 +938,10 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
     [emoji setImage:[LGAssetUtil imageFromBundleWithName:@"emoji"] forState:(UIControlStateNormal)];
     [emoji addTarget:self action:@selector(emoji) forControlEvents:(UIControlEventTouchUpInside)];
     
-//    UIButton *send  = [[UIButton alloc] initWithFrame:rect];
-//    [send setImage:[LGAssetUtil imageFromBundleWithName:@"emoji"] forState:(UIControlStateNormal)];
-//    [send addTarget:self action:@selector(send) forControlEvents:(UIControlEventTouchUpInside)];
-
+    //    UIButton *send  = [[UIButton alloc] initWithFrame:rect];
+    //    [send setImage:[LGAssetUtil imageFromBundleWithName:@"emoji"] forState:(UIControlStateNormal)];
+    //    [send addTarget:self action:@selector(send) forControlEvents:(UIControlEventTouchUpInside)];
+    
     if ([LGChatViewConfig sharedConfig].enableSendVoiceMessage) {
         [self.bottomBar.buttonGroupBar addButton:recorderBtn];
     }
@@ -929,8 +955,8 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
         [self.bottomBar.buttonGroupBar addButton:emoji];
     }
     
-//            [self.bottomBar.buttonGroupBar addButton:send];
-
+    //            [self.bottomBar.buttonGroupBar addButton:send];
+    
 }
 
 - (BOOL)handleSendMessageAbility {
@@ -940,7 +966,7 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
         [LGToast showToast:[LGBundleUtil localizedStringForKey:@"laigu_communication_failed"] duration:2.0 window:self.view];
         return NO;
     }
-        
+    
     
     //xlp 旧的: waitingInQueuePosition>0 && getCurrentAgent].privilege != LGAgentPrivilegeBot  改为 waitingInQueuePosition>0
     if ([LGServiceToViewInterface waitingInQueuePosition] > 0 && [LGServiceToViewInterface getCurrentAgent].privilege != LGAgentPrivilegeBot) {

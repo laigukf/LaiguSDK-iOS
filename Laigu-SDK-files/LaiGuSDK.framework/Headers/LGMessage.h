@@ -2,7 +2,7 @@
 //  LGMessage.h
 //  LaiGuSDK
 //
-//  Created by dingnan on 15/10/23.
+//  Created by zhangshunxing on 15/10/23.
 //  Copyright © 2015年 LaiGu Inc. All rights reserved.
 //
 

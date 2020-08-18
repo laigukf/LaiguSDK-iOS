@@ -2,7 +2,7 @@
 //  LGStringSizeUtil.m
 //  LaiGuSDK
 //
-//  Created by ijinmao on 15/10/28.
+//  Created by zhangshunxing on 15/10/28.
 //  Copyright © 2015年 LaiGu Inc. All rights reserved.
 //
 

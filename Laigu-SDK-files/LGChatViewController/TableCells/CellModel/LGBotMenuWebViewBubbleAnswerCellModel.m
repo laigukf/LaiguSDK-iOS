@@ -2,7 +2,7 @@
 //  LGBotMenuWebViewBubbleAnswerCellModel.m
 //  Laigu-SDK-Demo
 //
-//  Created by xulianpeng on 2017/9/26.
+//  Created by zhangshunxing on 2017/9/26.
 //  Copyright © 2017年 Laigu. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  LGTicket.h
 //  LaiGuSDK
 //
-//  Created by ian luo on 16/8/2.
+//  Created by zhangshunxing on 16/8/2.
 //  Copyright © 2016年 LaiGu Inc. All rights reserved.
 //
 

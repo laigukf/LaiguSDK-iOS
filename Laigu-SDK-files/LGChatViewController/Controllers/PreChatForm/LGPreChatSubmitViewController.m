@@ -2,7 +2,7 @@
 //  LGAdviseFormSubmitViewController.m
 //  Laigu-SDK-Demo
 //
-//  Created by ian luo on 16/6/29.
+//  Created by zhangshunxing on 16/6/29.
 //  Copyright © 2016年 Laigu. All rights reserved.
 //
 
@@ -98,9 +98,18 @@
     __weak typeof(self) wself = self;
     switch (formItem.type) {
         case LGPreChatFormItemInputTypeSingleLineText:
+        case LGPreChatFormItemInputTypeSingleLineDateText:
+        case LGPreChatFormItemInputTypeSingleLineNumberText:
         {
             LGPrechatSingleLineTextCell *scell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(LGPrechatSingleLineTextCell.class) forIndexPath:indexPath];
-            scell.textField.keyboardType = [self.viewModel keyboardtypeForType:formItem.filedName];
+            if (formItem.type == LGPreChatFormItemInputTypeSingleLineDateText) {
+                scell.textField.keyboardType = UIKeyboardTypeDecimalPad;
+            } else if (formItem.type == LGPreChatFormItemInputTypeSingleLineNumberText) {
+                scell.textField.keyboardType = UIKeyboardTypeNumberPad;
+            } else {
+                scell.textField.keyboardType = [self.viewModel keyboardtypeForType:formItem.filedName];
+            }
+
             //记录用户输入
             [scell setValueChangedAction:^(NSString *newString) {
                 __strong typeof (wself) sself = wself;

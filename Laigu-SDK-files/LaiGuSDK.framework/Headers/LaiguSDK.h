@@ -2,7 +2,7 @@
 //  LaiguSDK.h
 //  LaiGuSDK
 //
-//  Created by ian luo on 16/4/6.
+//  Created by zhangshunxing on 16/4/6.
 //  Copyright © 2016年 LaiGu Inc. All rights reserved.
 //
 

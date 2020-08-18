@@ -2,7 +2,7 @@
 //  LGPreChatCells.m
 //  Laigu-SDK-Demo
 //
-//  Created by ian luo on 16/7/7.
+//  Created by zhangshunxing on 16/7/7.
 //  Copyright © 2016年 Laigu. All rights reserved.
 //
 

@@ -2,8 +2,8 @@
 //  LGEvaluationResultCellModel.h
 //  LGChatViewControllerDemo
 //
-//  Created by ijinmao on 16/3/1.
-//  Copyright © 2016年 ijinmao. All rights reserved.
+//  Created by zhangshunxing on 16/3/1.
+//  Copyright © 2016年 zhangshunxing. All rights reserved.
 //
 /**
  * LGEvaluationCellModel 定义了评价 cell 的基本类型数据，包括产生cell的内部所有view的显示数据，cell内部元素的frame等

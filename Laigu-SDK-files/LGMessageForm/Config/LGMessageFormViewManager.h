@@ -2,7 +2,7 @@
 //  LGMessageFormViewManager.h
 //  LaiGuSDK
 //
-//  Created by bingoogolapple on 16/5/8.
+//  Created by zhangshunxing on 16/5/8.
 //  Copyright © 2016年 LaiGu Inc. All rights reserved.
 //
 

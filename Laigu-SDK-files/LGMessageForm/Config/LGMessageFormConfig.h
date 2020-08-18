@@ -2,8 +2,8 @@
 //  LGMessageFormConfig.h
 //  LGChatViewControllerDemo
 //
-//  Created by bingoogolapple on 16/5/8.
-//  Copyright © 2016年 ijinmao. All rights reserved.
+//  Created by zhangshunxing on 16/5/8.
+//  Copyright © 2016年 zhangshunxing. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

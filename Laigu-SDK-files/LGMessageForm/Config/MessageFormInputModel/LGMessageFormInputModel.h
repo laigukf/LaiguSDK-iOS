@@ -2,7 +2,7 @@
 //  LGMessageFormInputModel.h
 //  LaiGuSDK
 //
-//  Created by bingoogolapple on 16/5/6.
+//  Created by zhangshunxing on 16/5/6.
 //  Copyright © 2016年 LaiGu Inc. All rights reserved.
 //
 

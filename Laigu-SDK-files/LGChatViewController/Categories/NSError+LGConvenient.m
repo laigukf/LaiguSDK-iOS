@@ -2,7 +2,7 @@
 //  NSError+LGConvenient.m
 //  Laigu-SDK-Demo
 //
-//  Created by ian luo on 2017/1/19.
+//  Created by zhangshunxing on 2017/1/19.
 //  Copyright © 2017年 Laigu. All rights reserved.
 //
 

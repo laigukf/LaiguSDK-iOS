@@ -2,8 +2,8 @@
 //  LGRadioGroup.h
 //  LGEcoboostSDK-test
 //
-//  Created by qipeng_yuhao on 2020/5/26.
-//  Copyright © 2020 ijinmao. All rights reserved.
+//  Created by zhangshunxing on 2020/5/26.
+//  Copyright © 2020 zhangshunxing. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

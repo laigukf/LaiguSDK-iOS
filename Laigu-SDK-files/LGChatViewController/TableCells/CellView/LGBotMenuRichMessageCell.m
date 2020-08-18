@@ -2,8 +2,8 @@
 //  LGNewRichText1.m
 //  LGEcoboostSDK-test
 //
-//  Created by qipeng_yuhao on 2020/5/12.
-//  Copyright © 2020 ijinmao. All rights reserved.
+//  Created by zhangshunxing on 2020/5/12.
+//  Copyright © 2020 zhangshunxing. All rights reserved.
 //
 
 #import "LGBotMenuRichMessageCell.h"
@@ -13,7 +13,6 @@
 #import "LGImageUtil.h"
 #import "LGBotMenuMessage.h"
 #import "LGBotMenuRichCellModel.h"
-#import "Masonry.h"
 
 static CGFloat const kLGBotMenuReplyTipSize = 12.0; // 查看提醒的文字大小
 static NSString * const kLGBotMenuTipText = @"点击问题或回复对应数字查看答案"; // 提示文字内容
@@ -78,7 +77,7 @@ static CGFloat const kLGBotMenuVerticalSpacingInMenus = 12.0;
         if (sself.viewModel.cachedWetViewHeight != height) {
             [sself updateUI:height];
             sself.viewModel.cachedWetViewHeight = height;
-            [sself.chatCellDelegate reloadCellAsContentUpdated:sself];
+            [sself.chatCellDelegate reloadCellAsContentUpdated:sself messageId:[sself.viewModel getCellMessageId]];
         }
     }];
     
@@ -138,18 +137,6 @@ static CGFloat const kLGBotMenuVerticalSpacingInMenus = 12.0;
     
     self.contentWebView.viewWidth = self.bubbleImageView.viewWidth - 8;
     self.contentWebView.viewX = 8;
-    
-//    [self.itemsView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(self.contentWebView.mas_bottom).mas_offset(10);
-//        make.width.left.equalTo(self.contentWebView);
-//        make.height.mas_equalTo(120);
-//    }];
-//
-//    [self.replyTipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(self.itemsView.mas_bottom).mas_offset(10);
-//        make.width.left.equalTo(self.contentWebView);
-//        make.height.mas_equalTo(16);
-//    }];
     
 }
 

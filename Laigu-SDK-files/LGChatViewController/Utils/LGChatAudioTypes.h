@@ -2,7 +2,7 @@
 //  AudioTypes.h
 //  Laigu-SDK-Demo
 //
-//  Created by ian luo on 16/4/19.
+//  Created by zhangshunxing on 16/4/19.
 //  Copyright © 2016年 Laigu. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  UIViewController_Orientation.m
 //  GrubbyWorm
 //
-//  Created by ian luo on 16/3/14.
+//  Created by zhangshunxing on 16/3/14.
 //  Copyright © 2016年 GAME-CHINA.ORG. All rights reserved.
 //
 

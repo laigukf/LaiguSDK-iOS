@@ -2,7 +2,7 @@
 //  UIImage+Generate.m
 //  AutoGang
 //
-//  Created by ian luo on 14/11/7.
+//  Created by zhangshunxing on 14/11/7.
 //  Copyright (c) 2014年 com.qcb008.QiCheApp. All rights reserved.
 //
 

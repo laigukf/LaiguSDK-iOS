@@ -2,8 +2,8 @@
 //  main.m
 //  Laigu-SDK-Demo
 //
-//  Created by ijinmao on 15/12/9.
-//  Copyright © 2015年 ijinmao. All rights reserved.
+//  Created by zhangshunxing on 15/12/9.
+//  Copyright © 2015年 zhangshunxing. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

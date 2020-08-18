@@ -2,8 +2,8 @@
 //  LGChatEmojize.m
 //  LGChatViewControllerDemo
 //
-//  Created by ijinmao on 15/11/23.
-//  Copyright © 2015年 ijinmao. All rights reserved.
+//  Created by zhangshunxing on 15/11/23.
+//  Copyright © 2015年 zhangshunxing. All rights reserved.
 //
 
 #import "LGChatEmojize.h"

@@ -2,8 +2,8 @@
 //  DevelopViewController.m
 //  LGEcoboostSDK-test
 //
-//  Created by ijinmao on 15/12/3.
-//  Copyright © 2015年 ijinmao. All rights reserved.
+//  Created by zhangshunxing on 15/12/3.
+//  Copyright © 2015年 zhangshunxing. All rights reserved.
 //
 
 #import "DevelopViewController.h"
@@ -660,7 +660,7 @@ static NSString * kSwitchShowUnreadMessageCount = @"kSwitchShowUnreadMessageCoun
     UIImage *keyboardHighlightedImage = [UIImage imageNamed:@"LGMessageTextInputHighlightedImageStyleTwo"];
     UIImage *resightKeyboardImage = [UIImage imageNamed:@"LGMessageKeyboardDownImageNormalStyleTwo"];
     UIImage *resightKeyboardHighlightedImage = [UIImage imageNamed:@"LGMessageKeyboardDownHighlightedImageStyleTwo"];
-    UIImage *avatar = [UIImage imageNamed:@"devAvatar"];
+    UIImage *avatar = [UIImage imageNamed:@"zhangshunxingAvatar"];
     
     LGChatViewStyle *chatViewStyle = [chatViewManager chatViewStyle];
     
@@ -784,7 +784,7 @@ static NSString * kSwitchShowUnreadMessageCount = @"kSwitchShowUnreadMessageCoun
     [chatViewManager.chatViewStyle setStatusBarStyle:UIStatusBarStyleLightContent];
     
     [chatViewManager setChatViewStyle:[LGChatViewStyle blueStyle]];
-    [chatViewManager.chatViewStyle setNavBackButtonImage:[[UIImage imageNamed:@"devAvatar"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+    [chatViewManager.chatViewStyle setNavBackButtonImage:[[UIImage imageNamed:@"zhangshunxingAvatar"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
     
     [chatViewManager enableShowNewMessageAlert:true];
     [chatViewManager pushLGChatViewControllerInViewController:self];

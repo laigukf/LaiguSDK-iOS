@@ -2,7 +2,7 @@
 //  LGWebViewBubbleCell.m
 //  Laigu-SDK-Demo
 //
-//  Created by ian luo on 16/9/5.
+//  Created by zhangshunxing on 16/9/5.
 //  Copyright © 2016年 Laigu. All rights reserved.
 //
 
@@ -59,7 +59,7 @@
         if (sself.viewModel.cachedWetViewHeight != height) {
             [sself updateUI:height];
             sself.viewModel.cachedWetViewHeight = height;
-            [sself.chatCellDelegate reloadCellAsContentUpdated:sself];
+            [sself.chatCellDelegate reloadCellAsContentUpdated:sself messageId:[sself.viewModel getCellMessageId]];
         }
     }];
     

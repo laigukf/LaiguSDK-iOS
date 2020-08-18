@@ -2,7 +2,7 @@
 //  NSObject+JSON.h
 //  LaiGuSDK
 //
-//  Created by ian luo on 16/4/7.
+//  Created by zhangshunxing on 16/4/7.
 //  Copyright © 2016年 LaiGu Inc. All rights reserved.
 //
 

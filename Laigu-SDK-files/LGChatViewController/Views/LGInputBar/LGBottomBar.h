@@ -2,8 +2,8 @@
 //  LGInputToolView.h
 //  Laigu
 //
-//  Created by xulianpeng on 2017/8/31.
-//  Copyright © 2017年 Injoy. All rights reserved.
+//  Created by zhangshunxing on 2017/8/31.
+//  Copyright © 2017年 zhangshunxing. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

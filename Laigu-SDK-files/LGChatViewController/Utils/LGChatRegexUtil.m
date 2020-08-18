@@ -2,8 +2,8 @@
 //  LGChatRegexUtil.m
 //  LGChatViewControllerDemo
 //
-//  Created by ijinmao on 15/11/1.
-//  Copyright © 2015年 ijinmao. All rights reserved.
+//  Created by zhangshunxing on 15/11/1.
+//  Copyright © 2015年 zhangshunxing. All rights reserved.
 //
 
 #import "LGChatRegexUtil.h"

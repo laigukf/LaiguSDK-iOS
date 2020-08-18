@@ -2,7 +2,7 @@
 //  LGChatViewService.m
 //  LaiGuSDK
 //
-//  Created by ijinmao on 15/10/28.
+//  Created by zhangshunxing on 15/10/28.
 //  Copyright © 2015年 LaiGu Inc. All rights reserved.
 //
 
@@ -61,6 +61,12 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
 @property (nonatomic, assign) BOOL noAgentTipShowed;
 
 @property (nonatomic, weak) NSTimer *positionCheckTimer;
+
+@property (nonatomic, strong) NSMutableArray *cacheTextArr;
+
+@property (nonatomic, strong) NSMutableArray *cacheImageArr;
+
+@property (nonatomic, strong) NSMutableArray *cacheFilePathArr;
 
 @end
 #else
@@ -224,6 +230,19 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
 }
 
 #pragma mark - 消息发送
+
+- (void)cacheSendText:(NSString *)text {
+    [self.cacheTextArr addObject:text];
+}
+
+- (void)cacheSendImage:(UIImage *)image {
+    [self.cacheImageArr addObject:image];
+}
+
+- (void)cacheSendAMRFilePath:(NSString *)filePath {
+    [self.cacheFilePathArr addObject:filePath];
+}
+
 /**
  * 发送文字消息
  */
@@ -1233,13 +1252,41 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
                 if (messages.count > 0) {
                     [sself saveToCellModelsWithMessages:messages isInsertAtFirstIndex:true];
                     [sself.delegate reloadChatTableView];
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                        [self scrollToButton];
-                    });
+//                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                        [self scrollToButton];
+//                    });
                 }
             }];
         }
     }
+}
+
+// 分配客服成功
+- (void)didScheduleResult:(LGClientOnlineResult)onLineResult withResultMessages:(NSArray<LGMessage *> *)message {
+    
+    // 让UI显示历史消息成功了再发送
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.cacheTextArr.count > 0) {
+            for (NSString *text in self.cacheTextArr) {
+                [self sendTextMessageWithContent:text];
+            }
+            [self.cacheTextArr removeAllObjects];
+        }
+        
+        if (self.cacheImageArr.count > 0) {
+            for (UIImage *image in self.cacheImageArr) {
+                [self sendImageMessageWithImage:image];
+            }
+            [self.cacheImageArr removeAllObjects];
+        }
+        
+        if (self.cacheFilePathArr.count > 0) {
+            for (NSString *path in self.cacheFilePathArr) {
+                [self sendVoiceMessageWithAMRFilePath:path];
+            }
+            [self.cacheFilePathArr removeAllObjects];
+        }
+    });
 }
 
 #pragma mark - handle message
@@ -1270,7 +1317,7 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
     }
     
     // 客服邀请评价、客服主动结束会话
-    if (eventMessage.eventType == LGChatEventTypeInviteEvaluation || eventMessage.eventType == LGChatEventTypeAgentDidCloseConversation) {
+    if (eventMessage.eventType == LGChatEventTypeInviteEvaluation) {
         if (self.delegate) {
             if ([self.delegate respondsToSelector:@selector(showEvaluationAlertView)] && [self.delegate respondsToSelector:@selector(isChatRecording)]) {
                 if (![self.delegate isChatRecording]) {
@@ -1533,7 +1580,28 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
     }
     return _serviceToViewInterface;
 }
-#endif
 
+-(NSMutableArray *)cacheTextArr {
+    if (!_cacheTextArr) {
+        _cacheTextArr = [NSMutableArray new];
+    }
+    return _cacheTextArr;
+}
+
+-(NSMutableArray *)cacheImageArr {
+    if (!_cacheImageArr) {
+        _cacheImageArr = [NSMutableArray new];
+    }
+    return _cacheImageArr;
+}
+
+-(NSMutableArray *)cacheFilePathArr {
+    if (!_cacheFilePathArr) {
+        _cacheFilePathArr = [NSMutableArray new];
+    }
+    return _cacheFilePathArr;
+}
+
+#endif
 
 @end

@@ -2,7 +2,7 @@
 //  LGPreAdviseFormListViewController.m
 //  Laigu-SDK-Demo
 //
-//  Created by ian luo on 16/6/29.
+//  Created by zhangshunxing on 16/6/29.
 //  Copyright © 2016年 Laigu. All rights reserved.
 //
 

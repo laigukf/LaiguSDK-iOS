@@ -2,7 +2,7 @@
 //  LGDate.h
 //  LaiGuSDK
 //
-//  Created by dingnan on 15/10/24.
+//  Created by zhangshunxing on 15/10/24.
 //  Copyright © 2015年 LaiGu Inc. All rights reserved.
 //
 

@@ -2,8 +2,8 @@
 //  LGRecorderView.h
 //  Laigu
 //
-//  Created by Injoy on 16/5/10.
-//  Copyright © 2016年 Injoy. All rights reserved.
+//  Created by zhangshunxing on 16/5/10.
+//  Copyright © 2016年 zhangshunxing. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

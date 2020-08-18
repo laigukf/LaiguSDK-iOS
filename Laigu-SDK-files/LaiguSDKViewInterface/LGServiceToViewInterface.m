@@ -2,8 +2,8 @@
 //  LGServiceToViewInterface.m
 //  LGChatViewControllerDemo
 //
-//  Created by ijinmao on 15/11/5.
-//  Copyright © 2015年 ijinmao. All rights reserved.
+//  Created by zhangshunxing on 15/11/5.
+//  Copyright © 2015年 zhangshunxing. All rights reserved.
 //
 
 #import "LGServiceToViewInterface.h"
@@ -177,6 +177,10 @@
 
 + (BOOL)isThereAgent {
     return [LGManager getCurrentAgent].agentId.length > 0;
+}
+
++ (BOOL)haveConversation {
+    return [LGManager haveConversation];
 }
 
 + (void)downloadMediaWithUrlString:(NSString *)urlString

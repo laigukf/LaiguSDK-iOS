@@ -2,7 +2,7 @@
 //  LGBotMenuWebViewBubbleAnswerCell.m
 //  Laigu-SDK-Demo
 //
-//  Created by xulianpeng on 2017/9/26.
+//  Created by zhangshunxing on 2017/9/26.
 //  Copyright © 2017年 Laigu. All rights reserved.
 //
 
@@ -99,7 +99,7 @@
         if (height != self.viewModel.cachedWebViewHeight) {
             [sself.viewModel setCachedWebViewHeight:height];
             [sself updateUI:height];
-            [sself.chatCellDelegate reloadCellAsContentUpdated:sself];
+            [sself.chatCellDelegate reloadCellAsContentUpdated:sself messageId:[sself.viewModel getCellMessageId]];
         }
     }];
     

@@ -2,7 +2,7 @@
 //  LGRefresh.h
 //  Laigu-SDK-Demo
 //
-//  Created by ian luo on 2017/2/20.
+//  Created by zhangshunxing on 2017/2/20.
 //  Copyright © 2017年 Laigu. All rights reserved.
 //
 

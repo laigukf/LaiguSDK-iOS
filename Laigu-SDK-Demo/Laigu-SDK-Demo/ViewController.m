@@ -2,7 +2,7 @@
 //  ViewController.m
 //  Laigu-SDK-Demo
 //
-//  Created by xulianpeng on 2017/12/18.
+//  Created by zhangshunxing on 2017/12/18.
 //  Copyright © 2017年 Laigu. All rights reserved.
 //
 

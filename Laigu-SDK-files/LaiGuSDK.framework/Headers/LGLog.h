@@ -2,7 +2,7 @@
 //  LGLog.h
 //  LaiGuSDK
 //
-//  Created by ian luo on 16/6/1.
+//  Created by zhangshunxing on 16/6/1.
 //  Copyright © 2016年 LaiGu Inc. All rights reserved.
 //
 

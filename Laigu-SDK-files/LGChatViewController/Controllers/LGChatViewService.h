@@ -2,7 +2,7 @@
 //  LGChatViewService.h
 //  LaiGuSDK
 //
-//  Created by ijinmao on 15/10/28.
+//  Created by zhangshunxing on 15/10/28.
 //  Copyright © 2015年 LaiGu Inc. All rights reserved.
 //
 
@@ -238,6 +238,21 @@
 初始化历史消息
 */
 - (void)onceLoadHistoryAndRefreshWithSendMsg:(NSString *)message;
+
+/**
+ 顾客没上线前缓存需要发送的Text
+ */
+- (void)cacheSendText:(NSString *)text;
+
+/**
+ 顾客没上线前缓存需要发送的Image
+ */
+- (void)cacheSendImage:(UIImage *)image;
+
+/**
+ 顾客没上线前缓存需要发送的语音
+ */
+- (void)cacheSendAMRFilePath:(NSString *)filePath;
 
 #ifndef INCLUDE_LAIGU_SDK
 /**

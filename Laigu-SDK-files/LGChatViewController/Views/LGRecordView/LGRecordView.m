@@ -2,7 +2,7 @@
 //  LGRecordView.m
 //  LaiGuSDK
 //
-//  Created by Injoy on 14/11/13.
+//  Created by zhangshunxing on 14/11/13.
 //  Copyright (c) 2014年 LaiGu. All rights reserved.
 //
 

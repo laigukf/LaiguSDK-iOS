@@ -12,11 +12,17 @@
 @implementation LGMessageFormViewService
 
 + (void)getMessageFormConfigComplete:(void (^)(LGEnterpriseConfig *config, NSError *))action {
-    [LGServiceToViewInterface getMessageFormConfigComplete:action];
+    [LGServiceToViewInterface getEnterpriseConfigInfoWithCache:NO complete:^(LGEnterprise *enterprise, NSError *error) {
+        if (enterprise && enterprise.configInfo) {
+            action(enterprise.configInfo, nil);
+        } else {
+            action(nil, error);
+        }
+    }];
 }
 
-+ (void)submitMessageFormWithMessage:(NSString *)message images:(NSArray *)images clientInfo:(NSDictionary<NSString *,NSString *> *)clientInfo completion:(void (^)(BOOL, NSError *))completion {
-    [LGServiceToViewInterface submitMessageFormWithMessage:message images:images clientInfo:clientInfo completion:completion];
++ (void)submitMessageFormWithMessage:(NSString *)message clientInfo:(NSDictionary<NSString *,NSString *> *)clientInfo completion:(void (^)(BOOL, NSError *))completion {
+    [LGServiceToViewInterface submitMessageFormWithMessage:message clientInfo:clientInfo completion:completion];
 }
 
 @end

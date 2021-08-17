@@ -12,6 +12,8 @@
 
 "wait_agent"          = "Allocating an agent for you...";
 
+"waiting_title"       = "Waiting in line...";
+
 "not_access_camera"   = "Please go to Settings — Privacy — Photos. Then select ON for This App.";
 
 "not_access_photos"   = "Please go to Settings — Privacy — Camera. Then select ON for This App.";
@@ -118,8 +120,24 @@
 "wechat_placeholder" = "Please enter your WeChat account";
 "name" = "Name";
 "name_placeholder" = "Please enter your name";
+"gender" = "Gender";
+"age" = "Age";
+"age_placeholder" = "Please enter your age";
+"weibo" = "WeiBo";
+"weibo_placeholder" = "Please enter your WeiBo account";
+"address" = "Address";
+"address_placeholder" = "Please enter your address";
+"comment" = "Comment";
+"comment_placeholder" = "Please enter your comment";
+"contact" = "contact";
+"contact_placeholder" = "Please enter your contact";
+"man" = "Man";
+"woman" = "Woman";
+"time_placeholder" = "Year-Month-Day";
 
-"wating_in_queue_tip_text" = "please hold on, %d visitors in front, or you can leave a message";
+"wating_in_queue_tip_number" = "Number of people currently waiting";
+"wating_in_queue_tip_choice" = "If you can't wait, you can choose";
+"wating_in_queue_tip_leave_message" = "Leave a message";
 
 //询前表单
 "pre_chat_list_title" = "Client Support";

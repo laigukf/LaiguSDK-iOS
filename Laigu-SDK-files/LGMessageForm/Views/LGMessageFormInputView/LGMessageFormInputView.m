@@ -2,7 +2,7 @@
 //  LGMessageFormInputView.m
 //  LaiGuSDK
 //
-//  Created by zhangshunxing on 16/5/6.
+//  Created by bingoogolapple on 16/5/6.
 //  Copyright © 2016年 LaiGu Inc. All rights reserved.
 //
 
@@ -11,6 +11,10 @@
 #import "LGMessageFormConfig.h"
 
 static CGFloat const kLGMessageFormSpacing   = 16.0;
+
+@interface LGMessageFormInputView() <UITextFieldDelegate>
+
+@end
 
 @implementation LGMessageFormInputView {
     UILabel *tipLabel;
@@ -38,7 +42,7 @@ static CGFloat const kLGMessageFormSpacing   = 16.0;
     tipLabel.text = model.tip;
     [self refreshTipLabelFrameWithScreenWidth:screenWidth];
     tipLabel.font = [UIFont systemFontOfSize:14];
-    tipLabel.textColor = [LGMessageFormConfig sharedConfig].messageFormViewStyle.inputTipTextColor;
+    tipLabel.textColor = [LGMessageFormConfig sharedConfig].messageFormViewStyle.tipTextColor;
     
     if (model.isRequired) {
         NSString *text = [NSString stringWithFormat:@"%@%@", tipLabel.text, @"*"];
@@ -57,12 +61,13 @@ static CGFloat const kLGMessageFormSpacing   = 16.0;
 
 - (void)initContentTfWidthModel:(LGMessageFormInputModel *)model andScreenWidth:(CGFloat)screenWidth {
     contentTf = [[UITextField alloc] init];
-    contentTf.textColor = [LGMessageFormConfig sharedConfig].messageFormViewStyle.inputTextColor;
+    contentTf.textColor = [LGMessageFormConfig sharedConfig].messageFormViewStyle.contentTextColor;
     contentTf.backgroundColor = [UIColor whiteColor];
     contentTf.tintColor = [LGMessageFormConfig sharedConfig].messageFormViewStyle.inputPlaceholderTextColor;
     contentTf.font = [UIFont systemFontOfSize:14];
     contentTf.placeholder = model.placeholder;
-    contentTf.keyboardType = model.keyboardType;
+    contentTf.delegate = self;
+    contentTf.keyboardType = model.inputModelType == InputModelTypeNumber ? UIKeyboardTypeNumberPad : UIKeyboardTypeDefault;
     contentTf.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kLGMessageFormSpacing, contentTf.frame.size.height)];
     contentTf.leftViewMode = UITextFieldViewModeAlways;
     
@@ -93,13 +98,14 @@ static CGFloat const kLGMessageFormSpacing   = 16.0;
     contentContainer.backgroundColor = [UIColor whiteColor];
     
     contentTv = [[LGMessageFormTextView alloc] init];
-    contentTv.keyboardType = model.keyboardType;
-    contentTv.textColor = [LGMessageFormConfig sharedConfig].messageFormViewStyle.inputTextColor;
+    contentTv.textColor = [LGMessageFormConfig sharedConfig].messageFormViewStyle.contentTextColor;
     contentTv.backgroundColor = [UIColor whiteColor];
     contentTv.tintColor = [LGMessageFormConfig sharedConfig].messageFormViewStyle.inputPlaceholderTextColor;
     contentTv.placeholder = model.placeholder;
+    contentTf.keyboardType = model.inputModelType == InputModelTypeNumber ? UIKeyboardTypeNumberPad : UIKeyboardTypeDefault;
     contentTv.font = [UIFont systemFontOfSize:14];
     contentTv.showsVerticalScrollIndicator = NO;
+    contentTv.text = model.text;
     [contentContainer addSubview:contentTv];
     
     topLine = [[UIView alloc] init];
@@ -124,13 +130,15 @@ static CGFloat const kLGMessageFormSpacing   = 16.0;
 }
 
 - (void)refreshFrameWithScreenWidth:(CGFloat)screenWidth andY:(CGFloat)y {
+    [super refreshFrameWithScreenWidth:screenWidth andY:y];
+    
     [self refreshTipLabelFrameWithScreenWidth:screenWidth];
     [self refreshcontentTfFrameWithScreenWidth:screenWidth];
     [self refreshcontentTvFrameWithScreenWidth:screenWidth];
     self.frame = CGRectMake(0, y, screenWidth, CGRectGetMaxY(contentTf == nil ? contentTv.superview.frame : contentTf.frame));
 }
 
-- (NSString *)getText {
+- (id)getContentValue {
     if (contentTf) {
         return [contentTf.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     } else {
@@ -138,16 +146,22 @@ static CGFloat const kLGMessageFormSpacing   = 16.0;
     }
 }
 
-/**
- *  查找UITextView第一键盘响应者
- *
- *  @return UITextView第一键盘响应者
- */
-- (UITextView *)findFirstResponderUITextView {
+
+- (UIView *)findFirstResponderUIView {
     if (contentTv && contentTv.isFirstResponder) {
-        return contentTv;
+        return self;
+    }
+    if (contentTf && contentTf.isFirstResponder) {
+        return self;
     }
     return nil;
+}
+
+#pragma UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

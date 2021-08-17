@@ -11,14 +11,14 @@
 #import "LGChatViewConfig.h"
 #import "LGBundleUtil.h"
 #import "LGBotMenuCellModel.h"
-#import "LAIGU_TTTAttributedLabel.h"
+#import "TTTAttributedLabel.h"
 #import "LGBundleUtil.h"
 
 static const NSInteger kLGBotMenuCellSelectedUrlActionSheetTag = 2000;
 static const NSInteger kLGBotMenuCellSelectedNumberActionSheetTag = 2001;
 static const NSInteger kLGBotMenuCellSelectedEmailActionSheetTag = 2002;
 
-@interface LGBotMenuCell() <LAIGU_TTTAttributedLabelDelegate, UIActionSheetDelegate, UIAlertViewDelegate>
+@interface LGBotMenuCell() <TTTAttributedLabelDelegate, UIActionSheetDelegate, UIAlertViewDelegate>
 
 @end
 

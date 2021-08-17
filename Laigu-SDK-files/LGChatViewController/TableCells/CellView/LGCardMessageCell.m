@@ -12,10 +12,10 @@
 #import "LGImageUtil.h"
 #import <LaiGuSDK/LGManager.h>
 #import "LGRadioGroup.h"
-#import "NSString+Regular.h"
+#import "NSString+LGRegular.h"
 #import "LGToast.h"
 #import "LGTipsCell.h"
-#import "NSString+Name.h"
+#import "NSString+LGName.h"
 
 
 @interface LGCardMessageCell ()<UITextFieldDelegate>

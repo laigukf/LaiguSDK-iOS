@@ -36,6 +36,7 @@
     message.userName = plainMessage.messageUserName;
     message.userAvatarPath = plainMessage.messageAvatar;
     message.fromType = LGChatMessageIncoming;
+    message.conversionId = plainMessage.conversationId;
     
     return message;
 }

@@ -10,7 +10,7 @@
 #import "LGChatFileUtil.h"
 #import "LGChatViewConfig.h"
 #import "LGChatAudioPlayer.h"
-#import "VoiceConverter.h"
+#import "LGVoiceConverter.h"
 #import "LGAssetUtil.h"
 #import "LGVoiceCellModel.h"
 #import "LGImageUtil.h"
@@ -267,7 +267,7 @@
             //将wav文件转换成amr文件
             NSString *amrPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
             amrPath = [amrPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%d.amr", (int)[NSDate date].timeIntervalSince1970]];
-            [VoiceConverter wavToAmr:wavPath amrSavePath:amrPath];
+            [LGVoiceConverter wavToAmr:wavPath amrSavePath:amrPath];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.chatCellDelegate resendMessageInCell:self resendData:@{@"voice" : amrPath}];
             });

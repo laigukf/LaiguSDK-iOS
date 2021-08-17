@@ -62,6 +62,27 @@
     }];
 }
 
++ (void)getServerHistoryMessagesAndTicketsWithMsgDate:(NSDate *)msgDate
+                             messagesNumber:(NSInteger)messagesNumber
+                            successDelegate:(id<LGServiceToViewInterfaceDelegate>)successDelegate
+                              errorDelegate:(id<LGServiceToViewInterfaceErrorDelegate>)errorDelegate
+{
+    [LGManager getServerHistoryMessagesAndTicketsWithUTCMsgDate:msgDate messagesNumber:messagesNumber success:^(NSArray<LGMessage *> *messagesArray) {
+        NSArray *toMessages = [LGServiceToViewInterface convertToChatViewMessageWithLGMessages:messagesArray];
+        if (successDelegate) {
+            if ([successDelegate respondsToSelector:@selector(didReceiveHistoryMessages:)]) {
+                [successDelegate didReceiveHistoryMessages:toMessages];
+            }
+        }
+    } failure:^(NSError *error) {
+        if (errorDelegate) {
+            if ([errorDelegate respondsToSelector:@selector(getLoadHistoryMessageError)]) {
+                [errorDelegate getLoadHistoryMessageError];
+            }
+        }
+    }];
+}
+
 + (NSArray *)convertToChatViewMessageWithLGMessages:(NSArray *)messagesArray {
     //将LGMessage转换成UI能用的Message类型
     NSMutableArray *toMessages = [[NSMutableArray alloc] init];
@@ -181,6 +202,10 @@
 
 + (BOOL)haveConversation {
     return [LGManager haveConversation];
+}
+
++(NSString *)getCurrentConversationID {
+    return [LGManager getCurrentConversationID];
 }
 
 + (void)downloadMediaWithUrlString:(NSString *)urlString
@@ -488,8 +513,7 @@
     [LGManager getTicketCategoryComplete:action];
 }
 
-+ (void)submitMessageFormWithMessage:(NSString *)message images:(NSArray *)images clientInfo:(NSDictionary<NSString *,NSString *> *)clientInfo completion:(void (^)(BOOL, NSError *))completion {
-//    [LGManager submitMessageFormWithMessage:message images:images clientInfo:clientInfo completion:completion];
++ (void)submitMessageFormWithMessage:(NSString *)message clientInfo:(NSDictionary<NSString *,NSString *> *)clientInfo completion:(void (^)(BOOL, NSError *))completion {
     [LGManager submitTicketForm:message userInfo:clientInfo completion:^(LGTicket *ticket, NSError *e) {
         if (e) {
             completion(NO, e);

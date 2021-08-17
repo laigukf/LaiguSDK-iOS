@@ -22,6 +22,8 @@ static CGFloat const kLGMessageTipsCellHorizontalSpacing = 24.0;
 static CGFloat const kLGMessageReplyTipsCellVerticalSpacing = 8.0;
 static CGFloat const kLGMessageReplyTipsCellHorizontalSpacing = 8.0;
 static CGFloat const kLGMessageTipsLineHeight = 0.5;
+static CGFloat const kLGMessageTipsBottomBtnHeight = 40.0;
+static CGFloat const kLGMessageTipsBottomBtnHorizontalSpacing = 25.0;
 CGFloat const kLGMessageTipsFontSize = 13.0;
 
 @interface LGTipsCellModel()
@@ -41,6 +43,16 @@ CGFloat const kLGMessageTipsFontSize = 13.0;
 @property (nonatomic, readwrite, copy) NSString *tipText;
 
 /**
+ * @brief 提示文字的额外属性
+ */
+@property (nonatomic, readwrite, strong) NSArray<NSDictionary<NSString *, id> *> *tipExtraAttributes;
+
+/**
+ * @brief 提示文字的额外属性的 range 的数组
+ */
+@property (nonatomic, readwrite, strong) NSArray<NSValue *> *tipExtraAttributesRanges;
+
+/**
  * @brief 提示label的frame
  */
 @property (nonatomic, readwrite, assign) CGRect tipLabelFrame;
@@ -56,9 +68,19 @@ CGFloat const kLGMessageTipsFontSize = 13.0;
 @property (nonatomic, readwrite, assign) BOOL enableLinesDisplay;
 
 /**
- * @brief 下线条的frame
+ * 下线条的frame
  */
 @property (nonatomic, readwrite, assign) CGRect bottomLineFrame;
+
+/**
+ * 底部留言的btn的frame
+ */
+@property (nonatomic, readwrite, assign) CGRect bottomBtnFrame;
+
+/**
+ *  底部bottom提示文字
+ */
+@property (nonatomic, readwrite, copy) NSString *bottomBtnTitle;
 
 /**
  * @brief 提示的时间
@@ -110,11 +132,11 @@ CGFloat const kLGMessageTipsFontSize = 13.0;
                 NSString *subTips = [tips substringFromIndex:firstRange.location+1];
                 NSRange lastRange = [subTips rangeOfString:@"为你服务"];
                 NSRange agentNameRange = NSMakeRange(firstRange.location+1, lastRange.location-1);
-                self.tipExtraAttributesRange = agentNameRange;
-                self.tipExtraAttributes = @{
-                                            NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:13],
-                                            NSForegroundColorAttributeName : [LGChatViewConfig sharedConfig].chatViewStyle.btnTextColor
-                                            };
+                self.tipExtraAttributesRanges = @[[NSValue valueWithRange:agentNameRange]];
+                self.tipExtraAttributes = @[@{
+                                                NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:13],
+                                                NSForegroundColorAttributeName : [LGChatViewConfig sharedConfig].chatViewStyle.btnTextColor
+                                                }];
             }
         }
     }
@@ -155,31 +177,46 @@ CGFloat const kLGMessageTipsFontSize = 13.0;
         self.bottomLineFrame = CGRectMake(self.topLineFrame.origin.x, self.cellHeight - kLGMessageTipsLabelLineVerticalMargin - kLGMessageTipsLineHeight, lineWidth, kLGMessageTipsLineHeight);
         
         //tip的文字额外属性
-        NSString *tapText = tipType == LGTipTypeReply ? @"留言" : @"转人工";
+        NSString *tapText = [NSString string];
+        if (tipType == LGTipTypeReply) {
+            tapText = [self.tipText containsString:@"留言"] ? @"留言" : @"You can give us a message";
+        } else {
+            if ([self.tipText containsString:@"转人工"]) {
+                tapText = @"转人工";
+            } else {
+                tapText = [self.tipText containsString:@"轉人工"] ?  @"轉人工" : @"Tap here to redirect to an agent";
+            }
+        }
         NSRange replyTextRange = [self.tipText rangeOfString:tapText];
-        self.tipExtraAttributesRange = replyTextRange;
-        self.tipExtraAttributes = @{
-                                    NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:13],
-                                    NSForegroundColorAttributeName : [LGChatViewConfig sharedConfig].chatViewStyle.btnTextColor
-                                    };
+        self.tipExtraAttributesRanges = @[[NSValue valueWithRange:replyTextRange]];
+        self.tipExtraAttributes = @[@{
+                                        NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:13],
+                                        NSForegroundColorAttributeName : [LGChatViewConfig sharedConfig].chatViewStyle.btnTextColor
+                                        }];
     }
     return self;
 }
 
-- (LGTipsCellModel *)initWaitingInQueueTipCellModelWithCellWidth:(CGFloat)cellWidth withIntro:(NSString *)intro position:(int)position tipType:(LGTipType)tipType {
+- (LGTipsCellModel *)initWaitingInQueueTipCellModelWithCellWidth:(CGFloat)cellWidth withIntro:(NSString *)intro ticketIntro:(NSString *)ticketIntro position:(int)position tipType:(LGTipType)tipType {
     if (self = [super init]) {
         self.tipType = tipType;
         self.date = [NSDate date];
-        self.tipText = [NSString stringWithFormat:@"%@\n%@",intro,[NSString stringWithFormat:[LGBundleUtil localizedStringForKey:@"wating_in_queue_tip_text"], position]];
+        NSString *waitNumberTitle = [LGBundleUtil localizedStringForKey:@"wating_in_queue_tip_number"];
+        self.tipText =[NSString stringWithFormat:@"%@\n\n%@\n\n%d\n\n%@",intro,waitNumberTitle,position,ticketIntro];
         self.enableLinesDisplay = false;
+        self.bottomBtnTitle = [LGBundleUtil localizedStringForKey:@"wating_in_queue_tip_leave_message"];
         
         //tip frame
         CGFloat tipsWidth = cellWidth - kLGMessageReplyTipsCellHorizontalSpacing * 2;
+        CGFloat bottomBtnWidth = cellWidth - kLGMessageTipsBottomBtnHorizontalSpacing * 2;
         CGFloat tipsHeight = [LGStringSizeUtil getHeightForText:self.tipText withFont:[UIFont systemFontOfSize:kLGMessageTipsFontSize] andWidth:tipsWidth];
+        tipsHeight += kLGMessageTipsBottomBtnHeight;
         CGRect tipLabelFrame = CGRectMake(kLGMessageReplyTipsCellHorizontalSpacing, kLGMessageReplyTipsCellVerticalSpacing, tipsWidth, tipsHeight);
         self.tipLabelFrame = tipLabelFrame;
         
-        self.cellHeight = kLGMessageReplyTipsCellVerticalSpacing * 2 + tipsHeight;
+        self.bottomBtnFrame = CGRectMake(kLGMessageTipsBottomBtnHorizontalSpacing, CGRectGetMaxY(self.tipLabelFrame), bottomBtnWidth, kLGMessageTipsBottomBtnHeight);
+        
+        self.cellHeight = kLGMessageReplyTipsCellVerticalSpacing * 2 + tipsHeight + kLGMessageTipsBottomBtnHeight;
         
         //上线条的frame
         CGFloat lineWidth = cellWidth;
@@ -189,13 +226,17 @@ CGFloat const kLGMessageTipsFontSize = 13.0;
         self.bottomLineFrame = CGRectMake(self.topLineFrame.origin.x, self.cellHeight - kLGMessageTipsLabelLineVerticalMargin - kLGMessageTipsLineHeight, lineWidth, kLGMessageTipsLineHeight);
         
         //tip的文字额外属性
-        NSString *tapText = @"留言";
-        NSRange replyTextRange = [self.tipText rangeOfString:tapText];
-        self.tipExtraAttributesRange = replyTextRange;
-        self.tipExtraAttributes = @{
-                                    NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:13],
-                                    NSForegroundColorAttributeName : [LGChatViewConfig sharedConfig].chatViewStyle.btnTextColor
-                                    };
+        NSRange waitNumberTitleRange = [self.tipText rangeOfString:waitNumberTitle];
+        NSRange waitNunmerRange = NSMakeRange(waitNumberTitleRange.location + waitNumberTitleRange.length + 2, [NSString stringWithFormat:@"%d",position].length);
+        self.tipExtraAttributesRanges = @[[NSValue valueWithRange:waitNumberTitleRange], [NSValue valueWithRange:waitNunmerRange]];
+        self.tipExtraAttributes = @[@{
+                                        NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:15],
+                                        NSForegroundColorAttributeName : UIColor.blackColor
+                                    },
+                                    @{
+                                        NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:20],
+                                        NSForegroundColorAttributeName : [LGChatViewConfig sharedConfig].chatViewStyle.btnTextColor
+                                    }];
     }
     return self;
 }
@@ -223,6 +264,10 @@ CGFloat const kLGMessageTipsFontSize = 13.0;
 }
 
 - (NSString *)getCellMessageId {
+    return @"";
+}
+
+- (NSString *)getMessageConversionId {
     return @"";
 }
 

@@ -17,6 +17,8 @@
 
 - (NSString *)laiguStyleDateForDate:(NSDate *)date;
 
+- (NSString *)laiguSplitLineDateForDate:(NSDate *)date;
+
 - (NSString *)timestampForDate:(NSDate *)date;
 
 - (NSString *)timeForDate:(NSDate *)date;

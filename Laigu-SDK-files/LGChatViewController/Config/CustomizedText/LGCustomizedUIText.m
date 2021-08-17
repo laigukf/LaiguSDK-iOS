@@ -78,8 +78,6 @@ static NSMutableDictionary * customizedTextMap;
         @(LGUITextKeyPreChatFormMultipleSelectionLabel) : @"pre_chat_form_mutiple_selection_label",
         @(LGUITextKeyPreChatFormBlankAlertLabel) : @"pre_chat_form_black_alert_label",
         
-        @(LGUITextKeyQueuePosition) : @"wating_in_queue_tip_text",
-        
         @(LGUITextKeyPullRefreshNormal) : @"pull_refresh_normal",
         @(LGUITextKeyPullRfreshTriggered) : @"pull_refresh_triggered"
         };

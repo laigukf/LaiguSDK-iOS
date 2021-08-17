@@ -16,7 +16,7 @@
 #import "LGPreChatData.h"
 
 
-#define LGSDKVersion @"3.6.0"
+#define LGSDKVersion @"3.7.0"
 @protocol LGManagerDelegate <NSObject>
 
 /**
@@ -57,6 +57,11 @@
 
 /// 获取当前顾客是否分配了聊天
 + (BOOL)haveConversation;
+
+/**
+ *  获取当前分配对话的会话id，，没有分配则为nil
+ */
++ (NSString *)getCurrentConversationID;
 
 /**
  *  开启来鼓服务
@@ -272,6 +277,20 @@
  * @warning 需要在初始化成功后调用才有效
  */
 + (void)getServerHistoryMessagesWithUTCMsgDate:(NSDate *)msgDate
+                                messagesNumber:(NSInteger)messagesNumber
+                                       success:(void (^)(NSArray<LGMessage *> *messagesArray))success
+                                       failure:(void (^)(NSError* error))failure;
+
+/**
+ * 从服务端获取某日期之前的历史消息(包含留言信息)
+ *
+ * @param msgDate        获取该日期之前的历史消息，注：该日期是UTC格式的;
+ * @param messagesNumber 获取消息的数量
+ * @param success        回调中，messagesArray:消息数组
+ * @param failure        获取失败，返回错误信息
+ * @warning 需要在初始化成功后调用才有效
+ */
++ (void)getServerHistoryMessagesAndTicketsWithUTCMsgDate:(NSDate *)msgDate
                                 messagesNumber:(NSInteger)messagesNumber
                                        success:(void (^)(NSArray<LGMessage *> *messagesArray))success
                                        failure:(void (^)(NSError* error))failure;

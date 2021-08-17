@@ -9,14 +9,14 @@
 
 Pod::Spec.new do |s|
   s.name             = "Laigu"
-  s.version          = "3.6.0"
+  s.version          = "3.7.0"
   s.summary          = "来鼓官方 SDK for iOS"
   s.description      = "来鼓官方的 iOS SDK"
 
   s.homepage         = "https://github.com/laigukf/LaiguSDK-iOS"
   s.license          = 'MIT'
   s.author           = { "laigu" => "laigukf@gmail.com" }
-  s.source           = { :git => "https://github.com/laigukf/LaiguSDK-iOS.git", :tag => "v3.6.0" }
+  s.source           = { :git => "https://github.com/laigukf/LaiguSDK-iOS.git", :tag => "v3.7.0" }
   s.social_media_url = "https://app.laigukf.com"
   s.documentation_url = "https://github.com/laigukf/LaiguSDK-iOS/wiki"
   s.platform     = :ios, '8.0'

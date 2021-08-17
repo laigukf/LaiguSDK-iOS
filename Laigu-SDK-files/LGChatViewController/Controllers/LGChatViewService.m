@@ -29,7 +29,7 @@
 #import "LGPhotoCardCellModel.h"
 #import <UIKit/UIKit.h>
 #import "LGToast.h"
-#import "VoiceConverter.h"
+#import "LGVoiceConverter.h"
 #import "LGEventCellModel.h"
 #import "LGAssetUtil.h"
 #import "LGBundleUtil.h"
@@ -45,6 +45,7 @@
 #import "NSError+LGConvenient.h"
 #import "LGMessageFactoryHelper.h"
 #import "LGBotMenuRichCellModel.h"
+#import "LGSplitLineCellModel.h"
 
 #import "LGBotMenuWebViewBubbleAnswerCellModel.h"
 
@@ -140,7 +141,7 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
 
 //从后台返回到前台时 
 - (void)backFromBackground {
-    if ([LGServiceToViewInterface waitingInQueuePosition] > 0) {
+    if ([LGServiceToViewInterface waitingInQueuePosition] > 0 || [LGServiceToViewInterface isBlacklisted]) {
         [self setClientOnline];
     }
 }
@@ -171,6 +172,17 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
     }
 }
 
+/**
+ * 在开启无消息访客过滤的条件下获取历史聊天信息
+ */
+- (void)getMessagesWithScheduleAfterClientSendMessage {
+    NSDate *firstMessageDate = [self getFirstServiceCellModelDate];
+    if ([LGChatViewConfig sharedConfig].enableSyncServerMessage) {// 默认开启消息同步
+        [LGServiceToViewInterface getServerHistoryMessagesAndTicketsWithMsgDate:firstMessageDate messagesNumber:kLGChatGetHistoryMessageNumber successDelegate:self errorDelegate:self.errorDelegate];
+    } else {
+        [LGServiceToViewInterface getDatabaseHistoryMessagesWithMsgDate:firstMessageDate messagesNumber:kLGChatGetHistoryMessageNumber delegate:self];
+    }
+}
 
 /// 获取本地历史所有消息
 - (void)startGettingDateBaseHistoryMessages{
@@ -200,7 +212,15 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
             [cellModel isKindOfClass:[LGVoiceCellModel class]] ||
             [cellModel isKindOfClass:[LGEventCellModel class]] ||
             [cellModel isKindOfClass:[LGFileDownloadCellModel class]] ||
-            [cellModel isKindOfClass:[LGPhotoCardCellModel class]])
+            [cellModel isKindOfClass:[LGPhotoCardCellModel class]] ||
+            [cellModel isKindOfClass:[LGWebViewBubbleCellModel class]] ||
+            [cellModel isKindOfClass:[LGBotAnswerCellModel class]] ||
+            [cellModel isKindOfClass:[LGBotMenuAnswerCellModel class]] ||
+            [cellModel isKindOfClass:[LGBotMenuCellModel class]] ||
+            [cellModel isKindOfClass:[LGBotMenuWebViewBubbleAnswerCellModel class]] ||
+            [cellModel isKindOfClass:[LGBotWebViewBubbleAnswerCellModel class]] ||
+            [cellModel isKindOfClass:[LGEvaluationResultCellModel class]])
+
         {
             return [cellModel getCellDate];
         }
@@ -220,7 +240,15 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
                 [cellModel isKindOfClass:[LGVoiceCellModel class]] ||
                 [cellModel isKindOfClass:[LGEventCellModel class]] ||
                 [cellModel isKindOfClass:[LGFileDownloadCellModel class]] ||
-                [cellModel isKindOfClass:[LGPhotoCardCellModel class]])
+                [cellModel isKindOfClass:[LGPhotoCardCellModel class]] ||
+                [cellModel isKindOfClass:[LGWebViewBubbleCellModel class]] ||
+                [cellModel isKindOfClass:[LGBotAnswerCellModel class]] ||
+                [cellModel isKindOfClass:[LGBotMenuAnswerCellModel class]] ||
+                [cellModel isKindOfClass:[LGBotMenuCellModel class]] ||
+                [cellModel isKindOfClass:[LGBotMenuWebViewBubbleAnswerCellModel class]] ||
+                [cellModel isKindOfClass:[LGBotWebViewBubbleAnswerCellModel class]] ||
+                [cellModel isKindOfClass:[LGEvaluationResultCellModel class]])
+
             {
                 return [cellModel getCellDate];
             }
@@ -248,7 +276,9 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
  */
 - (void)sendTextMessageWithContent:(NSString *)content {
     LGTextMessage *message = [[LGTextMessage alloc] initWithContent:content];
+    message.conversionId = [LGServiceToViewInterface getCurrentConversationID] ?:@"";
     LGTextCellModel *cellModel = [[LGTextCellModel alloc] initCellModelWithMessage:message cellWidth:self.chatViewWidth delegate:self];
+    [self addConversionSplitLineWithCurrentCellModel:cellModel];
     [self addMessageDateCellAtLastWithCurrentCellModel:cellModel];
     [self addCellModelAndReloadTableViewWithModel:cellModel];
     [LGServiceToViewInterface sendTextMessageWithContent:content messageId:message.messageId delegate:self];
@@ -259,7 +289,9 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
  */
 - (void)sendImageMessageWithImage:(UIImage *)image {
     LGImageMessage *message = [[LGImageMessage alloc] initWithImage:image];
+    message.conversionId = [LGServiceToViewInterface getCurrentConversationID] ?:@"";
     LGImageCellModel *cellModel = [[LGImageCellModel alloc] initCellModelWithMessage:message cellWidth:self.chatViewWidth delegate:self];
+    [self addConversionSplitLineWithCurrentCellModel:cellModel];
     [self addMessageDateCellAtLastWithCurrentCellModel:cellModel];
     [self addCellModelAndReloadTableViewWithModel:cellModel];
 #ifdef INCLUDE_LAIGU_SDK
@@ -291,7 +323,9 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
  * @param wavData WAV格式的语音数据
  */
 - (void)sendVoiceMessageWithWAVData:(NSData *)wavData voiceMessage:(LGVoiceMessage *)message{
+    message.conversionId = [LGServiceToViewInterface getCurrentConversationID] ?:@"";
     LGVoiceCellModel *cellModel = [[LGVoiceCellModel alloc] initCellModelWithMessage:message cellWidth:self.chatViewWidth delegate:self];
+    [self addConversionSplitLineWithCurrentCellModel:cellModel];
     [self addMessageDateCellAtLastWithCurrentCellModel:cellModel];
     [self addCellModelAndReloadTableViewWithModel:cellModel];
 #ifndef INCLUDE_LAIGU_SDK
@@ -423,6 +457,74 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
 }
 
 /**
+ *  在尾部增加cellModel之前，先判断两个message 是否是不同会话的，插入一个LGSplitLineCellModel
+ *
+ *  @param beAddedCellModel 准备被add的cellModel
+ *  @return 是否插入
+ */
+- (BOOL)addConversionSplitLineWithCurrentCellModel:(id<LGCellModelProtocol>)beAddedCellModel {
+    if(![LGServiceToViewInterface haveConversation] && beAddedCellModel.getMessageConversionId.length == 0) {
+        if (_cellModels.count == 0) {
+            return false;
+        }
+        id<LGCellModelProtocol> lastCellModel;
+        bool haveSplit = false;
+        for (id<LGCellModelProtocol> cellModel in [_cellModels reverseObjectEnumerator]) {
+            if ([cellModel isKindOfClass:[LGSplitLineCellModel class]]) {
+                haveSplit = true;
+            }
+            if ([cellModel getMessageConversionId].length > 0) {
+                lastCellModel = cellModel;
+                break;
+            }
+        }
+        
+        if (lastCellModel && !haveSplit) {
+            LGSplitLineCellModel *cellModel = [[LGSplitLineCellModel alloc] initCellModelWithCellWidth:self.chatViewWidth withConversionDate:[beAddedCellModel getCellDate]];
+            [self.cellModels addObject:cellModel];
+            [self.delegate insertCellAtBottomForModelCount: 1];
+            return true;
+        }
+        return false;
+    }
+    
+    LGSplitLineCellModel *cellModel = [self insertConversionSplitLineWithCellModel:beAddedCellModel withCellModels:_cellModels];
+    if (cellModel) {
+        [self.cellModels addObject:cellModel];
+        [self.delegate insertCellAtBottomForModelCount: 1];
+        return true;
+    }
+    return false;
+}
+
+/**
+ *  判断是否需要加入不同回话的分割线
+ *
+ *  @param beInsertedCellModel 准备被insert的cellModel
+ */
+- (LGSplitLineCellModel *)insertConversionSplitLineWithCellModel:(id<LGCellModelProtocol>)beInsertedCellModel withCellModels:(NSArray *) cellModelArr {
+    if (cellModelArr.count == 0) {
+        return nil;
+    }
+    id<LGCellModelProtocol> lastCellModel;
+    for (id<LGCellModelProtocol> cellModel in [cellModelArr reverseObjectEnumerator]) {
+        if ([cellModel getMessageConversionId].length > 0) {
+            lastCellModel = cellModel;
+            break;
+        }
+    }
+    if (!lastCellModel) {
+        return nil;
+    }
+    
+    if ([beInsertedCellModel getMessageConversionId].length > 0 && ![lastCellModel.getMessageConversionId isEqualToString:beInsertedCellModel.getMessageConversionId]) {
+        LGSplitLineCellModel *cellModel1 = [[LGSplitLineCellModel alloc] initCellModelWithCellWidth:self.chatViewWidth withConversionDate:[beInsertedCellModel getCellDate]];
+        return cellModel1;
+    }
+    return nil;
+}
+
+/**
  * 从后往前从cellModels中获取到业务相关的cellModel，即text, image, voice等；
  */
 /**
@@ -459,7 +561,7 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
     }
 }
 
-- (void)scrollToButton {
+- (void)scrollToBottom {
     if (self.delegate) {
         if ([self.delegate respondsToSelector:@selector(scrollTableViewToBottomAnimated:)]) {
             [self.delegate scrollTableViewToBottomAnimated: NO];
@@ -571,7 +673,7 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
 - (NSData *)convertToWAVDataWithAMRFilePath:(NSString *)amrFilePath {
     NSString *tempPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     tempPath = [tempPath stringByAppendingPathComponent:@"record.wav"];
-    [VoiceConverter amrToWav:amrFilePath wavSavePath:tempPath];
+    [LGVoiceConverter amrToWav:amrFilePath wavSavePath:tempPath];
     NSData *wavData = [NSData dataWithContentsOfFile:tempPath];
     [[NSFileManager defaultManager] removeItemAtPath:tempPath error:nil];
     return wavData;
@@ -738,6 +840,10 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
         if ([redundentCellModels count] > 0) {
             [self.cellModels replaceObjectAtIndex:[self.cellModels indexOfObject:[redundentCellModels firstObject]] withObject:newCellModel];
         } else {
+            LGSplitLineCellModel *splitLineCellModel = [self insertConversionSplitLineWithCellModel:newCellModel withCellModels:newCellModels];
+            if (splitLineCellModel) {
+                [newCellModels addObject:splitLineCellModel];
+            }
             [newCellModels addObject:newCellModel];
         }
     }
@@ -747,10 +853,12 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
     NSDate *firstMessageDate = [self.cellModels.firstObject getCellDate];
     NSDate *lastMessageDate = [self.cellModels.lastObject getCellDate];
     [newCellModels enumerateObjectsUsingBlock:^(id<LGCellModelProtocol> newCellModel, NSUInteger idx, BOOL * stop) {
-        if ([firstMessageDate compare:[newCellModel getCellDate]] == NSOrderedDescending) {
-            [positionVector addObject:@"1"];
-        } else if ([lastMessageDate compare:[newCellModel getCellDate]] == NSOrderedAscending) {
-            [positionVector addObject:@"0"];
+        if (![newCellModel isKindOfClass:[LGSplitLineCellModel class]]) {
+            if ([firstMessageDate compare:[newCellModel getCellDate]] == NSOrderedDescending) {
+                [positionVector addObject:@"1"];
+            } else if ([lastMessageDate compare:[newCellModel getCellDate]] == NSOrderedAscending) {
+                [positionVector addObject:@"0"];
+            }
         }
     }];
     
@@ -764,15 +872,36 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
         position = [obj intValue];
     }];
     
-    NSUInteger newMessageCount = newCellModels.count;
     if (newCellModels.count == 0) { return 0; }
+    // 判断是否需要添加分割线
+    if (position == 1) {
+        id <LGCellModelProtocol> currentFirstCellModel;
+        for (id<LGCellModelProtocol> cellModel in self.cellModels) {
+            if ([cellModel getMessageConversionId].length > 0) {
+                currentFirstCellModel = cellModel;
+                break;
+            }
+        }
+        if (!currentFirstCellModel) {
+            LGSplitLineCellModel *splitLineCellModel = [self insertConversionSplitLineWithCellModel:currentFirstCellModel withCellModels:newCellModels];
+            if (splitLineCellModel) {
+                [newCellModels addObject:splitLineCellModel];
+            }
+        }
+    } else if (position == 0) {
+        LGSplitLineCellModel *splitLineCellModel = [self insertConversionSplitLineWithCellModel:[newCellModels firstObject] withCellModels:self.cellModels];
+        if (splitLineCellModel) {
+            [newCellModels insertObject:splitLineCellModel atIndex:0];
+        }
+    }
+    NSUInteger newMessageCount = newCellModels.count;
     switch (position) {
         case 1: // top
             [self insertMessageDateCellAtFirstWithCellModel:[newCellModels firstObject]]; // 如果需要，顶部插入时间
             self.cellModels = [[newCellModels arrayByAddingObjectsFromArray:self.cellModels] mutableCopy];
             break;
         case 0: // bottom
-            [self addMessageDateCellAtLastWithCurrentCellModel:[newCellModels firstObject]]; // 如果需要，底部插入时间
+            [self addMessageDateCellAtLastWithCurrentCellModel:[newCellModels firstObject]];// 如果需要，底部插入时间
             [self.cellModels addObjectsFromArray:newCellModels];
             break;
         default:
@@ -861,7 +990,7 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
         [self.cellModels addObject:cellModel];
         [self.delegate insertCellAtBottomForModelCount: 1];
     }
-    [self scrollToButton];
+    [self scrollToBottom];
 }
 
 // 清除当前界面的「转人工」「留言」的 tipCell
@@ -884,10 +1013,10 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
         if (enterPrise.configInfo.queueStatus) {
             [self removeWaitingInQueueCellModels];
             [self.delegate reloadChatTableView];
-            LGTipsCellModel *cellModel = [[LGTipsCellModel alloc] initWaitingInQueueTipCellModelWithCellWidth:self.chatViewWidth withIntro:enterPrise.configInfo.queueIntro position:position tipType:LGTipTypeWaitingInQueue];
+            LGTipsCellModel *cellModel = [[LGTipsCellModel alloc] initWaitingInQueueTipCellModelWithCellWidth:self.chatViewWidth withIntro:enterPrise.configInfo.queueIntro ticketIntro:enterPrise.configInfo.queueTicketIntro position:position tipType:LGTipTypeWaitingInQueue];
             [self.cellModels addObject:cellModel];
             [self.delegate insertCellAtBottomForModelCount: 1];
-            [self scrollToButton];
+            [self scrollToBottom];
         }
     }];
 }
@@ -1003,12 +1132,12 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
         NSInteger newCellCount = [self saveToCellModelsWithMessages:receivedMessages isInsertAtFirstIndex: NO];
         [UIView setAnimationsEnabled:NO];
         [self.delegate insertCellAtTopForModelCount: newCellCount];
-        [self scrollToButton];
+        [self scrollToBottom];
         [UIView setAnimationsEnabled:YES];
         [self.delegate reloadChatTableView];
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self scrollToButton]; // some image may lead the table didn't reach bottom
+            [self scrollToBottom]; // some image may lead the table didn't reach bottom
         });
     }
     
@@ -1040,7 +1169,7 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
     }
     
     [LGServiceToViewInterface getEnterpriseConfigInfoWithCache:YES complete:^(LGEnterprise *enterprise, NSError *e) {
-        [LGCustomizedUIText setCustomiedTextForKey:(LGUITextKeyNoAgentTip) text:enterprise.configInfo.intro];
+        [LGCustomizedUIText setCustomiedTextForKey:(LGUITextKeyNoAgentTip) text:enterprise.configInfo.ticketConfigInfo.intro];
     }];
 }
 
@@ -1172,7 +1301,7 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
                     agentStatus = LGChatAgentStatusNone;
                     break;
                 case LGStateQueueing:
-                    viewTitle = @"排队等待中...";
+                    viewTitle = [LGBundleUtil localizedStringForKey:@"waiting_title"];
                     agentStatus = LGChatAgentStatusNone;
                     break;
                 case LGStateAllocatedAgent:
@@ -1252,9 +1381,6 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
                 if (messages.count > 0) {
                     [sself saveToCellModelsWithMessages:messages isInsertAtFirstIndex:true];
                     [sself.delegate reloadChatTableView];
-//                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//                        [self scrollToButton];
-//                    });
                 }
             }];
         }
@@ -1363,10 +1489,9 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
             if (receivedMessages) {
                 [self saveToCellModelsWithMessages:receivedMessages isInsertAtFirstIndex: NO];
                 [self.delegate reloadChatTableView];
-                
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [self scrollToButton];
-                });
+//                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                    [self scrollToBottom];
+//                });
             }
             
         }];
@@ -1464,8 +1589,26 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
         return;
     }
     id<LGCellModelProtocol> cellModel = [self.cellModels objectAtIndex:index];
-    [cellModel updateCellMessageId:newMessageId];
-    [cellModel updateCellSendStatus:sendStatus];
+    if ([cellModel respondsToSelector:@selector(updateCellMessageId:)]) {
+        [cellModel updateCellMessageId:newMessageId];
+    }
+    if ([cellModel respondsToSelector:@selector(updateCellSendStatus:)]) {
+        [cellModel updateCellSendStatus:sendStatus];
+    }
+    
+    BOOL needSplitLine = NO;
+    if (cellModel.getMessageConversionId.length < 1) {
+        if ([cellModel respondsToSelector:@selector(updateCellConversionId:)]) {
+            [cellModel updateCellConversionId:[LGServiceToViewInterface getCurrentConversationID]];
+        }
+    } else {
+        if (cellModel.getMessageConversionId != [LGServiceToViewInterface getCurrentConversationID]) {
+            needSplitLine = YES;
+            if ([cellModel respondsToSelector:@selector(updateCellConversionId:)]) {
+                [cellModel updateCellConversionId:[LGServiceToViewInterface getCurrentConversationID]];
+            }
+        }
+    }
     if (newMessageDate) {
         [cellModel updateCellMessageDate:newMessageDate];
     }
@@ -1475,7 +1618,15 @@ static NSInteger const kLGChatGetHistoryMessageNumber = 20;
     
     // 消息发送完成，刷新单行cell
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self updateCellWithIndex:index needToBottom:YES];
+        if (needSplitLine) {
+            LGSplitLineCellModel *cellModel1 = [[LGSplitLineCellModel alloc] initCellModelWithCellWidth:self.chatViewWidth withConversionDate:newMessageDate];
+            [self.cellModels replaceObjectAtIndex:index withObject:cellModel1];
+            [self.cellModels addObject:cellModel];
+            [self reloadChatTableView];
+            [self scrollToBottom];
+        } else {
+            [self updateCellWithIndex:index needToBottom:YES];
+        }
     });
     
     // 将 messageId 保存到 set，用于去重

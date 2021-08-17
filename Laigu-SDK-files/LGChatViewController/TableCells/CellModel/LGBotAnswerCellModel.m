@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 #import "LGChatViewConfig.h"
 #import "LGImageUtil.h"
-#import "LAIGU_TTTAttributedLabel.h"
+#import "TTTAttributedLabel.h"
 #import "LGChatEmojize.h"
 #import "LGServiceToViewInterface.h"
 
@@ -165,6 +165,11 @@ static CGFloat const kLGBotAnswerEvaluateBubbleMinWidth = 144.0;
  */
 @property (nonatomic, readwrite, copy) NSArray *normalSubTypes;
 
+/**
+ * @brief cell中消息的会话id
+ */
+@property (nonatomic, readwrite, strong) NSString *conversionId;
+
 @end
 
 @implementation LGBotAnswerCellModel
@@ -179,6 +184,7 @@ static CGFloat const kLGBotAnswerEvaluateBubbleMinWidth = 144.0;
         self.isEvaluated = message.isEvaluated;
         self.messageId = message.messageId;
         self.sendStatus = message.sendStatus;
+        self.conversionId = message.conversionId;
         NSMutableParagraphStyle *contentParagraphStyle = [[NSMutableParagraphStyle alloc] init];
         contentParagraphStyle.lineSpacing = kLGTextCellLineSpacing;
         contentParagraphStyle.lineHeightMultiple = 1.0;
@@ -402,12 +408,20 @@ static CGFloat const kLGBotAnswerEvaluateBubbleMinWidth = 144.0;
     return self.messageId;
 }
 
+- (NSString *)getMessageConversionId {
+    return self.conversionId;
+}
+
 - (void)updateCellSendStatus:(LGChatMessageSendStatus)sendStatus {
     self.sendStatus = sendStatus;
 }
 
 - (void)updateCellMessageId:(NSString *)messageId {
     self.messageId = messageId;
+}
+
+- (void)updateCellConversionId:(NSString *)conversionId {
+    self.conversionId = conversionId;
 }
 
 - (void)updateCellMessageDate:(NSDate *)messageDate {

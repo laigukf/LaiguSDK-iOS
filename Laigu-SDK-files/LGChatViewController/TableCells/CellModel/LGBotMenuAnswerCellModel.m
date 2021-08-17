@@ -86,6 +86,14 @@
     self.message.messageId = messageId;
 }
 
+- (NSString *)getMessageConversionId {
+    return self.message.conversionId;
+}
+
+- (void)updateCellConversionId:(NSString *)conversionId {
+    self.message.conversionId = conversionId;
+}
+
 - (void)updateCellMessageDate:(NSDate *)messageDate {
     self.message.date = messageDate;
 }

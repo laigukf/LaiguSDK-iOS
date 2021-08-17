@@ -104,27 +104,10 @@ static CGFloat const kLGButtonToBottomSpacing   = 128.0;
 
 - (void)feedback
 {
-    LGMessageFormInputModel *emailMessageFormInputModel = [[LGMessageFormInputModel alloc] init];
-    emailMessageFormInputModel.key = @"email";
-    emailMessageFormInputModel.isSingleLine = YES;
-    emailMessageFormInputModel.isRequired = NO;
-    emailMessageFormInputModel.keyboardType = UIKeyboardTypeEmailAddress;
-    
-    LGMessageFormInputModel *phoneMessageFormInputModel = [[LGMessageFormInputModel alloc] init];
-    phoneMessageFormInputModel.key = @"tel";
-    phoneMessageFormInputModel.isSingleLine = YES;
-    phoneMessageFormInputModel.isRequired = NO;
-    phoneMessageFormInputModel.keyboardType = UIKeyboardTypePhonePad;
-    
-    NSMutableArray *customMessageFormInputModelArray = [NSMutableArray array];
-    [customMessageFormInputModelArray addObject:emailMessageFormInputModel];
-    [customMessageFormInputModelArray addObject:phoneMessageFormInputModel];
-    
     LGMessageFormViewManager *messageFormViewManager = [[LGMessageFormViewManager alloc] init];
     
     LGMessageFormViewStyle *style = [messageFormViewManager messageFormViewStyle];
     style.navBarColor = [UIColor whiteColor];
-    [messageFormViewManager setCustomMessageFormInputModelArray:nil];
     [messageFormViewManager presentLGMessageFormViewControllerInViewController:self];
 }
 #pragma 开发者的高级功能 其中有调用来鼓SDK的API接口

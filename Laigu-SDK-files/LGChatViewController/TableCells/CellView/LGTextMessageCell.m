@@ -11,14 +11,14 @@
 #import "LGChatViewConfig.h"
 #import "LGBundleUtil.h"
 #import "LGTextCellModel.h"
-#import "LAIGU_TTTAttributedLabel.h"
+#import "TTTAttributedLabel.h"
 
 static const NSInteger kLGTextCellSelectedUrlActionSheetTag = 2000;
 static const NSInteger kLGTextCellSelectedNumberActionSheetTag = 2001;
 static const NSInteger kLGTextCellSelectedEmailActionSheetTag = 2002;
 static const NSString *kLGTextCellsensitiveWords = @"！消息包含不规范用语";
 
-@interface LGTextMessageCell() <LAIGU_TTTAttributedLabelDelegate, UIActionSheetDelegate, UIAlertViewDelegate>
+@interface LGTextMessageCell() <TTTAttributedLabelDelegate, UIActionSheetDelegate, UIAlertViewDelegate>
 
 @end
 

@@ -18,9 +18,6 @@
 
 + (LGDateFormatterUtil *)sharedFormatter
 {
-    
-    
-    
     static LGDateFormatterUtil *_sharedFormatter = nil;
     
     static dispatch_once_t onceToken = 0;
@@ -67,6 +64,12 @@
         //去年以前
         return [self timestampForDate:date];
     }
+}
+
+- (NSString *)laiguSplitLineDateForDate:(NSDate *)date
+{
+    self.dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm";
+    return [self.dateFormatter stringFromDate:date];
 }
 
 - (NSString *)timestampForDate:(NSDate *)date

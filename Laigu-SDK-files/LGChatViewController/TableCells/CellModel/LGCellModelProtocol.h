@@ -135,6 +135,11 @@ typedef NS_ENUM(NSUInteger, LGChatCellFromType) {
  */
 - (void)updateCellFrameWithCellWidth:(CGFloat)cellWidth;
 
+/**
+  获取当前message所对应的conversionid
+ */
+- (NSString *)getMessageConversionId;
+
 @optional
 /**
  *  更新cell的sendType
@@ -149,6 +154,13 @@ typedef NS_ENUM(NSUInteger, LGChatCellFromType) {
  *  @param messageId 消息id
  */
 - (void)updateCellMessageId:(NSString *)messageId;
+
+/**
+ *  更新cell的conversionId
+ *
+ *  @param conversionId 会话id
+ */
+- (void)updateCellConversionId:(NSString *)conversionId;
 
 /**
  *  更新cell的messageDate

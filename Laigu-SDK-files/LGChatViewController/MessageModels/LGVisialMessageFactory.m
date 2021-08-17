@@ -77,6 +77,7 @@
     toMessage.date = plainMessage.createdOn;
     toMessage.userName = plainMessage.messageUserName;
     toMessage.userAvatarPath = plainMessage.messageAvatar;
+    toMessage.conversionId = plainMessage.conversationId;
     switch (plainMessage.sendStatus) {
         case LGMessageSendStatusSuccess:
             toMessage.sendStatus = LGChatMessageSendStatusSuccess;

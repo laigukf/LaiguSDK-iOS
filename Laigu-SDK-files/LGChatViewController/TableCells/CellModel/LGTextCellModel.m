@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 #import "LGChatViewConfig.h"
 #import "LGImageUtil.h"
-#import "LAIGU_TTTAttributedLabel.h"
+#import "TTTAttributedLabel.h"
 #import "LGChatEmojize.h"
 #import "LGServiceToViewInterface.h"
 #ifndef INCLUDE_LAIGU_SDK
@@ -133,6 +133,12 @@ static CGFloat const kLGTextCellSensitiveHeight = 25.0;
 @property (nonatomic, readwrite, assign) BOOL isSensitive;
 
 /**
+ * @brief cell中消息的会话id
+ */
+@property (nonatomic, readwrite, strong) NSString *conversionId;
+
+
+/**
  * @brief 敏感词汇提示语frame
  */
 @property (nonatomic, readwrite, assign) CGRect sensitiveLableFrame;
@@ -151,9 +157,10 @@ static CGFloat const kLGTextCellSensitiveHeight = 25.0;
                                      delegate:(id<LGCellModelDelegate>)delegator
 {
     if (self = [super init]) {
-        self.textLabelForHeightCalculation = [TTTAttributedLabel new];
+        self.textLabelForHeightCalculation = [[TTTAttributedLabel alloc] initWithFrame:CGRectZero];
         self.textLabelForHeightCalculation.numberOfLines = 0;
         self.messageId = message.messageId;
+        self.conversionId = message.conversionId;
         self.sendStatus = message.sendStatus;
         self.isSensitive = message.isSensitive;
         self.cellFromType = message.fromType == LGChatMessageIncoming ? LGChatCellIncoming : LGChatCellOutgoing;
@@ -354,12 +361,20 @@ static CGFloat const kLGTextCellSensitiveHeight = 25.0;
     return self.messageId;
 }
 
+- (NSString *)getMessageConversionId {
+    return self.conversionId;
+}
+
 - (void)updateCellSendStatus:(LGChatMessageSendStatus)sendStatus {
     self.sendStatus = sendStatus;
 }
 
 - (void)updateCellMessageId:(NSString *)messageId {
     self.messageId = messageId;
+}
+
+- (void)updateCellConversionId:(NSString *)conversionId {
+    self.conversionId = conversionId;
 }
 
 - (void)updateCellMessageDate:(NSDate *)messageDate {

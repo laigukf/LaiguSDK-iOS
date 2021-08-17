@@ -38,11 +38,11 @@
 #import "LGToolUtil.h"
 #import "LGChatViewManager.h"
 #import <LaiGuSDK/LGManager.h>
-#import "XLPInputView.h"
+#import "LG_InputView.h"
 #import "LGCellModelProtocol.h"
 static CGFloat const kLGChatViewInputBarHeight = 80.0;
 
-@interface LGChatViewController () <UITableViewDelegate, LGChatViewServiceDelegate, LGBottomBarDelegate, UIImagePickerControllerDelegate, LGChatTableViewDelegate, LGChatCellDelegate, LGServiceToViewInterfaceErrorDelegate,UINavigationControllerDelegate, LGEvaluationViewDelegate, LGInputContentViewDelegate, LGKeyboardControllerDelegate, LGRecordViewDelegate, LGRecorderViewDelegate,XLPInputViewDelegate>
+@interface LGChatViewController () <UITableViewDelegate, LGChatViewServiceDelegate, LGBottomBarDelegate, UIImagePickerControllerDelegate, LGChatTableViewDelegate, LGChatCellDelegate, LGServiceToViewInterfaceErrorDelegate,UINavigationControllerDelegate, LGEvaluationViewDelegate, LGInputContentViewDelegate, LGKeyboardControllerDelegate, LGRecordViewDelegate, LGRecorderViewDelegate,LG_InputViewDelegate>
 
 @property(nonatomic, strong)LGChatViewService *chatViewService;
 
@@ -75,7 +75,7 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
     BOOL openVisitorNoMessageBool; // 默认值 在presentUI里分2种情况初始化 在发送各种消息前检测 若为真 打开 则需手动上线  若为假 则不做操作
     
     BOOL shouldSendInputtingMessageToServer;
-    
+    BOOL willDisapper; // 页面即将消失
 }
 
 - (void)dealloc {
@@ -84,7 +84,7 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
     [self.chatViewService setCurrentInputtingText:[(LGTabInputContentView *)self.bottomBar.contentView textField].text];
     [self closeLaiguChatView];
     [LGCustomizedUIText reset];
-    
+    [LGServiceToViewInterface completeChat];
 }
 
 - (instancetype)initWithChatViewManager:(LGChatViewConfig *)config {
@@ -196,13 +196,13 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
                 
                 
                 // 加载历史消息
-                [self.chatViewService startGettingHistoryMessages];
+                [self.chatViewService getMessagesWithScheduleAfterClientSendMessage];
                 
                 // 注册通知
                 // TODO: 这个通知什么时候回调（客服离开、隐身、结束对话都不会触发）
                 [LGManager addStateObserverWithBlock:^(LGState oldState, LGState newState, NSDictionary *value, NSError *error) {
                     if (newState == LGStateUnallocatedAgent) { // 离线
-                        [LGManager setClientOffline];
+//                        [LGManager setClientOffline];
                     }
                 } withKey:@"LGChatViewController"];
                 
@@ -230,10 +230,6 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
     [UIApplication sharedApplication].statusBarStyle = previousStatusBarStyle;
     
     [[UIApplication sharedApplication] setStatusBarHidden:previousStatusBarHidden];
-    
-    [LGServiceToViewInterface completeChat];
-    
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -246,6 +242,7 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
     [super viewWillDisappear:animated];
     [self.view endEditing:YES];
     
+    willDisapper = YES;
     [self.keyboardView endListeningForKeyboard];
     
     if ([LGServiceToViewInterface waitingInQueuePosition] > 0) {
@@ -255,6 +252,7 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    willDisapper = NO;
     [UIView setAnimationsEnabled:YES];
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
     [self.chatViewService fillTextDraftToFiledIfExists:(UITextField *)[(LGTabInputContentView *)self.bottomBar.contentView textField]];
@@ -486,8 +484,10 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
 }
 
 - (void)showEvaluationAlertView {
-    [self.view.window endEditing:YES];
-    [self.evaluationView showEvaluationAlertView];
+    if (!willDisapper) {
+        [self.view.window endEditing:YES];
+        [self.evaluationView showEvaluationAlertView];
+    }
 }
 
 - (BOOL)isChatRecording {
@@ -530,8 +530,6 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
             [LGToast showToast:[LGBundleUtil localizedStringForKey:@"display_new_message"] duration:1.5 window:[[UIApplication sharedApplication].windows lastObject]];
         }
     }
-    // 接收新消息滚动到底部
-    [self chatTableViewScrollToBottomWithAnimated: YES];
 }
 
 - (void)showToastViewWithContent:(NSString *)content {
@@ -553,7 +551,7 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
     }
     
     
-    if (openVisitorNoMessageBool) {
+    if (openVisitorNoMessageBool || self.chatViewService.clientStatus == LGStateUnallocatedAgent) {
         [self.view endEditing:YES];
         [self.chatViewService setClientOnline];
         
@@ -1020,8 +1018,8 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
             
             CGFloat emojiViewHeight = LGToolUtil.kXlpObtainDeviceVersionIsIphoneX ? (emojikeyboardHeight + 34) : emojikeyboardHeight;
             
-            XLPInputView * mmView = [[XLPInputView alloc]initWithFrame:CGRectMake(0,0, self.view.frame.size.width, emojiViewHeight)];
-            mmView.xlpInputViewDelegate = self;
+            LG_InputView * mmView = [[LG_InputView alloc]initWithFrame:CGRectMake(0,0, self.view.frame.size.width, emojiViewHeight)];
+            mmView.inputViewDelegate = self;
             self.bottomBar.inputView = mmView;
             
             [self.bottomBar becomeFirstResponder];
@@ -1104,7 +1102,7 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
         
         if (LGToolUtil.kXlpObtainDeviceVersionIsIphoneX ) {
             
-            CGFloat diff = heightFromBottom - self.constraintInputBarBottom.constant + 34;
+            CGFloat diff = heightFromBottom - self.constraintInputBarBottom.constant + (heightFromBottom == 0 ? 34 : 0);
             if (diff < self.chatTableView.contentInset.top + self.chatTableView.contentSize.height) {
                 self.chatTableView.contentOffset = CGPointMake(self.chatTableView.contentOffset.x, self.chatTableView.contentOffset.y + diff);
             }
@@ -1136,18 +1134,18 @@ static CGFloat const kLGChatViewInputBarHeight = 80.0;
 
 #pragma mark - emoji delegate and datasource
 
-- (void)XLPInputViewObtainEmojiStr:(NSString *)emojiStr{
+- (void)LGInputViewObtainEmojiStr:(NSString *)emojiStr{
     LAIGU_HPGrowingTextView *textField = [(LGTabInputContentView *)self.bottomBar.contentView textField];
     textField.text = [textField.text stringByAppendingString:emojiStr];
 }
-- (void)XLPInputViewDeleteEmoji{
+- (void)LGInputViewDeleteEmoji{
     LAIGU_HPGrowingTextView *textField = [(LGTabInputContentView *)self.bottomBar.contentView textField];
     if (textField.text.length > 0) {
         NSRange lastRange = [textField.text rangeOfComposedCharacterSequenceAtIndex:([textField.text length] - 1)];
         textField.text = [textField.text stringByReplacingCharactersInRange:lastRange withString:@""];
     }
 }
-- (void)XLPInputViewSendEmoji{
+- (void)LGInputViewSendEmoji{
     LAIGU_HPGrowingTextView *textField = [(LGTabInputContentView *)self.bottomBar.contentView textField];
     if (textField.text.length > 0) {
         

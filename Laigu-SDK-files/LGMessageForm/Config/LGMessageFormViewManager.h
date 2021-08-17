@@ -34,13 +34,6 @@
 - (void)disappearLGMessageFromViewController;
 
 /**
- *  设置自定义留言表单引导文案，配置了该引导文案后将不会读取工作台配置的引导文案
- *
- *  @param customMfimArr 留言表单的引导文案
- */
-- (void)setLeaveMessageIntro:(NSString *)leaveMessageIntro;
-
-/**
  *  设置留言表单的自定义输入信息
  *
  *  @param customMessageFormInputModelArray 留言表单的自定义输入信息

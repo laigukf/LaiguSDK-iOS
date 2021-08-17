@@ -119,6 +119,17 @@
                                      delegate:(id<LGServiceToViewInterfaceDelegate>)delegate;
 
 /**
+ * 从服务端获取留言消息和一般的消息
+ *
+ * @param msgDate 获取该日期之前的历史消息;
+ * @param messagesNum 获取消息的数量
+ */
++ (void)getServerHistoryMessagesAndTicketsWithMsgDate:(NSDate *)msgDate
+                             messagesNumber:(NSInteger)messagesNumber
+                            successDelegate:(id<LGServiceToViewInterfaceDelegate>)successDelegate
+                              errorDelegate:(id<LGServiceToViewInterfaceErrorDelegate>)errorDelegate;
+
+/**
  * 从服务端获取更多消息
  *
  * @param msgDate 获取该日期之前的历史消息;
@@ -259,6 +270,11 @@
  *
  */
 + (BOOL)haveConversation;
+
+/**
+ *  获取当前分配对话的会话id，，没有分配则为nil
+ */
++ (NSString *)getCurrentConversationID;
 
 /**
  *  下载多媒体消息的多媒体内容
@@ -435,12 +451,10 @@
  *  提交留言表单
  *
  *  @param message 留言消息
- *  @param images 图片数组
  *  @param clientInfo 顾客的信息
  *  @param completion  提交留言表单的回调
  */
 + (void)submitMessageFormWithMessage:(NSString *)message
-                              images:(NSArray *)images
                           clientInfo:(NSDictionary<NSString *, NSString *>*)clientInfo
                           completion:(void (^)(BOOL success, NSError *error))completion;
 

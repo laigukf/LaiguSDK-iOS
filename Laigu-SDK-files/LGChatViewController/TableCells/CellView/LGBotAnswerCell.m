@@ -10,7 +10,7 @@
 #import "LGChatViewConfig.h"
 #import "LGChatFileUtil.h"
 #import "LGBundleUtil.h"
-#import "LAIGU_TTTAttributedLabel.h"
+#import "TTTAttributedLabel.h"
 #import "LGStringSizeUtil.h"
 #import "LGChatViewStyle.h"
 #import "LGBotAnswerCellModel.h"
@@ -20,7 +20,7 @@ static const NSInteger kLGTextCellSelectedNumberActionSheetTag = 2001;
 static const NSInteger kLGTextCellSelectedEmailActionSheetTag = 2002;
 static const CGFloat   kLGBotAnswerEvaluateTextSize = 16.0;
 
-@interface LGBotAnswerCell() <LAIGU_TTTAttributedLabelDelegate, UIActionSheetDelegate, UIAlertViewDelegate>
+@interface LGBotAnswerCell() <TTTAttributedLabelDelegate, UIActionSheetDelegate, UIAlertViewDelegate>
 
 @end
 

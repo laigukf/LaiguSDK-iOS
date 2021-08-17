@@ -7,10 +7,10 @@
 //
 
 #import "LGChatAudioRecorder.h"
-#import "LAIGU_MLAudioRecorder.h"
-#import "LAIGU_AmrRecordWriter.h"
+#import "MLAudioRecorder.h"
+#import "AmrRecordWriter.h"
 #import "LGNamespacedDependencies.h"
-#import "LAIGU_MLAudioMeterObserver.h"
+#import "MLAudioMeterObserver.h"
 #import <UIKit/UIKit.h>
 #import "LGBundleUtil.h"
 

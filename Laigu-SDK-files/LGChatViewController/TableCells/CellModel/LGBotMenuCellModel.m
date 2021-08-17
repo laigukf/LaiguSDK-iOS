@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 #import "LGChatViewConfig.h"
 #import "LGImageUtil.h"
-#import "LAIGU_TTTAttributedLabel.h"
+#import "TTTAttributedLabel.h"
 #import "LGChatEmojize.h"
 #import "LGServiceToViewInterface.h"
 #ifndef INCLUDE_LAIGU_SDK
@@ -124,6 +124,11 @@
  */
 @property (nonatomic, readwrite, assign) CGRect replyTipLabelFrame;
 
+/**
+ * @brief cell中消息的会话id
+ */
+@property (nonatomic, readwrite, strong) NSString *conversionId;
+
 @end
 
 @implementation LGBotMenuCellModel
@@ -134,7 +139,10 @@
 {
     if (self = [super init]) {
         self.messageId = message.messageId;
+        self.conversionId = message.conversionId;
         self.sendStatus = message.sendStatus;
+        //文字最大宽度
+        CGFloat maxLabelWidth = cellWidth - kLGCellAvatarToHorizontalEdgeSpacing - kLGCellAvatarDiameter - kLGCellAvatarToBubbleSpacing - kLGCellBubbleToTextHorizontalLargerSpacing - kLGCellBubbleToTextHorizontalSmallerSpacing - kLGCellBubbleMaxWidthToEdgeSpacing;
         NSMutableParagraphStyle *contentParagraphStyle = [[NSMutableParagraphStyle alloc] init];
         contentParagraphStyle.lineSpacing = kLGTextCellLineSpacing;
         contentParagraphStyle.lineHeightMultiple = 1.0;
@@ -151,12 +159,14 @@
         } else {
             [contentAttributes setObject:(__bridge id)[LGChatViewConfig sharedConfig].incomingMsgTextColor.CGColor forKey:(__bridge id)kCTForegroundColorAttributeName];
         }
-        
-//        self.cellTextAttributes = [[NSDictionary alloc] initWithDictionary:contentAttributes];
-//        self.cellText = [[NSAttributedString alloc] initWithString:message.content attributes:self.cellTextAttributes];
-        
-        NSMutableAttributedString * nameText = [[NSMutableAttributedString alloc] initWithData:[message.richContent?:message.content dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes: nil error:nil];
-        self.cellText = nameText;
+        self.cellTextAttributes = [[NSDictionary alloc] initWithDictionary:contentAttributes];
+        if (message.richContent && message.richContent.length > 0) {
+            NSString *str = [NSString stringWithFormat:@"<head><style>img{width:%f !important;height:auto}</style></head>%@",maxLabelWidth,message.richContent];
+                NSAttributedString *attributeString=[[NSAttributedString alloc] initWithData:[str dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:nil];
+            self.cellText = attributeString;
+        } else {
+            self.cellText = [[NSAttributedString alloc] initWithString:message.content attributes:self.cellTextAttributes];
+        }
 
         self.date = message.date;
         self.cellHeight = 44.0;
@@ -189,8 +199,6 @@
             }];
         }
         
-        //文字最大宽度
-        CGFloat maxLabelWidth = cellWidth - kLGCellAvatarToHorizontalEdgeSpacing - kLGCellAvatarDiameter - kLGCellAvatarToBubbleSpacing - kLGCellBubbleToTextHorizontalLargerSpacing - kLGCellBubbleToTextHorizontalSmallerSpacing - kLGCellBubbleMaxWidthToEdgeSpacing;
         //文字高度
         CGFloat messageTextHeight = [LGStringSizeUtil getHeightForAttributedText:self.cellText textWidth:maxLabelWidth];
         //判断文字中是否有emoji
@@ -361,12 +369,20 @@
     return self.messageId;
 }
 
+- (NSString *)getMessageConversionId {
+    return self.conversionId;
+}
+
 - (void)updateCellSendStatus:(LGChatMessageSendStatus)sendStatus {
     self.sendStatus = sendStatus;
 }
 
 - (void)updateCellMessageId:(NSString *)messageId {
     self.messageId = messageId;
+}
+
+- (void)updateCellConversionId:(NSString *)conversionId {
+    self.conversionId = conversionId;
 }
 
 - (void)updateCellMessageDate:(NSDate *)messageDate {

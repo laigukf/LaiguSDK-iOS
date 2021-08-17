@@ -72,8 +72,6 @@ typedef NS_ENUM(NSUInteger, LGUITextKey) {
     LGUITextKeyPreChatFormMultipleSelectionLabel,
     LGUITextKeyPreChatFormBlankAlertLabel,
     
-    LGUITextKeyQueuePosition,
-    
     //pull refresh
     LGUITextKeyPullRefreshNormal,
     LGUITextKeyPullRfreshTriggered,
